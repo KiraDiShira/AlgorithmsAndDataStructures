@@ -1,4 +1,4 @@
-* [Index](https://github.com/anlarosa/algorithms/blob/master/README.md#project-title)
+* [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
 # Insertion sort
 
@@ -8,8 +8,8 @@
 
 ## Overview
 
-![alt text](https://github.com/anlarosa/algorithms/blob/master/RepoFiles/InsertionSort/Insertion-sort-example-300px.gif)
-![alt text](https://github.com/anlarosa/algorithms/blob/master/RepoFiles/InsertionSort/InsertionSort.PNG)
+![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/Insertion-sort-example-300px.gif)
+![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSort.PNG)
 
 ## Code
 
@@ -34,14 +34,14 @@ public static void InsertionSort(int[] array)
 ```
 
 ## Analysis of insertion sort
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/InsertionSort/InsertionSortRunningTime.PNG" width="600">
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSortRunningTime.PNG" width="600">
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/InsertionSort/InsertionSortRunningTimeFormula.PNG">
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSortRunningTimeFormula.PNG">
 
 The best-case running time is a linear function of n:
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/InsertionSort/insertionsortbestcase.PNG">
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/insertionsortbestcase.PNG">
 
 The worst case is a quadratic function:
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/InsertionSort/inssortWorscase.PNG">
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/inssortWorscase.PNG">
