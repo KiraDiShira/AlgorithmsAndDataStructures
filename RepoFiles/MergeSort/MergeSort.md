@@ -1,4 +1,4 @@
-* [Index](https://github.com/anlarosa/algorithms/blob/master/README.md#project-title)
+* [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
 # Merge sort
 
@@ -11,8 +11,8 @@
 
 ## Overview
 
-![alt text](https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MergeSort/Merge-sort-example-300px.gif)
-![alt text](https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MergeSort/execSteps.png)
+![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/Merge-sort-example-300px.gif)
+![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/execSteps.png)
 
 ```
 38,27,43,3,9,82,10
@@ -157,7 +157,7 @@ In questi casi (tipicamente per n=0 o n=1) la funzione termina senza attivare ch
 ne può quindi calcolare semplicemente il tempo di esecuzione T(n), che sarà in generale costante.
 Ad esempio, nell’ambito del paradigma divide-et-impera, avremo ricorrenze del tipo:
 
- <img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MergeSort/recurrenceEquation.PNG" />
+ <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/recurrenceEquation.PNG" />
 
 derivanti dall’aver diviso un certo problema padre in a sottoproblemi figlio di dimensione n/b, avendo indicato con C(n) il costo derivante dalla combinazione dei risultati e con D(n) il costo relativo alla divisione del problema padre nei problemi figlio ed essendo costante (e quindi pari a Q(1)) il tempo per la soluzione dei problemi nel caso banale, cioè quando n <= c.
 Per risolvere una formula di ricorrenza, e quindi giungere a determinare la complessità asintotica
@@ -165,12 +165,12 @@ di T(n), è necessario adottare dei particolari metodi di soluzione.
 
 ## Analysis of merge sort
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MergeSort/Mergesortrunningtime.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/Mergesortrunningtime.PNG" />
 
 ## Intuitive analysis
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MergeSort/running%20time.png" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/running%20time.png" />
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MergeSort/intuitiveanalysis.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/intuitiveanalysis.PNG" />
 
 
