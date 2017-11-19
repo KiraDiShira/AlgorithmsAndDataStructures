@@ -1,4 +1,4 @@
-* [Index](https://github.com/anlarosa/algorithms/blob/master/README.md#project-title)
+* [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
 # Maximum subarray
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-![alt text](https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MaximumSubarray/overview.PNG)
+![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MaximumSubarray/overview.PNG)
 
 ```
 13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7
@@ -193,5 +193,5 @@ private static Result FindMaxCrossingSubarray(int[] a, int low, int mid, int hig
 
 The base case, when n = 1, is easy: constant time
 
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MaximumSubarray/constantTime.PNG" />
-<img src="https://github.com/anlarosa/algorithms/blob/master/RepoFiles/MaximumSubarray/analysis.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MaximumSubarray/constantTime.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MaximumSubarray/analysis.PNG" />
