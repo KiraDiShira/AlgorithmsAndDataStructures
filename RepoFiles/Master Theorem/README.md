@@ -19,3 +19,11 @@ We will see some example for understanding how to check polynomial difference.
 ### Caso 1
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso1.PNG" />
+
+### Caso 2
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso2.PNG" />
+
+### Caso 3
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso3.PNG" />
