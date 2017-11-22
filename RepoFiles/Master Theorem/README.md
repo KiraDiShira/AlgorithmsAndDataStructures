@@ -2,11 +2,11 @@
 
 # Master theorem
 
-* [Overview](#overview)
-* [Code](#code)
-* [Analysis of insertion sort](#analysis-of-insertion-sort)
+* [Theorem](#theorem)
+* [Examples](#examples)
+* [Master theorem in practice](#master-theorem-in-practice)
 
-## Overview
+## Theorem
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/mt1.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/mt2.PNG" />
