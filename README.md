@@ -3,7 +3,7 @@
 One Paragraph of project description goes here
 
 ## Table of Contents
-- [Foundations]
+- Foundations
   - [Insertion sort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSort.md#insertion-sort)   
   - [Merge sort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/MergeSort.md#merge-sort)   
     - [Analyzing divide-and-conquer algorithms](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/MergeSort.md#analyzing-divide-and-conquer-algorithms)   
