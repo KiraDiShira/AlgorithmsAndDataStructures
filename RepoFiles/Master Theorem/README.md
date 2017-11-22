@@ -16,14 +16,20 @@ We will see some example for understanding how to check polynomial difference.
 
 ## Examples
 
-### Caso 1
+### Case 1
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso1.PNG" />
 
-### Caso 2
+### Case 2
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso2.PNG" />
 
-### Caso 3
+### Case 3
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso3.PNG" />
+
+### The difference is not polynomial
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso4.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso4b.PNG" />
+
