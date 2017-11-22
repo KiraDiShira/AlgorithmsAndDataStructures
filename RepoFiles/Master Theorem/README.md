@@ -33,3 +33,8 @@ We will see some example for understanding how to check polynomial difference.
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso4.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso4b.PNG" />
 
+### Other inapplicable cases
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso5.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso6.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Master%20Theorem/Images/caso7.PNG" />
