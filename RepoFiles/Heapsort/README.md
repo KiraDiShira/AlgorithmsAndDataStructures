@@ -17,7 +17,7 @@ An array A that represents a heap is an object with two attributes: *A.length*, 
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ParentLeftRight.PNG" />
 
-There are two kinds of binary heaps: max-heaps and min-heaps. In a max-heap, the max-heap property is that for every node i
+There are two kinds of binary heaps: max-heaps and min-heaps. In a max-heap, the **max-heap property** is that for every node i
 other than the root,
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/maxheapformula.PNG" />
