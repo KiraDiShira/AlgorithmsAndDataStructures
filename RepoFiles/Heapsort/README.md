@@ -1,15 +1,16 @@
 * [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
-# Insertion sort
+# Heapsort
 
-* [Overview](#overview)
+* [Heaps](#heaps)
 * [Code](#code)
 * [Analysis of insertion sort](#analysis-of-insertion-sort)
 
-## Overview
+## Heaps
 
-![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/Insertion-sort-example-300px.gif)
-![alt text](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSort.PNG)
+The **(binary) heap** data structure is an array object that we can view as a nearly complete binary tree.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heaps.PNG" />
 
 ## Code
 
