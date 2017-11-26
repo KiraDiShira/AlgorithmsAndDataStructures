@@ -11,6 +11,8 @@ One Paragraph of project description goes here
   - [Maximum subarray](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MaximumSubarray/ReadMe.md#maximum-subarray)      
   - [Strassen's algorithm for matrix multiplication](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Strassen/readme.md#strassens-algorithm-for-matrix-multiplication)
   - [Master theorem](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Master%20Theorem#master-theorem)
+- Sorting and Order Statistics
+  -[Heapsort]
 
 ## Acknowledgments
 
