@@ -28,6 +28,9 @@ A min-heap is organized in the opposite way;
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/max-heap-min-heap.jpg" />
 
+We define the height of a node in a heap to be the number of edges on the longest simple downward path from the node to a leaf, and
+we define the height of the heap to be the height of its root.
+
 ## Code
 
 ```c#
