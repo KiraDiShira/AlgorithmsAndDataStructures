@@ -12,6 +12,22 @@ The **(binary) heap** data structure is an array object that we can view as a ne
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heaps.PNG" />
 
+An array A that represents a heap is an object with two attributes: *A.length*, which gives the number of elements in the array, and
+*A.heap-size*, which represents how many elements in the heap are stored within array A. That is, although A[1...A.length] may contain numbers, only the elements in A[1...A:heap-size], where 0 <= A.heap-size <= A.length, are valid elements of the heap. The root of the tree is A[1], and given the index i of a node, we can easily compute the indices of its parent, left child, and right child:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ParentLeftRight.PNG" />
+
+There are two kinds of binary heaps: max-heaps and min-heaps. In a max-heap, the max-heap property is that for every node i
+other than the root,
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/maxheapformula.PNG" />
+
+A min-heap is organized in the opposite way;
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/minheapformula.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/max-heap-min-heap.jpg" />
+
 ## Code
 
 ```c#
