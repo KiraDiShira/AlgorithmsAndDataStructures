@@ -4,7 +4,7 @@
 
 * [Heaps](#heaps)
 * [Maintaining the heap property](#maintaining-the-heap-property)
-* [Analysis of insertion sort](#analysis-of-insertion-sort)
+* [Building a heap](#building-a-heap)
 
 ## Heaps
 
@@ -50,7 +50,7 @@ public static void MaxHeapify(int[] heap, int index)
     int left = Left(index);
     int right = Right(index);
     int largest;
-    if (left <= heap.Length && heap[left] > heap[index])
+    if (left < heap.Length && heap[left] > heap[index])
     {
         largest = left;
     }
@@ -58,7 +58,7 @@ public static void MaxHeapify(int[] heap, int index)
     {
         largest = index;
     }
-    if (right <= heap.Length && heap[right] > heap[largest])
+    if (right < heap.Length && heap[right] > heap[largest])
     {
         largest = right;
     }
@@ -90,36 +90,21 @@ private static void Exchange(int[] heap, int index, int largest)
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify3.PNG" />
 
+## Building a heap
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify4.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify5.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify6.PNG" />
 
 ```c#
 
-public static void InsertionSort(int[] array)
+private static void BuildMaxHeap(int[] array)
 {
-    for (int i = 1; i < array.Length; i++)
+    for (int i = array.Length / 2; i >= 0; i--)
     {
-        int key = array[i];
-        int j = i - 1;
-
-        while (j >= 0 && array[j] > key)
-        {
-            array[j + 1] = array[j];
-            j--;
-        }
-        
-        array[j + 1] = key;
+        MaxHeapify(array, i);
     }
 }
+
 ```
 
-## Analysis of insertion sort
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSortRunningTime.PNG" width="600">
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSortRunningTimeFormula.PNG">
-
-The best-case running time is a linear function of n:
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/insertionsortbestcase.PNG">
-
-The worst case is a quadratic function:
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/inssortWorscase.PNG">
