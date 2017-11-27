@@ -40,7 +40,9 @@ we define the **height of the heap** to be the height of its root.
 Idea: far scendere il valore di A[i] nel max-heap in modo da ripristinare la proprietà desiderata.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify1.PNG" />
+
 ```c#
+
 public static void MaxHeapify(int[] heap, int index)
 {
     int left = Left(index);
