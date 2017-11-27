@@ -84,6 +84,10 @@ private static void Exchange(int[] heap, int index, int largest)
     heap[largest] = heapIndex;
 }
 ```
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify2.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify3.PNG" />
+
 
 ```c#
 
