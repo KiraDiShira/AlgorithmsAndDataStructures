@@ -3,7 +3,7 @@
 # Heapsort
 
 * [Heaps](#heaps)
-* [Code](#code)
+* [Maintaining the heap property](#maintaining-the-heap-property)
 * [Analysis of insertion sort](#analysis-of-insertion-sort)
 
 ## Heaps
@@ -31,7 +31,57 @@ A min-heap is organized in the opposite way;
 We define the **height of a node** in a heap to be the number of edges on the longest simple downward path from the node to a leaf, and
 we define the **height of the heap** to be the height of its root.
 
-## Code
+## Maintaining the heap property
+
+**Max-Heapify(A, i)** è un importante subroutine per manipolare max-heap quando:
+* i sotto-alberi binari con radice left[i] e right[i] sono max-heap,
+* ma A[i] è più piccolo dei suoi figli, violando così la proprietà del max-heap
+
+Idea: far scendere il valore di A[i] nel max-heap in modo da ripristinare la proprietà desiderata.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify1.PNG" />
+```c#
+public static void MaxHeapify(int[] heap, int index)
+{
+    int left = Left(index);
+    int right = Right(index);
+    int largest;
+    if (left <= heap.Length && heap[left] > heap[index])
+    {
+        largest = left;
+    }
+    else
+    {
+        largest = index;
+    }
+    if (right <= heap.Length && heap[right] > heap[largest])
+    {
+        largest = right;
+    }
+    if (largest != index)
+    {
+        Exchange(heap, index, largest);
+        MaxHeapify(heap, largest);
+    }
+}
+
+private static int Right(int index)
+{
+    return 2 * index + 2;
+}
+
+private static int Left(int index)
+{
+    return 2 * index + 1;
+}
+
+private static void Exchange(int[] heap, int index, int largest)
+{
+    int heapIndex = heap[index];
+    heap[index] = heap[largest];
+    heap[largest] = heapIndex;
+}
+```
 
 ```c#
 
