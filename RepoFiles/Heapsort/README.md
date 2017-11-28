@@ -5,6 +5,7 @@
 * [Heaps](#heaps)
 * [Maintaining the heap property](#maintaining-the-heap-property)
 * [Building a heap](#building-a-heap)
+* [The heapsort algorithm](#the-heapsort-algorithm)
 
 ## Heaps
 
@@ -141,3 +142,19 @@ private static int Left(int index)
 
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify7.PNG" />
+
+## The heapsort algorithm
+
+```c#
+
+private static void Heapsort(Heap heap)
+{
+    BuildMaxHeap(heap);
+    for (int i = heap.Length - 1; i >= 1; i--)
+    {
+        Exchange(heap, 0, i);
+        heap.Size = heap.Size - 1;
+        MaxHeapify(heap, 0);
+    }
+}
+```
