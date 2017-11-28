@@ -76,12 +76,12 @@ Idea: far scendere il valore di A[i] nel max-heap in modo da ripristinare la pro
 
 ```c#
 
-public static void MaxHeapify(int[] heap, int index)
+public static void MaxHeapify(Heap heap, int index)
 {
     int left = Left(index);
     int right = Right(index);
     int largest;
-    if (left < heap.Length && heap[left] > heap[index])
+    if (left < heap.Size && heap[left] > heap[index])
     {
         largest = left;
     }
@@ -89,16 +89,24 @@ public static void MaxHeapify(int[] heap, int index)
     {
         largest = index;
     }
-    if (right < heap.Length && heap[right] > heap[largest])
+    if (right < heap.Size && heap[right] > heap[largest])
     {
         largest = right;
     }
     if (largest != index)
     {
-        Exchange(heap, index, largest);
+        Exchange(heap,index,largest);
         MaxHeapify(heap, largest);
     }
 }
+
+private static void Exchange(Heap heap, int index, int largest)
+{
+    int heapIndex = heap[index];
+    heap[index] = heap[largest];
+    heap[largest] = heapIndex;
+}
+
 
 private static int Right(int index)
 {
@@ -108,13 +116,6 @@ private static int Right(int index)
 private static int Left(int index)
 {
     return 2 * index + 1;
-}
-
-private static void Exchange(int[] heap, int index, int largest)
-{
-    int heapIndex = heap[index];
-    heap[index] = heap[largest];
-    heap[largest] = heapIndex;
 }
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify2.PNG" />
