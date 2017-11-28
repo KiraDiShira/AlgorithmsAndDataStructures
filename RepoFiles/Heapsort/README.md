@@ -158,3 +158,7 @@ private static void Heapsort(Heap heap)
     }
 }
 ```
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heapsortalgo1.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heapsortalgo2.PNG" />
+
+
