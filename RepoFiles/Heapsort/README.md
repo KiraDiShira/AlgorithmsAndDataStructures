@@ -132,6 +132,7 @@ private static int Left(int index)
 
  private static void BuildMaxHeap(Heap heap)
  {
+     heap.Size = heap.Length;
      for (int i = heap.Length / 2; i >= 0; i--)
      {
          MaxHeapify(heap, i);
