@@ -17,6 +17,5 @@ One Paragraph of project description goes here
 ## Acknowledgments
 
 * [*GitHub Cheat Sheet*](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md)
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* [Università di Camerino](http://docenti.unicam.it/pdett.aspx?UteId=207&IDPADRE=968&tv=m&ru=PO)
+
