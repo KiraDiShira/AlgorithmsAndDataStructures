@@ -130,13 +130,13 @@ private static int Left(int index)
 
 ```c#
 
-private static void BuildMaxHeap(int[] array)
-{
-    for (int i = array.Length / 2; i >= 0; i--)
-    {
-        MaxHeapify(array, i);
-    }
-}
+ private static void BuildMaxHeap(Heap heap)
+ {
+     for (int i = heap.Length / 2; i >= 0; i--)
+     {
+         MaxHeapify(heap, i);
+     }
+ }
 
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify7.PNG" />
