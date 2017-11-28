@@ -142,6 +142,9 @@ private static int Left(int index)
 
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify7.PNG" />
+
+Possiamo fare di meglio osservando che il tempo di esecuzione di Max-Heapify varia al variare dell’altezza del nodo nell’heap
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/Buimaxhea.PNG" />
 
 ## The heapsort algorithm
