@@ -15,7 +15,38 @@ dall’ultima foglia a destra
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heaps.PNG" />
 
 An array A that represents a heap is an object with two attributes: *A.length*, which gives the number of elements in the array, and
-*A.heap-size*, which represents how many elements in the heap are stored within array A. That is, although A[1...A.length] may contain numbers, only the elements in A[1...A:heap-size], where 0 <= A.heap-size <= A.length, are valid elements of the heap. The root of the tree is A[1], and given the index i of a node, we can easily compute the indices of its parent, left child, and right child:
+*A.heap-size*, which represents how many elements in the heap are stored within array A. That is, although A[1...A.length] may contain numbers, only the elements in A[1...A:heap-size], where 0 <= A.heap-size <= A.length, are valid elements of the heap.
+
+```c#
+
+public class Heap
+{
+    private readonly int[] _array;
+
+    public int Size { get; set; }
+    public int Length => _array.Length;
+
+    public int this[int index]
+    {
+        get => _array[index];
+        set => _array[index] = value;
+    }
+
+    public Heap(int[] array)
+    {
+        _array = array;
+        Size = array.Length;
+    }
+
+    public override string ToString()
+    {
+        return $"{nameof(_array)}: {String.Join(",",_array)}";
+    }
+}
+
+```
+
+The root of the tree is A[1], and given the index i of a node, we can easily compute the indices of its parent, left child, and right child:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ParentLeftRight.PNG" />
 
