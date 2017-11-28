@@ -142,6 +142,7 @@ private static int Left(int index)
 
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/MaxHeapify7.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/Buimaxhea.PNG" />
 
 ## The heapsort algorithm
 
