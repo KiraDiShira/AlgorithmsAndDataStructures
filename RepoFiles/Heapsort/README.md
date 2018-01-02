@@ -171,6 +171,11 @@ Possiamo fare di meglio osservando che il tempo di esecuzione di Max-Heapify var
 
 ## The heapsort algorithm
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ordin1.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ordin2.PNG" />
+
+
 ```c#
 
 private static void Heapsort(Heap heap)
@@ -186,6 +191,8 @@ private static void Heapsort(Heap heap)
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heapsortalgo1.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heapsortalgo2.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ordin3.PNG" />
 
 ## Priority queues
 
