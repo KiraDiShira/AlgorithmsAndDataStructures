@@ -181,4 +181,59 @@ Among their other applications, we can use max-priority queues to schedule jobs 
 In a given application, such as job scheduling or event-driven simulation, elements of a priority queue correspond to objects in the application. We often need to determine which application object corresponds to a given priority-queue element, and vice versa.
 When we use a heap to implement a priority queue, therefore, we often need to store a **handle** to the corresponding application object in each heap element. The exact makeup of the handle (such as a pointer or an integer) depends on the application. Similarly, we need to store a handle to the corresponding heap element in each application object. *Here, the handle would typically be an array index*. Because heap elements change locations within the array during heap operations, an actual implementation, upon relocating a heap element, would also have to update the array index in the corresponding application object. *Because the details of accessing application objects depend heavily on the application and its implementation, we shall not pursue them here, other than noting that in practice, these handles do need to be correctly maintained*.
 
+The procedure **HEAP-MAXIMUM** implements the MAXIMUM operation in TETHA(1) time.
 
+```c#
+
+public int HeapMaxmimum(Heap heap)
+{
+    return heap[0];
+}
+
+```
+
+The running time of **HEAP-EXTRACT-MAX** is O(lg n), since it performs only a constant amount of work on top of the O(lg n) time for MAX-HEAPIFY.
+
+```c#
+
+public int HeapExtractMax(Heap heap)
+{
+    if (heap.Size <= 0)
+    {
+        throw new Exception("heap underflow");
+    }
+
+    int max = heap[0];
+
+    heap[0] = heap[heap.Size - 1];
+    heap.Size--;
+    MaxHeapify(heap, 0);
+
+    return max;
+}
+
+```
+The procedure **HEAP-INCREASE-KEY** implements the INCREASE-KEY operation. An index *i* into the array identifies the priority-queue element whose key we wish to increase. The procedure first updates the key of element A[i] to its new value. Because increasing the key of A[i] might violate the max-heap property, the procedure then, in a manner reminiscent of the insertion loop, traverses a simple path from this node toward the root to find a proper place for the newly increased key.
+
+The running time of HEAP-INCREASE-KEY on an n-element heap is O(lg n), since the path traced from the node updated in line 3 to the root has length O(lg n).
+
+```c#
+
+public void HeapIncreaseKey(Heap heap, int index, int key)
+{
+    if (key < heap[index])
+    {
+        throw new Exception("new key is smaller than current key");
+    }
+
+    heap[index] = key;
+
+    while (index > 0 && heap[Parent(index)] < heap[index])
+    {
+        Exchange(heap, index, Parent(index));
+        index = Parent(index);
+    }
+}
+
+```
+The procedure **MAX-HEAP-INSERT** implements the INSERT operation. It takes as an input the key of the new element to be inserted into max-heap A. The procedure first expands the max-heap by adding to the tree a new leaf whose key is *-Inf*. Then it calls HEAP-INCREASE-KEY to set the key of this new node to its correct value and maintain the max-heap property.
