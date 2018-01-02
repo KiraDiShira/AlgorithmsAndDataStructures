@@ -52,6 +52,25 @@ The root of the tree is A[1], and given the index i of a node, we can easily com
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/ParentLeftRight.PNG" />
 
+```c#
+
+private static int Right(int index)
+{
+    return 2 * index + 2;
+}
+
+private static int Left(int index)
+{
+    return 2 * index + 1;
+}
+
+private static int Parent(int index)
+{
+     return (index - 1) / 2;
+}
+
+```
+
 There are two kinds of binary heaps: max-heaps and min-heaps. In a max-heap, the **max-heap property** is that for every node i
 other than the root,
 
