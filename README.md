@@ -18,4 +18,4 @@ One Paragraph of project description goes here
 
 * [*GitHub Cheat Sheet*](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md)
 * [Università di Camerino](http://docenti.unicam.it/pdett.aspx?UteId=207&IDPADRE=968&tv=m&ru=PO)
-
+* [Solutions to clrs](https://github.com/gzc/CLRS#solutions-to-clrs)
