@@ -12,7 +12,7 @@
 
 The **(binary) heap** data structure is an array object that we can view as a nearly complete binary tree.
 Quasi completo significa che tutti i livelli, tranne l’ultimo, sono completi: possono mancare alcune foglie consecutive a partire
-dall’ultima foglia a destra
+dall’ultima foglia a destra. La *quasi* completezza garantisce che l’altezza di un heap con *n* nodi è THETA(ln n).
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heaps.PNG" />
 
