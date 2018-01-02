@@ -6,6 +6,7 @@
 * [Maintaining the heap property](#maintaining-the-heap-property)
 * [Building a heap](#building-a-heap)
 * [The heapsort algorithm](#the-heapsort-algorithm)
+* [Priority queues](#Priority queues)
 
 ## Heaps
 
@@ -164,5 +165,20 @@ private static void Heapsort(Heap heap)
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heapsortalgo1.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heapsortalgo2.PNG" />
+
+## Priority queues
+
+Heapsort is an excellent algorithm, but a good implementation of quicksort, presented in Chapter 7, usually beats it in practice. Nevertheless, the heap data structure itself has many uses, one of the most popular applications of a heap: as an efficient **priority queue**. 
+
+As with heaps, priority queues come in two forms: **max-priority queues** and **min-priority queues**. We will focus here on how to implement max-priority queues.
+
+A priority queue is a data structure for maintaining a set *S* of elements, each with an associated value called a **key**. A max-priority queue supports the following operations:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/pq1.PNG" />
+
+Among their other applications, we can use max-priority queues to schedule jobs on a shared computer. Alternatively, a min-priority queue supports the operations INSERT, MINIMUM, EXTRACT-MIN, and DECREASE-KEY. A min-priority queue can be used in an event-driven simulator.
+
+In a given application, such as job scheduling or event-driven simulation, elements of a priority queue correspond to objects in the application. We often need to determine which application object corresponds to a given priority-queue element, and vice versa.
+When we use a heap to implement a priority queue, therefore, we often need to store a **handle** to the corresponding application object in each heap element. The exact makeup of the handle (such as a pointer or an integer) depends on the application. Similarly, we need to store a handle to the corresponding heap element in each application object. *Here, the handle would typically be an array index*. Because heap elements change locations within the array during heap operations, an actual implementation, upon relocating a heap element, would also have to update the array index in the corresponding application object. *Because the details of accessing application objects depend heavily on the application and its implementation, we shall not pursue them here, other than noting that in practice, these handles do need to be correctly maintained*.
 
 
