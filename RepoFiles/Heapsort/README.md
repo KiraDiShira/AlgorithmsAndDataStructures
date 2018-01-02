@@ -12,7 +12,7 @@
 
 The **(binary) heap** data structure is an array object that we can view as a nearly complete binary tree.
 Quasi completo significa che tutti i livelli, tranne l’ultimo, sono completi: possono mancare alcune foglie consecutive a partire
-dall’ultima foglia a destra. La *quasi* completezza garantisce che l’altezza di un heap con *n* nodi è THETA(ln n).
+dall’ultima foglia a destra. La *quasi* completezza garantisce che l’altezza di un heap con *n* nodi è THETA(lg n).
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/heaps.PNG" />
 
@@ -269,3 +269,7 @@ public void MaxHeapInsert(Heap heap, int key)
 }
 
 ```
+
+The running time of MAX-HEAP-INSERT on an n-element heap is O(lg n).
+
+In summary, a heap can support any priority-queue operation on a set of size n in O(lg n) time.
