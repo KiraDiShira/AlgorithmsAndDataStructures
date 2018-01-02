@@ -6,7 +6,7 @@
 * [Maintaining the heap property](#maintaining-the-heap-property)
 * [Building a heap](#building-a-heap)
 * [The heapsort algorithm](#the-heapsort-algorithm)
-* [Priority queues](#Priority queues)
+* [Priority queues](#priority-queues)
 
 ## Heaps
 
