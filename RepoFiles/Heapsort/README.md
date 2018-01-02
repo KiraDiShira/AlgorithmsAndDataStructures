@@ -238,6 +238,8 @@ The procedure **HEAP-INCREASE-KEY** implements the INCREASE-KEY operation. An in
 
 The running time of HEAP-INCREASE-KEY on an n-element heap is O(lg n), since the path traced from the node updated in line 3 to the root has length O(lg n).
 
+Il numero di scambi è pari al più all’altezza dello heap, quindi **O(lg n)**
+
 ```c#
 
 public void HeapIncreaseKey(Heap heap, int index, int key)
