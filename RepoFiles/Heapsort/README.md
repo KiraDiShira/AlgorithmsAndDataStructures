@@ -274,4 +274,6 @@ public void MaxHeapInsert(Heap heap, int key)
 
 The running time of MAX-HEAP-INSERT on an n-element heap is O(lg n).
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/pqIns.PNG" />
+
 In summary, a heap can support any priority-queue operation on a set of size n in O(lg n) time.
