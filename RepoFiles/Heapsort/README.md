@@ -215,6 +215,8 @@ public int HeapMaxmimum(Heap heap)
 
 The running time of **HEAP-EXTRACT-MAX** is O(lg n), since it performs only a constant amount of work on top of the O(lg n) time for MAX-HEAPIFY.
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/Images/pqMax.PNG" />
+
 ```c#
 
 public int HeapExtractMax(Heap heap)
