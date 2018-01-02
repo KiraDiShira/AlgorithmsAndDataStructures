@@ -258,3 +258,14 @@ public void HeapIncreaseKey(Heap heap, int index, int key)
 
 ```
 The procedure **MAX-HEAP-INSERT** implements the INSERT operation. It takes as an input the key of the new element to be inserted into max-heap A. The procedure first expands the max-heap by adding to the tree a new leaf whose key is *-Inf*. Then it calls HEAP-INCREASE-KEY to set the key of this new node to its correct value and maintain the max-heap property.
+
+```c#
+
+public void MaxHeapInsert(Heap heap, int key)
+{
+    heap.Size++;
+    heap[heap.Size] = int.MinValue;
+    HeapIncreaseKey(heap, heap.Size, key);
+}
+
+```
