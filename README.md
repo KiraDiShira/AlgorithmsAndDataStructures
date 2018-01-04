@@ -13,6 +13,7 @@ One Paragraph of project description goes here
   - [Master theorem](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Master%20Theorem#master-theorem)
 - Sorting and Order Statistics
   - [Heapsort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Heapsort/README.md#heapsort)
+  - [Quicksort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/QuickSort#quicksort)
 
 ## Acknowledgments
 
