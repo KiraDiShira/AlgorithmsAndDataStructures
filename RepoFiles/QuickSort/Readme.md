@@ -1,0 +1,1 @@
+Quicksort, like merge sort, applies the divide-and-conquer paradigm
