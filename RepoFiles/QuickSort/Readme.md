@@ -98,6 +98,11 @@ Indeed the recurrence has solution `T(n) = THETA(n^2)`.
 Therefore the worst-case running time of quicksort is no better than that of insertion sort. Moreover, the THETA(n^2) running time
 occurs when the input array is already completely sorted—a common situation in which insertion sort runs in O(n) time.
 
+### Best-case partitioning
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs6.PNG" />
+
+### Balanced partitioning
 
 ```c#
 
