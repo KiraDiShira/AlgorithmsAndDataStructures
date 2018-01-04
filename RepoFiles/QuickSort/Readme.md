@@ -108,71 +108,12 @@ occurs when the input array is already completely sorted—a common situation in
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs8.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs9.PNG" />
 
-```c#
+### Intuition for the average case
 
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Security.Authentication;
+To develop a clear notion of the randomized behavior of quicksort, we must make an assumption about how frequently we expect to encounter the various inputs. When we run quicksort on a random input array, the partitioning is highly unlikely to happen in the same way at every level, as our informal analysis has assumed. We expect that some of the splits will be reasonably well balanced and that some will be fairly unbalanced.
 
-namespace Heaps
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int[] array = {13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11};
+In the average case, PARTITION produces a mix of “good” and “bad” splits. In a recursion tree for an average-case execution of PARTITION, the good and bad splits are distributed randomly throughout the tree. Suppose, for the sake of intuition, that the good and bad splits alternate levels in the tree, and that the good splits are best-case splits and the bad splits are worst-case splits.
 
-            Console.WriteLine(string.Join(",", array));
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs10.PNG" />
 
-            QuickSort(array, 0, array.Length - 1);
-
-            Console.WriteLine(string.Join(",", array));
-
-            Console.Read();
-        }
-
-        private static void QuickSort(int[] array, int left, int right)
-        {
-            if (left >= right)
-            {
-                return;
-            }
-
-            int q = Partition(array, left, right);
-            QuickSort(array, left, q -1);
-            QuickSort(array, q + 1, right);
-        }
-
-        private static int Partition(int[] array, int left, int right)
-        {
-            int pivot = array[right];
-
-            int i = left - 1;
-
-            for (int j = left; j <= right - 1; j++)
-            {
-                if (array[j] <= pivot)
-                {
-                    i++;
-                    Exchange(array,i,j);
-                }
-            }
-
-            Exchange(array,i + 1, right);
-            return i + 1;
-        }
-
-        private static void Exchange(int[] array, int index1, int index2)
-        {
-            int item1 = array[index1];
-            array[index1] = array[index2];
-            array[index2] = item1;
-        }
-    }
-}
-
-
-```
-
-
+Thus, the running time of quicksort, when levels alternate between good and bad splits, is like the running time for good splits alone: still O(n lg n)
