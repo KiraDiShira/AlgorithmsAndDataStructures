@@ -2,11 +2,8 @@
 
 # Quicksort
 
-* [Heaps](#heaps)
 * [Description of quicksort](#description-of-quicksort)
 * [Performance of quicksort](#performance-of-quicksort)
-* [The heapsort algorithm](#the-heapsort-algorithm)
-* [Priority queues](#priority-queues)
 
 ## Description of quicksort
 
