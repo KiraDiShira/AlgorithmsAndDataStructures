@@ -4,7 +4,7 @@
 
 * [Heaps](#heaps)
 * [Description of quicksort](#description-of-quicksort)
-* [Building a heap](#building-a-heap)
+* [Performance of quicksort](#performance-of-quicksort)
 * [The heapsort algorithm](#the-heapsort-algorithm)
 * [Priority queues](#priority-queues)
 
@@ -71,6 +71,33 @@ private static int Partition(int[] array, int left, int right)
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs1.PNG" />
 
 The running time of PARTITION on the subarray A[p..r] is THETA(n), where n = r - p + 1
+
+## Performance of quicksort
+
+The running time of quicksort depends on whether the partitioning is balanced or unbalanced. If the partitioning is balanced, the algorithm runs asymptotically as fast as merge sort. If the partitioning is unbalanced, however, it can run asymptotically as slowly
+as insertion sort.
+
+### Worst-case partitioning
+
+The worst-case behavior for quicksort occurs when the partitioning routine produces one subproblem with *n - 1* elements and one with 0 elements. Let us assume that this unbalanced partitioning arises in each recursive call. Since the recursive call on an array of size 0 just returns, T(0) = THETA(1), and the recurrence for the running time is:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs4.PNG" />
+
+Osservazioni: 
+
+1) Invece di aT(n/b) si va ai nodi figli e si sommano le ricorrenze: costo delle chiamate di quicksort
+2) D(n) è il costo del *partioning*
+3) C(n) = 0 in questo algoritmo
+
+Intuitively, if we sum the costs incurred at each level of the recursion, we get an arithmetic series (equation (A.2)), which evaluates to THETA(n^2).
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs5.PNG" />
+
+Indeed the recurrence has solution `T(n) = THETA(n^2)`.
+
+Therefore the worst-case running time of quicksort is no better than that of insertion sort. Moreover, the THETA(n^2) running time
+occurs when the input array is already completely sorted—a common situation in which insertion sort runs in O(n) time.
+
 
 ```c#
 
