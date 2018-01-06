@@ -1,8 +1,9 @@
 * [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
-# Quicksort
+# Sorting in linear time
 
 * [Intro](#intro)
+* [Lower bounds for sorting](#lower-bounds-for-sorting)
 
 ## Intro
 
@@ -12,7 +13,13 @@ These algorithms share an interesting property: *the sorted order they determine
 
 We shall prove that any comparison sort must make OMEGA(n lg n) comparisons in the worst case to sort n elements. Thus, merge sort and heapsort are asymptotically optimal, and no comparison sort exists that is faster by more than a constant factor.
 
+## Lower bounds for sorting
 
+We can view comparison sorts abstractly in terms of decision trees. A **decision tree** is a *full binary tree* that represents the comparisons between elements that are performed by a particular sorting algorithm operating on an input of a given size. Control, data movement, and all other aspects of the algorithm are ignored.
+
+Figure shows the decision tree corresponding to the *insertion sort algorithm* operating on an input sequence of three elements.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt1.PNG" />
 
 
 **Quicksort** applies the divide-and-conquer paradigm. Here is the three-step divide-and-conquer process for sorting a typical subarray A[p..r]:
