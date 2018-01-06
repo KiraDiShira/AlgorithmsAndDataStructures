@@ -21,111 +21,28 @@ Figure shows the decision tree corresponding to the *insertion sort algorithm* o
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt1.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt2.PNG" />
 
-**Quicksort** applies the divide-and-conquer paradigm. Here is the three-step divide-and-conquer process for sorting a typical subarray A[p..r]:
+Because any correct sorting algorithm must be able to produce each permutation of its input, each of the `n!` permutations on n elements must appear as one of the leaves of the decision tree for a comparison sort to be correct. Furthermore, each of these leaves must be reachable from the root by a downward path corresponding to an actual execution of the comparison sort. Thus, we shall consider only decision trees in which each permutation appears as a reachable leaf.
 
-**Divide**: Partition (rearrange) the array A[p..r] into two (possibly empty) subarrays A[p..q-1] and A[q+1..r] such that each element of A[p..q-1] is less than or equal to A[q], which is, in turn, less than or equal to each element of A[q+1..r]. Compute the index q as part of this partitioning procedure.
+The length of the longest simple path from the root of a decision tree to any of its reachable leaves represents the worst-case number of comparisons that the corresponding sorting algorithm performs. Consequently, the worst-case number of comparisons for a given comparison sort algorithm equals the height of its decision tree. A lower bound on the heights of all decision trees in which each permutation appears as a reachable leaf is therefore a lower bound on the running time of any comparison sort algorithm. The following theorem establishes such a lower bound.
 
-**Conquer**: Sort the two subarrays A[p..q-1] and A[q+1..r] by recursive calls to quicksort.
+### Theorem
 
-**Combine**: Because the subarrays are already sorted, no work is needed to combine them: the entire array A[p..r] is now sorted.
+Any comparison sort algorithm requires `OMEGA(n lg n)` comparisons in the worst case.
 
-The following procedure implements quicksort:
+### Proof 
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs2.PNG" />
+Consider a decision tree of height `h` with `l` reachable leaves corresponding to a comparison sort on `n` elements. Because each of the `n!` permutations of the input appears as some leaf, we have `n! <= l` . Since a binary tree of height h has no more than `2^h` leaves, we have:
 
-```c#
-
-private static void QuickSort(int[] array, int left, int right)
-{
-    if (left >= right)
-    {
-        return;
-    }
-
-    int pivotIndex = Partition(array, left, right);
-    QuickSort(array, left, pivotIndex -1);
-    QuickSort(array, pivotIndex + 1, right);
-}
-
+```
+n! <= l <= 2^h
 
 ```
 
-To sort an entire array A, the initial call is `QuickSort(array, 0, array.Length - 1);`
-
-The key to the algorithm is the PARTITION procedure, which rearranges the subarray A[p..r] in place.
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs3.PNG" />
-
-```c#
-
-private static int Partition(int[] array, int left, int right)
-{
-    int pivot = array[right];
-
-    int i = left - 1;
-
-    for (int j = left; j <= right - 1; j++)
-    {
-        if (array[j] <= pivot)
-        {
-            i++;
-            Exchange(array,i,j);
-        }
-    }
-
-    Exchange(array,i + 1, right);
-    return i + 1;
-}
+which, by taking logarithms, implies
 
 ```
+h >= lg (n!)             (since the lg function is monotonically increasing)
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs1.PNG" />
-
-The running time of PARTITION on the subarray A[p..r] is THETA(n), where n = r - p + 1
-
-## Performance of quicksort
-
-The running time of quicksort depends on whether the partitioning is balanced or unbalanced. If the partitioning is balanced, the algorithm runs asymptotically as fast as merge sort. If the partitioning is unbalanced, however, it can run asymptotically as slowly
-as insertion sort.
-
-### Worst-case partitioning
-
-The worst-case behavior for quicksort occurs when the partitioning routine produces one subproblem with *n - 1* elements and one with 0 elements. Let us assume that this unbalanced partitioning arises in each recursive call. Since the recursive call on an array of size 0 just returns, T(0) = THETA(1), and the recurrence for the running time is:
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs4.PNG" />
-
-Osservazioni: 
-
-1) Invece di aT(n/b) si va ai nodi figli e si sommano le ricorrenze: costo delle chiamate di quicksort
-2) D(n) è il costo del *partioning*
-3) C(n) = 0 in questo algoritmo
-
-Intuitively, if we sum the costs incurred at each level of the recursion, we get an arithmetic series (equation (A.2)), which evaluates to THETA(n^2).
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs5.PNG" />
-
-Indeed the recurrence has solution `T(n) = THETA(n^2)`.
-
-Therefore the worst-case running time of quicksort is no better than that of insertion sort. Moreover, the THETA(n^2) running time
-occurs when the input array is already completely sorted—a common situation in which insertion sort runs in O(n) time.
-
-### Best-case partitioning
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs6.PNG" />
-
-### Balanced partitioning
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs7.PNG" />
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs8.PNG" />
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs9.PNG" />
-
-### Intuition for the average case
-
-To develop a clear notion of the randomized behavior of quicksort, we must make an assumption about how frequently we expect to encounter the various inputs. When we run quicksort on a random input array, the partitioning is highly unlikely to happen in the same way at every level, as our informal analysis has assumed. We expect that some of the splits will be reasonably well balanced and that some will be fairly unbalanced.
-
-In the average case, PARTITION produces a mix of “good” and “bad” splits. In a recursion tree for an average-case execution of PARTITION, the good and bad splits are distributed randomly throughout the tree. Suppose, for the sake of intuition, that the good and bad splits alternate levels in the tree, and that the good splits are best-case splits and the bad splits are worst-case splits.
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/QuickSort/Images/qs10.PNG" />
-
-Thus, the running time of quicksort, when levels alternate between good and bad splits, is like the running time for good splits alone: still O(n lg n)
+  = OMEGA(n lg n)        (by equation (3.19): lg(n!) = THETA(n lg n))
