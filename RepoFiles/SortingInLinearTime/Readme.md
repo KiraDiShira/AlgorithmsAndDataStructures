@@ -33,7 +33,7 @@ Any comparison sort algorithm requires `OMEGA(n lg n)` comparisons in the worst 
 
 ### Proof 
 
-Consider a decision tree of height `h` with `l` reachable leaves corresponding to a comparison sort on `n` elements. Because each of the `n!` permutations of the input appears as some leaf, we have `n! <= l` . Since a binary tree of height h has no more than `2^h` leaves, we have:
+Consider a decision tree of height `h` with `l` reachable leaves corresponding to a comparison sort on `n` elements. Because each of the `n!` permutations of the input appears as some leaf, we have `n! <= l` (perchè non tutti i nodi arrivano al livello più profondo). Since a binary tree of height h has no more than `2^h` leaves, we have:
 
 ```
 n! <= l <= 2^h
