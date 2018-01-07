@@ -64,6 +64,21 @@ h >= lg (n!)             (since the lg function is monotonically increasing)
 
 ```c#
 
+static void Main(string[] args)
+{
+    int[] array = {2, 5, 3, 0, 2 ,3, 0, 3};
+    int[] sortedOutput = new int[array.Length];
+
+    Console.WriteLine(string.Join(",", array));
+
+    CountingSort(array, sortedOutput, 5);
+
+    Console.WriteLine(string.Join(",", sortedOutput));
+
+    Console.Read();
+}
+
+
 private static void CountingSort(int[] array, int[] sortedOutput, int max)
 {
     int[] temporaryStorage = new int[max + 1];
@@ -86,4 +101,4 @@ private static void CountingSort(int[] array, int[] sortedOutput, int max)
 }
 
 ```
-
+Finally, the for loop of lines 10–12 places each element `A[j]` into its correct sorted position in the output array B. If all `n` elements are distinct, then when we first enter line 10, for each `A[j]`, the value `C[A[j]]` is the correct final position of `A[j]` in the output array, since there are `C[A[j]]` elements less than or equal to `A[j]`. Because the elements might not be distinct, we decrement `C[A[j]]` each time we place a value `A[j]` into the B array. Decrementing `C[A[j]]` causes the next input element with a value equal to `A[j]`, if one exists, to go to the position immediately before `A[j]` in the output array.
