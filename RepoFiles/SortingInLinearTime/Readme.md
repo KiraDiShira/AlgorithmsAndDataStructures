@@ -4,6 +4,7 @@
 
 * [Intro](#intro)
 * [Lower bounds for sorting](#lower-bounds-for-sorting)
+* [Counting sort](#counting-sort)
 
 ## Intro
 
@@ -46,3 +47,43 @@ which, by taking logarithms, implies
 h >= lg (n!)             (since the lg function is monotonically increasing)
 
   = OMEGA(n lg n)        (by equation (3.19): lg(n!) = THETA(n lg n))
+
+```
+
+## Counting sort
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt3.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt4.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt5.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt6.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SortingInLinearTime/Images/slt7.PNG" />
+
+```c#
+
+private static void CountingSort(int[] array, int[] sortedOutput, int max)
+{
+    int[] temporaryStorage = new int[max + 1];
+
+    foreach (int item in array)
+    {
+        temporaryStorage[item] += 1;
+    }   
+
+    for (int i = 1; i < temporaryStorage.Length; i++)
+    {
+        temporaryStorage[i] += temporaryStorage[i - 1];
+    } 
+
+    for (int i = array.Length - 1; i >= 0; i--)
+    {
+        sortedOutput[temporaryStorage[array[i]] - 1] = array[i];
+        temporaryStorage[array[i]] -= 1;
+    }
+}
+
+```
+
