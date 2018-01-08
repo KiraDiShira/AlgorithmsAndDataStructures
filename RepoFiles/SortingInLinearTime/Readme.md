@@ -105,7 +105,7 @@ Finally, the for loop of lines 10–12 places each element `A[j]` into its corre
 
 How much time does counting sort require? The for loop of lines 2–3 takes time `THETA(k)`, the for loop of lines 4–5 takes time `THETA(n)`, the for loop of lines 7–8 takes time `THETA(k)`, and the for loop of lines 10–12 takes time `THETA(n)`. Thus, the overall time is`THETA(k + n)`. In practice, we usually use counting sort when we have `k = O(n)`, in which case the running time is `THETA(n)`.
 
-An important property of counting sort is that it is stable: numbers with the same value appear in the output array in the same order as they do in the input array. That's why the for loop is in the inverted order:
+An important property of counting sort is that it is **stable**: numbers with the same value appear in the output array in the same order as they do in the input array. That's why the for loop is in the inverted order:
 
 ```c#
 for (int i = array.Length - 1; i >= 0; i--)
