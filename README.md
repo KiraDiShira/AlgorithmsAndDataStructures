@@ -16,6 +16,7 @@ One Paragraph of project description goes here
   - [Quicksort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/QuickSort#quicksort)
   - [Sorting in Linear Time](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/SortingInLinearTime#sorting-in-linear-time)
 - Data structure
+  - [Array](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Readme.md#array)
 
 ## Acknowledgments
 
