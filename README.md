@@ -17,6 +17,7 @@ One Paragraph of project description goes here
   - [Sorting in Linear Time](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/SortingInLinearTime#sorting-in-linear-time)
 - Data structure
   - [Array](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Readme.md#array)
+  - [Singly-Linked Lists](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Readme.md#singly-linked-lists)
 
 ## Acknowledgments
 
