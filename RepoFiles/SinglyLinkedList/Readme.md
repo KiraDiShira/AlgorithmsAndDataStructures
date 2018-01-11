@@ -9,6 +9,9 @@
 ## Definition
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll1b.PNG" />
+
+It's possible to have also a **Tail**: a pointer to the last node.
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/Tail.PNG" />
 
 ```c#
