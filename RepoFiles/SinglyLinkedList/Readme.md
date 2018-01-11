@@ -213,6 +213,159 @@ public void AddAfter(Node node, object key)
 
 ```
 
+### Other methods
+
+```c#
+
+public object TopFront()
+{
+    if (Head == null)
+    {
+        throw new Exception("ERROR: empty list");
+    }
+
+    return Head.Key;
+}
+
+public object TopBack()
+{
+    if (Head == null)
+    {
+        throw new Exception("ERROR: empty list");
+    }
+
+    return Tail.Key;
+}
+
+public bool Find(object key)
+{
+    if (Head == null)
+    {
+        return false;
+    }
+
+    Node currentNode = Head;
+    if (currentNode.Key.Equals(key))
+    {
+        return true;
+    }
+
+    //mi trova il ultimo elemento
+    while (currentNode.Next != null)
+    {
+        currentNode = currentNode.Next;
+
+        if (currentNode.Key.Equals(key))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+public void Erase(object key)
+{
+    if (Head == null)
+    {
+        throw new Exception("cannot delete");
+    }
+
+    if (Head.Key.Equals(key))
+    {
+        Head = Head.Next;
+        if (Head == null)
+        {
+            Tail = null;
+        }
+        return;
+    }
+
+    Node currentNode = Head;
+    Node previousNode = null;
+
+    while (currentNode != null && !currentNode.Key.Equals(key))
+    {
+        previousNode = currentNode;
+        currentNode = currentNode.Next;
+    }
+
+    if (currentNode == null) throw new Exception("cannot delete");
+
+    //delete cur node
+    previousNode.Next = currentNode.Next;
+
+}
+
+public bool Empty()
+{
+    if (Tail == null)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+public void AddBefore(Node node, object key)
+{
+    if (Head == null)
+            {
+               return;
+            }
+
+    if (Head.Key.Equals(key))
+    {
+        PushFront(key);
+        return;
+    }
+
+    Node currentNode = Head;
+    Node previousNode = null;
+
+    while (currentNode != null && !currentNode.Key.Equals(key))
+    {
+        previousNode = currentNode;
+        currentNode = currentNode.Next;
+    }
+
+    if (currentNode == null)
+    {
+        return;
+    }
+
+    var newNode2 = new Node()
+    {
+        Key = key,
+        Next = currentNode
+    };
+
+    previousNode.Next = newNode2;
+}
+
+public override string ToString()
+{
+    if (Head == null)
+    {
+        return "NULL";
+    }
+
+    string toString = Head.Key + "->";
+
+    Node curr = Head;
+    while (curr.Next != null)
+    {
+        curr = curr.Next;
+        toString += curr.Key;
+        toString += "->";
+    }
+
+    return toString;
+}
+
+
+```
+
 ## Summary
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice5.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice6.PNG" />
