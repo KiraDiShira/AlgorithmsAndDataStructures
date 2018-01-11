@@ -5,6 +5,8 @@
 * [Definition](#definition)
 * [List Api](#list-api)
 * [Times for Some Operations](#times-for-some-operations)
+* [Other operations](#other-operations)
+* [Summary](#summary)
 
 ## Definition
 
@@ -213,7 +215,7 @@ public void AddAfter(Node node, object key)
 
 ```
 
-### Other methods
+## Other operations
 
 ```c#
 
