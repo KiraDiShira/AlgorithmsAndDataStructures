@@ -10,6 +10,15 @@
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll1b.PNG" />
 
+```c#
+
+public class Node
+{
+    public object Key { get; set; }
+    public Node Next { get; set; }
+}
+
+```
 
 ## List API
 
