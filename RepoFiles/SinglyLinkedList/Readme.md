@@ -26,6 +26,10 @@ public class SinglyLinkedList
 {
     public Node Head { get; set; }
     public Node Tail { get; set; }
+    
+    public void PushFront(object key)
+    {
+           ...
 
 ```
 
