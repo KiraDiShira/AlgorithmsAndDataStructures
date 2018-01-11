@@ -52,6 +52,30 @@ public class SinglyLinkedList
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll5.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice1.PNG" />
+
+```c#
+
+public void PushFront(object key)
+{
+    var node = new Node()
+    {
+        Key = key,
+        Next = Head
+    };
+
+    Head = node;
+
+    //Se la coda non punta ad alcuna parte vuol dire che prima la lista era vuota e 
+    //il nuovo nodo è il primo nodo, quindi faccio puntare la tail all'unico elemento inserito
+    if (Tail == null)
+    {
+        Tail = Head;
+    }
+}
+
+```
+
 ### PopFront
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll6.PNG" />
@@ -59,6 +83,26 @@ public class SinglyLinkedList
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll7.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll8.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice2.PNG" />
+
+```c#
+
+public void PopFront()
+{
+    if (Head == null)
+    {
+        throw new Exception("ERROR: empty list");
+    }
+
+    Head = Head.Next;
+    if (Head == null) //significa che la lista è vuota, quindi setto a null anche la tail
+    {
+        Tail = null;
+    }
+}
+
+```
 
 ### Times for PushBack (no tail)
 
@@ -78,6 +122,32 @@ public class SinglyLinkedList
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll14.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice3.PNG" />
+
+```c#
+
+public void PushBack(object key)
+{
+    var node = new Node()
+    {
+        Key = key,
+        Next = null
+    };
+
+    if (Tail == null)
+    {
+        Head = node;
+        Tail = node;
+    }
+    else
+    {
+        Tail.Next = node;
+        Tail = node;
+    }
+}
+
+```
+
 ### Times for PopBack (with tail)
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll15.PNG" />
@@ -88,7 +158,61 @@ public class SinglyLinkedList
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll18.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice4.PNG" />
+
+```c#
+public void PopBack()
+{
+    if (Head == null)
+            {
+                throw new Exception("ERROR: empty list");
+            }
+
+    if (Head == Tail)
+    {
+        Head = null;
+        Tail = null;
+    }
+    else
+    {
+        Node currentNode = Head;
+
+        //mi trova il penultimo elemento
+        while (currentNode.Next.Next != null)
+        {
+            currentNode = currentNode.Next;
+        }
+
+        currentNode.Next = null;
+        Tail = currentNode;
+    }
+}
 
 ```
-array_addr + elem_size * (i - first_index)
+### Add After
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice5.PNG" />
+
+```c#
+
+public void AddAfter(Node node, object key)
+{
+    var newNode = new Node()
+    {
+        Key = key,
+        Next = node.Next
+    };
+
+    node.Next = newNode;
+
+    if (Tail == node)
+    {
+        Tail = newNode;
+    }
+}
+
 ```
+
+## Summary
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice5.PNG" />
