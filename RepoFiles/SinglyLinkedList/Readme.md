@@ -20,6 +20,15 @@ public class Node
 
 ```
 
+```c#
+
+public class SinglyLinkedList
+{
+    public Node Head { get; set; }
+    public Node Tail { get; set; }
+
+```
+
 ## List API
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/sll2b.PNG" />
