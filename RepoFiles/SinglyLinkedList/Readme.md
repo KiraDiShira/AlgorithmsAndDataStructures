@@ -371,3 +371,9 @@ public override string ToString()
 ## Summary
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Images/codice6.PNG" />
+
+If I need a reference to a node different from the `Head` or the `Tail` the running time is `O(n)`.
+
+**PopBack** is `O(n)` because I need a reference to last minus one node. 
+**Find** and **Erase** are linear searching operation so they are `O(n)`
+**AddBefore** is `O(n)` because I need a reference to the node previuous to my target node.
