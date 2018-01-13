@@ -3,7 +3,7 @@
 # Stack
 
 * [Definition](#definition)
-* [List Api](#list-api)
+* [Balanced Brackets example](#balanced-brackets-example)
 * [Times for Some Operations](#times-for-some-operations)
 * [Other operations](#other-operations)
 * [Summary](#summary)
@@ -19,15 +19,15 @@
 
 Stack is useful when you need to be keep track of what has happened in a particular order.
 
-Balanced Brackets example:
+## Balanced Brackets example
 
-Balanced: 
-`([])[]()`,
-`((([([])]))())`
+**Balanced**: 
+* `([])[]()`,
+* `((([([])]))())`
 
-Unbalanced:
-`([]]()`
-`][`
+**Unbalanced**:
+* `([]]()`
+* `][`
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Stack/Images/st1.PNG" />
 
