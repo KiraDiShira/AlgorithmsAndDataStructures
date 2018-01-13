@@ -1,8 +1,18 @@
 * [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
-# Array
+# Doubly-Linked Lists
 
-**Array**: contiguous area of memory consisting of equal-size elements indexed by countiguos integers.
+* [Definition](#definition)
+* [List Api](#list-api)
+* [Times for Some Operations](#times-for-some-operations)
+* [Other operations](#other-operations)
+* [Summary](#summary)
+
+## Definition
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll1.PNG" />
+
+It's possible to have also a **Tail**: a pointer to the last node.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr1.PNG" />
 
