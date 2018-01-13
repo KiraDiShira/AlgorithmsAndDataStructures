@@ -19,6 +19,18 @@
 
 Stack is useful when you need to be keep track of what has happened in a particular order.
 
+Balanced Brackets example:
+
+Balanced: 
+`([])[]()`,
+`((([([])]))())`
+
+Unbalanced:
+`([]]()`
+`][`
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Stack/Images/st1.PNG" />
+
 ```c#
 
 private static IDictionary<char, char> _brackets = new Dictionary<char, char>()
