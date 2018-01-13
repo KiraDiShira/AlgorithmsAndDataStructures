@@ -4,7 +4,7 @@
 
 * [Definition](#definition)
 * [Balanced Brackets example](#balanced-brackets-example)
-* [Times for Some Operations](#times-for-some-operations)
+* [Stack Implementation with Array](#stack-implementation-with-array)
 * [Other operations](#other-operations)
 * [Summary](#summary)
 
@@ -18,6 +18,10 @@
 * `Boolean Empty()`: are there any elements?
 
 Stack is useful when you need to be keep track of what has happened in a particular order.
+
+Stacks can be implemented with either an **array** or a **linked list**.
+
+Stacks are ocassionaly known as **LIFO queues**.
 
 ## Balanced Brackets example
 
@@ -75,6 +79,69 @@ private static bool IsStackEmpty(Stack<char> stack)
 private static bool IsOpenBracket(char character)
 {
     return _brackets.ContainsKey(character);
+}
+
+```
+
+## Stack Implementation with Array
+
+Each stack operation is `O(1)`: Push, Pop, Top, Empty.
+
+```c#
+
+public class MyStack<T>
+{
+    private int _index;
+    private readonly T[] _array;
+
+    public MyStack(int size)
+    {
+        _array = new T[size];
+        _index = 0;
+    }
+
+    public void Push(T item)
+    {
+        if (_index >= _array.Length)
+        {
+            throw new IndexOutOfRangeException("pushing index error");
+        }
+
+        _array[_index] = item;
+        _index++;
+    }
+
+    public T Peek()
+    {
+        return _array[_index - 1];
+    }
+
+    public T Pop()
+    {
+        if (_index - 1 < 0)
+        {
+            throw new IndexOutOfRangeException("popping index error");
+        }
+
+        T item = _array[_index - 1];
+        _index--;
+        return item;
+    }
+
+    public bool IsEmpty()
+    {
+        if (_index == 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public override string ToString()
+    {
+        return String.Join(",", _array.Take(_index));
+    }
 }
 
 ```
