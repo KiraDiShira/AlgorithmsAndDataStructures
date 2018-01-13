@@ -2,29 +2,67 @@
 
 # Stack
 
-**Array**: contiguous area of memory consisting of equal-size elements indexed by countiguos integers.
+* [Definition](#definition)
+* [List Api](#list-api)
+* [Times for Some Operations](#times-for-some-operations)
+* [Other operations](#other-operations)
+* [Summary](#summary)
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr1.PNG" />
+## Definition
 
-What's special about arrays? Constant-time access: `O(1)`
+**Stack**: Abstract data type with the following operations:
+
+* `Push(Key)`: adds key to collection
+* `Key Top()`: returns most recently-added key
+* `Key Pop()`: removes and returns most recently-added key
+* `Boolean Empty()`: are there any elements?
+
+Stack is useful when you need to be keep track of what has happened in a particular order.
+
+```c#
+
+private static IDictionary<char, char> _brackets = new Dictionary<char, char>()
+{
+    { '(', ')'},
+    { '[', ']'},
+    { '{', '}'},
+};
+
+static bool IsBalanced(string source)
+{
+    Stack<char> stack = new Stack<char>();
+    foreach (char character in source)
+    {
+        if (IsOpenBracket(character))
+        {
+            stack.Push(character);
+        }
+        else
+        {
+            if (IsStackEmpty(stack))
+            {
+                return false;
+            }
+
+            char top = stack.Pop();
+            if (_brackets.ContainsKey(top) && character != _brackets[top])
+            {
+                return false;
+            }
+        }
+    }
+
+    return IsStackEmpty(stack);
+}
+
+private static bool IsStackEmpty(Stack<char> stack)
+{
+    return stack.Count == 0;
+}
+
+private static bool IsOpenBracket(char character)
+{
+    return _brackets.ContainsKey(character);
+}
 
 ```
-array_addr + elem_size * (i - first_index)
-```
-
-Constant-time access also for **multidimensional arrays**:
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr2.PNG" />
-
-We need to skip the full rows that we are not using (`(3 - 1) * 6`), and then the situation is like for mono dimensional arrays:
-
-```
-array_addr + elem_size * ((3 - 1) * 6 + (4 - 1))
-```
-For multimensional arrays we made a supposition: all the elements of the first row, followed by all of the elements of the second row, and so on. That's called **row-major ordering** or **row-major indexing**. And what we do is basically, we lay out, (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6). And then right after that in memory (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6). So the column index is changing most rapidly as we're looking at successive elements. And that's an indication of it's row-major indexing. 
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr3.PNG" />
-
-Time for common operations:
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr4.PNG" />
