@@ -10,7 +10,20 @@
 
 ## Definition
 
+There is a way to make `popping the back` and `adding before` cheap: we need a reference to th previous node. **Doubly-Linked Lists**:
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll1.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll2.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll3.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll4.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll5.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll6.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll7.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll8.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll9.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Images/dll10.PNG" />
+
 
 It's possible to have also a **Tail**: a pointer to the last node.
 
