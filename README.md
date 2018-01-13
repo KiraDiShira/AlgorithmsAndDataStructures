@@ -18,6 +18,7 @@ One Paragraph of project description goes here
 - Data structure
   - [Array](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Readme.md#array)
   - [Singly-Linked Lists](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/SinglyLinkedList/Readme.md#singly-linked-lists)
+  - [Doubly-Linked Lists](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Readme.md#doubly-linked-lists)
 
 ## Acknowledgments
 
