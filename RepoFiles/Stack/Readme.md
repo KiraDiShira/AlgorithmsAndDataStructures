@@ -22,7 +22,7 @@ Stack is useful when you need to be keep track of what has happened in a particu
 ## Balanced Brackets example
 
 **Balanced**: 
-* `([])[]()`,
+* `([])[]()`
 * `((([([])]))())`
 
 **Unbalanced**:
