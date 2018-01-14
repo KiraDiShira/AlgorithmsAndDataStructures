@@ -23,6 +23,8 @@ Stacks can be implemented with either an **array** or a **linked list**.
 
 Stacks are ocassionaly known as **LIFO queues**.
 
+Each stack operation is `O(1)`: Push, Pop, Top, Empty.
+
 ## Balanced Brackets example
 
 **Balanced**: 
