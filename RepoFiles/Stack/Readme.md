@@ -5,7 +5,7 @@
 * [Definition](#definition)
 * [Balanced Brackets example](#balanced-brackets-example)
 * [Stack Implementation with Array](#stack-implementation-with-array)
-* [Other operations](#other-operations)
+* [Stack Implementation with Linked List](#stack-implementation-with-linked-list)
 * [Summary](#summary)
 
 ## Definition
@@ -87,8 +87,6 @@ private static bool IsOpenBracket(char character)
 
 ## Stack Implementation with Array
 
-Each stack operation is `O(1)`: Push, Pop, Top, Empty.
-
 ```c#
 
 public class MyStack<T>
@@ -147,3 +145,10 @@ public class MyStack<T>
 }
 
 ```
+## Stack Implementation with Linked List
+
+One limitation of the array is that we have a maximum size, based on the array we initially allocated. 
+
+The other potential problem is that we have potentially wasted space. So if we allocated a very large array, to allow a possibly large stack, we didn't actually use much of it, all the rest of it is wasted.
+
+ If we have a linked list, there's no a priori limit as to the number of elements you can add. As long as you have available memory, you can keep adding. There's an overhead though, like in the array, we have each element size, is just big enough to store our key. Here we've got the overhead of storing a pointer as well. On the other hand there's no wasted space in terms of allocated space that isn't actually being used. 
