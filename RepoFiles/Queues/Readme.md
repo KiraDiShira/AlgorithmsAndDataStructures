@@ -24,65 +24,16 @@ Queues can be implemented with either an **array** or a **linked list**.
 
 Each Queue operation is `O(1)`: Enqueue, Dequeue, Empty.
 
-## Balanced Brackets example
+## Queue Implementation with Linked List
 
-**Balanced**: 
-* `([])[]()`
-* `((([([])]))())`
+With a linked list, where you have a head and a tail pointer. 
 
-**Unbalanced**:
-* `([]]()`
-* `][`
+Enqueue: we are going to push to the back of the linked list.
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Stack/Images/st1.PNG" />
+Dequeue: that's just an implementation of popping from the front. 
 
-```c#
 
-private static IDictionary<char, char> _brackets = new Dictionary<char, char>()
-{
-    { '(', ')'},
-    { '[', ']'},
-    { '{', '}'},
-};
 
-static bool IsBalanced(string source)
-{
-    Stack<char> stack = new Stack<char>();
-    foreach (char character in source)
-    {
-        if (IsOpenBracket(character))
-        {
-            stack.Push(character);
-        }
-        else
-        {
-            if (IsStackEmpty(stack))
-            {
-                return false;
-            }
-
-            char top = stack.Pop();
-            if (_brackets.ContainsKey(top) && character != _brackets[top])
-            {
-                return false;
-            }
-        }
-    }
-
-    return IsStackEmpty(stack);
-}
-
-private static bool IsStackEmpty(Stack<char> stack)
-{
-    return stack.Count == 0;
-}
-
-private static bool IsOpenBracket(char character)
-{
-    return _brackets.ContainsKey(character);
-}
-
-```
 
 ## Stack Implementation with Array
 
