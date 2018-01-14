@@ -1,6 +1,6 @@
 * [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
-# Stack
+# Queues
 
 * [Definition](#definition)
 * [Balanced Brackets example](#balanced-brackets-example)
@@ -10,20 +10,19 @@
 
 ## Definition
 
-**Stack**: Abstract data type with the following operations:
+**Queue**: Abstract data type with the following operations:
 
-* `Push(Key)`: adds key to collection
-* `Key Top()`: returns most recently-added key
-* `Key Pop()`: removes and returns most recently-added key
+* `Enqueue(Key)`: adds key to collection
+* `Key Dequeue()`: removes and returns least recently-added key
 * `Boolean Empty()`: are there any elements?
 
-Stack is useful when you need to be keep track of what has happened in a particular order.
+Queues are known as **FIFO queues**.
 
-Stacks can be implemented with either an **array** or a **linked list**.
+Queue is useful when you need to be keep track of what has happened in a particular order.
 
-Stacks are ocassionaly known as **LIFO queues**.
+Queues can be implemented with either an **array** or a **linked list**.
 
-Each stack operation is `O(1)`: Push, Pop, Top, Empty.
+Each Queue operation is `O(1)`: Enqueue, Dequeue, Empty.
 
 ## Balanced Brackets example
 
