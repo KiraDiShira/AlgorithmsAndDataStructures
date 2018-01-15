@@ -30,10 +30,48 @@ With a linked list, where you have a head and a tail pointer.
 
 Enqueue: we are going to push to the back of the linked list.
 
-Dequeue: that's just an implementation of popping from the front. 
+Dequeue: that's just an implementation of popping from the front.
 
+```c#
 
+public class LinkedListQueue<T>
+{
+    private readonly SinglyLinkedList<T> _singlyLinkedList;
 
+    public LinkedListQueue()
+    {
+        _singlyLinkedList = new SinglyLinkedList<T>();
+    }
+
+    public void Enqueue(T key)
+    {
+        _singlyLinkedList.PushBack(key);
+    }
+
+    public T Dequeue()
+    {
+        T key = _singlyLinkedList.TopFront();
+        _singlyLinkedList.PopFront();
+        return key;
+    }
+
+    public bool IsEmpty()
+    {
+        return _singlyLinkedList.Empty();
+    }
+
+    public override string ToString()
+    {
+        return _singlyLinkedList.ToString();
+    }
+}
+
+```
+
+What would happen if we use List.PushFront to implement Enqueue and List.TopBack and List.PopBack to implement Dequeue?
+
+If the linked-list is implemente as a doubly-linked-list there is no problem.
+If the linked-list is implemente as a singly-linked-list, Dequeue would be `O(n)`.
 
 ## Stack Implementation with Array
 
