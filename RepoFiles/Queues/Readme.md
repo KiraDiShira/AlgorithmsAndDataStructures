@@ -24,6 +24,8 @@ Queues can be implemented with either an **array** or a **linked list**.
 
 Each Queue operation is `O(1)`: Enqueue, Dequeue, Empty.
 
+One distinction between the array and the linked list implementation, is that in the array implementation, we have a maximum size that the queue can grow to. Maybe you want that in which case it's fine, but if you don't know a priori how long the queue you need is going to be an array is a bad choice. And any amount that is unused is wasted space. In a queue that's implemented with a linked list, it can get arbitrarily large as long as there's available memory. The downside is, every element you have to pay for another pointer. 
+
 ## Queue Implementation with Linked List
 
 With a linked list, where you have a head and a tail pointer. 
