@@ -73,110 +73,65 @@ What would happen if we use List.PushFront to implement Enqueue and List.TopBack
 If the linked-list is implemente as a doubly-linked-list there is no problem.
 If the linked-list is implemente as a singly-linked-list, Dequeue would be `O(n)`.
 
-## Stack Implementation with Array
+## Queue Implementation with Array
+
+We could add at the end and then pop from the front. Then enqeueing is easy, but dequeuing would be an expensive `O(n)` operation. And we want enqeueing to be `O(1)`. We can do that, in a fashion I'll show you right now which is basically keeping track of sort of the array as a circular array: so we need a write index and a reading index.
 
 ```c#
 
-public class MyStack<T>
+public class ArrayQueue<T>
 {
-    private int _index;
     private readonly T[] _array;
+    private int _readingIndex;
+    private int _writingIndex;
 
-    public MyStack(int size)
+    public ArrayQueue(int size)
     {
+        _readingIndex = 0;
+        _writingIndex = 0;
         _array = new T[size];
-        _index = 0;
     }
 
-    public void Push(T item)
+    public void Enqueue(T key)
     {
-        if (_index >= _array.Length)
+        _array[_writingIndex] = key;
+        _writingIndex++;
+        if (_writingIndex == _array.Length)
         {
-            throw new IndexOutOfRangeException("pushing index error");
+            _writingIndex = 0;
         }
 
-        _array[_index] = item;
-        _index++;
-    }
-
-    public T Peek()
-    {
-        return _array[_index - 1];
-    }
-
-    public T Pop()
-    {
-        if (_index - 1 < 0)
+        if (_writingIndex == _readingIndex)
         {
-            throw new IndexOutOfRangeException("popping index error");
+            throw new Exception("_writing index is equal to _reading index: I can't know if queue is empty");
         }
+    }
 
-        T item = _array[_index - 1];
-        _index--;
-        return item;
+    public T Dequeue()
+    {
+        T key = _array[_readingIndex];
+        _readingIndex++;
+        if (_readingIndex == _array.Length)
+        {
+            _readingIndex = 0;
+        }
+        return key;
     }
 
     public bool IsEmpty()
     {
-        if (_index == 0)
+        return _readingIndex == _writingIndex;
+    }
+
+    public override string ToString()
+    {
+        if (_writingIndex >= _readingIndex)
         {
-            return true;
+            return String.Join(",", _array.SubArray(_readingIndex, _writingIndex - _readingIndex));
         }
 
-        return false;
-    }
-
-    public override string ToString()
-    {
-        return String.Join(",", _array.Take(_index));
-    }
-}
-
-```
-## Stack Implementation with Linked List
-
-One limitation of the array is that we have a maximum size, based on the array we initially allocated. 
-
-The other potential problem is that we have potentially wasted space. So if we allocated a very large array, to allow a possibly large stack, we didn't actually use much of it, all the rest of it is wasted.
-
- If we have a linked list, there's no a priori limit as to the number of elements you can add. As long as you have available memory, you can keep adding. There's an overhead though, like in the array, we have each element size, is just big enough to store our key. Here we've got the overhead of storing a pointer as well. On the other hand there's no wasted space in terms of allocated space that isn't actually being used. 
-
-```c#
-
-public class LinkedListStack<T>
-{
-    private readonly SinglyLinkedList<T> _singlyLinkedList;
-
-    public LinkedListStack()
-    {
-        _singlyLinkedList = new SinglyLinkedList<T>();
-    }
-
-    public void Push(T item)
-    {
-        _singlyLinkedList.PushFront(item);
-    }
-
-    public T Peek()
-    {
-        return _singlyLinkedList.TopFront();
-    }
-
-    public T Pop()
-    {
-        T top = _singlyLinkedList.TopFront();
-        _singlyLinkedList.PopFront();
-        return top;
-    }
-
-    public bool IsEmpty()
-    {
-        return _singlyLinkedList.Empty();
-    }
-
-    public override string ToString()
-    {
-        return _singlyLinkedList.ToString();
+        return String.Join(",", _array.SubArray(_readingIndex, _array.Length - _readingIndex)
+            .Concat(_array.SubArray(0, _writingIndex)));
     }
 }
 
