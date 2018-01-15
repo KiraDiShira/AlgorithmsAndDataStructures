@@ -3,10 +3,8 @@
 # Queues
 
 * [Definition](#definition)
-* [Balanced Brackets example](#balanced-brackets-example)
-* [Stack Implementation with Array](#stack-implementation-with-array)
-* [Stack Implementation with Linked List](#stack-implementation-with-linked-list)
-* [Summary](#summary)
+* [Queue Implementation with Linked List](#queue-implementation-with-linked-list)
+* [Queue Implementation with Array](#queue-implementation-with-array)
 
 ## Definition
 
