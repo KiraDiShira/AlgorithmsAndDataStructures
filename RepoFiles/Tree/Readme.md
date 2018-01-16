@@ -16,10 +16,12 @@ For binary tree, node contains:
 * right
 * (optional) parent
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr1.PNG" />
+**Height**: maximum depth of subtree node and farthest leaf
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree1.PNG" />
+
+**Size**: number of nodes
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree2.PNG" />
 
 What's special about arrays? Constant-time access: `O(1)`
-
-```
-array_addr + elem_size * (i - first_index)
-```
