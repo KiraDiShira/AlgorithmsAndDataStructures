@@ -21,6 +21,7 @@ One Paragraph of project description goes here
   - [Doubly-Linked Lists](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DoublyLinkedList/Readme.md#doubly-linked-lists)
   - [Stack](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Stack/Readme.md#stack)
   - [Queue](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Queues/Readme.md#queues)
+  - [Tree](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Tree#tree)
 
 ## Acknowledgments
 
