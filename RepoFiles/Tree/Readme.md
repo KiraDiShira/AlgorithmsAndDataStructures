@@ -2,6 +2,11 @@
 
 # Tree
 
+* [Definition](#definition)
+* [Depth-first](#depth-first)
+
+## Definition
+
 A **Tree** is:
 
 * empty, or
@@ -23,5 +28,13 @@ For binary tree, node contains:
 **Size**: number of nodes
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree2.PNG" />
+
+Often we want to visit the nodes of a tree in a particular order. For example, print the nodes of the tree.
+
+**Depth-first**: We completely traverse one sub-tree before exploring a sibling sub-tree.
+
+**Breadth-first**: We traverse all nodes at one level before progressing to the next level.
+
+## Depth-first
 
 What's special about arrays? Constant-time access: `O(1)`
