@@ -40,6 +40,30 @@ public class Tree<T>
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree2.PNG" />
 
+```c#
+public class TreeApi<T>
+{
+    public int Height(Tree<T> tree)
+    {
+        if (tree == null)
+        {
+            return 0;
+        }
+
+        return 1 + Math.Max(Height(tree.Left), Height(tree.Right));
+    }
+
+    public int Size(Tree<T> tree)
+    {
+        if (tree == null)
+        {
+            return 0;
+        }
+
+        return 1 + Size(tree.Left) + Size(tree.Right);
+    }
+```
+
 Often we want to visit the nodes of a tree in a particular order. For example, print the nodes of the tree.
 
 **Depth-first**: We completely traverse one sub-tree before exploring a sibling sub-tree.
@@ -54,12 +78,83 @@ Depth-first search now is implemented in a recursive way, but it can also be imp
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree3.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree4.PNG" />
+
+```c#
+public void InOrderRecursiveTraversal(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+
+    InOrderRecursiveTraversal(tree.Left);
+    Console.WriteLine(tree.Key);
+    InOrderRecursiveTraversal(tree.Right);
+}
+```
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree5.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree6.PNG" />
+
+```c#
+public void PreOrderRecursiveTraversal(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+
+    Console.WriteLine(tree.Key);
+    PreOrderRecursiveTraversal(tree.Left);
+    PreOrderRecursiveTraversal(tree.Right);
+}
+```
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree7.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree8.PNG" />
+
+```c#
+public void PostOrderRecursiveTraversal(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+    
+    PostOrderRecursiveTraversal(tree.Left);
+    PostOrderRecursiveTraversal(tree.Right);
+    Console.WriteLine(tree.Key);
+}
+```
 
 ## Breath-first
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree9.PNG" />
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree10.PNG" />
+
+```c#
+public void BreathFirst(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+
+    Queue<Tree<T>> queue = new Queue<Tree<T>>();
+    queue.Enqueue(tree);
+
+    while (queue.Count != 0)
+    {
+        Tree<T> actualTree = queue.Dequeue();
+        Console.WriteLine(actualTree.Key);
+        if (actualTree.Left != null)
+        {
+            queue.Enqueue(actualTree.Left);
+        }
+        if (actualTree.Right != null)
+        {
+            queue.Enqueue(actualTree.Right);
+        }
+    }
+}
+```
