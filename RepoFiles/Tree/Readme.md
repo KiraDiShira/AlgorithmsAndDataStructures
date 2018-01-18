@@ -91,6 +91,39 @@ public void InOrderRecursiveTraversal(Tree<T> tree)
     Console.WriteLine(tree.Key);
     InOrderRecursiveTraversal(tree.Right);
 }
+
+public void InOrderIterativeTraversal(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+    
+    var stack = new Stack<Tree<T>>();
+    stack.Push(tree);
+    Tree<T> actualTree = tree;
+
+    while (stack.Count != 0)
+    {
+        if (actualTree.Left != null)
+        {
+            stack.Push(actualTree.Left);
+            actualTree = actualTree.Left;
+        }
+        else
+        {
+            actualTree = stack.Pop();
+            Console.WriteLine(actualTree.Key);
+
+            if (actualTree.Right != null)
+            {
+                stack.Push(actualTree.Right);
+                actualTree = actualTree.Right;
+            }
+        }   
+    }
+}
+
 ```
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree5.PNG" />
