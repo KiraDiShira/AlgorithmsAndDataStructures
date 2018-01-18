@@ -22,6 +22,16 @@ For binary tree, node contains:
 * right
 * (optional) parent
 
+```c#
+public class Tree<T>
+{
+    public T Key { get; set; }
+    public Tree<T> Left { get; set; }
+    public Tree<T> Right { get; set; }
+}
+```c#
+
+
 **Height**: maximum depth of subtree node and farthest leaf
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree1.PNG" />
