@@ -29,7 +29,7 @@ public class Tree<T>
     public Tree<T> Left { get; set; }
     public Tree<T> Right { get; set; }
 }
-```c#
+```
 
 
 **Height**: maximum depth of subtree node and farthest leaf
