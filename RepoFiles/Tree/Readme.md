@@ -141,6 +141,32 @@ public void PreOrderRecursiveTraversal(Tree<T> tree)
     PreOrderRecursiveTraversal(tree.Left);
     PreOrderRecursiveTraversal(tree.Right);
 }
+
+public void PreOrderIterativeTraversal(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+
+    var stack = new Stack<Tree<T>>();
+    stack.Push(tree);
+
+    while (stack.Count != 0)
+    {
+        Tree<T> actualTree = stack.Pop();
+        Console.WriteLine(actualTree.Key);
+        if (actualTree.Right != null)
+        {
+            stack.Push(actualTree.Right);
+        }
+        if (actualTree.Left != null)
+        {
+            stack.Push(actualTree.Left);
+        }
+    }
+}
+
 ```
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Tree/Images/tree7.PNG" />
