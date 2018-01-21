@@ -134,5 +134,49 @@ Task. You are given a description of a rooted tree. Your task is to compute and 
 
 Sample 1.
 Input:
+
 `5`
+
 `4 -1 4 1 1`
+
+<img src='https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure1Exercises/Images/ds1e1.PNG' />
+
+```c#
+
+public int ComputeIterativeTreeHeight(int[] parents)
+{
+    int[] heights = new int[parents.Length];
+    int maxHeight = 0;
+    for (int key = 0; key < parents.Length; key++)
+    {
+        int level = 0;
+        var unexploredNodes = new Stack<int>();
+        int currentNode = key;
+        do
+        {
+            if (heights[currentNode] != 0)
+            {
+                level = heights[currentNode];
+                break;
+            }
+            unexploredNodes.Push(currentNode);
+            currentNode = parents[currentNode];
+        } while (currentNode != -1);
+
+       
+        while (unexploredNodes.Count != 0)
+        {
+            int node = unexploredNodes.Pop();
+            heights[node] = ++level;
+        }
+
+        if (level > maxHeight)
+        {
+            maxHeight = level;
+        }
+    }
+
+    return maxHeight;
+}
+
+```
