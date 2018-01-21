@@ -3,6 +3,7 @@
 # DataStructure1Exercises
 
 * [Check brackets in the code](#check-brackets-in-the-code)
+* [Compute tree height](#compute-tree-height)
 
 ## Check brackets in the code
 
@@ -127,3 +128,11 @@ Console.WriteLine(bracketsChecker.CheckBrackets("{{{")); //3
 
 ```
 
+## Compute tree height
+
+Task. You are given a description of a rooted tree. Your task is to compute and output its height. Recall that the height of a (rooted) tree is the maximum depth of a node, or the maximum distance from a leaf to the root. You are given an arbitrary tree, not necessarily a binary tree.
+
+Sample 1.
+Input:
+`5`
+`4 -1 4 1 1`
