@@ -22,7 +22,7 @@ One Paragraph of project description goes here
   - [Stack](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Stack/Readme.md#stack)
   - [Queue](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Queues/Readme.md#queues)
   - [Tree](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Tree#tree)
-  - [Some exercises]()
+  - [DataStructure1Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure1Exercises/Readme.md#datastructure1exercises)
 
 ## Acknowledgments
 
