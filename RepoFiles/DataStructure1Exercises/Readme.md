@@ -2,14 +2,119 @@
 
 # Stack
 
-**Array**: contiguous area of memory consisting of equal-size elements indexed by countiguos integers.
+**Task**. Your friend is making a text editor for programmers. He is currently working on a feature that will
+find errors in the usage of different types of brackets. Code can contain any brackets from the set
+[]{}(), where the opening brackets are [,{, and ( and the closing brackets corresponding to them
+are ],}, and ).
+For convenience, the text editor should not only inform the user that there is an error in the usage
+of brackets, but also point to the exact place in the code with the problematic bracket. First priority
+is to find the first unmatched closing bracket which either doesn’t have an opening bracket before it,
+like ] in ](), or closes the wrong opening bracket, like } in ()[}. If there are no such mistakes, then
+it should find the first unmatched opening bracket without the corresponding closing bracket after it,
+like ( in {}([]. If there are no mistakes, text editor should inform the user that the usage of brackets
+is correct.
+Apart from the brackets, code can contain big and small latin letters, digits and punctuation marks.
+More formally, all brackets in the code should be divided into pairs of matching brackets, such that in
+each pair the opening bracket goes before the closing bracket, and for any two pairs of brackets either
+one of them is nested inside another one as in (foo[bar]) or they are separate as in f(a,b)-g[c].
+The bracket [ corresponds to the bracket ], { corresponds to }, and ( corresponds to ).
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Array/Images/arr1.PNG" />
+```c#
+public enum BracketCheckOutput
+{
+    Error,
+    Success
+}
 
-What's special about arrays? Constant-time access: `O(1)`
+public class BracketsCheckResult
+{
+    public BracketCheckOutput BracketCheckOutput { get; set; }
+    public int ErrorCharacterIndex { get; set; }
 
-```
-array_addr + elem_size * (i - first_index)
+    public override string ToString()
+    {
+        if (BracketCheckOutput == BracketCheckOutput.Success)
+        {
+            return BracketCheckOutput.ToString();
+        }
+        return ErrorCharacterIndex.ToString();
+    }
+}
+
+public class BracketsChecker
+{
+    private IDictionary<char, char> _bracketPairs = new Dictionary<char, char>()
+    {
+        {'{', '}'},
+        {'[', ']'},
+        {'(', ')'}
+    };
+
+    public BracketsCheckResult CheckBrackets(string text)
+    {
+        if (text == null) throw new ArgumentNullException(nameof(text));
+        var openBracketStack = new Stack<char>();
+
+        for (int index = 0; index < text.Length; index++)
+        {
+            char character = text[index];
+            if (IsOpenBracket(character))
+            {
+                openBracketStack.Push(character);
+            }
+            else
+            {
+                if (!IsClosingBracket(character))
+                {
+                    continue;
+                }
+
+                if (openBracketStack.Count == 0)
+                {
+                    return new BracketsCheckResult()
+                    {
+                        BracketCheckOutput = BracketCheckOutput.Error,
+                        ErrorCharacterIndex = index + 1
+                    };
+                }
+
+                char lastOpenBracket = openBracketStack.Pop();
+                if (_bracketPairs[lastOpenBracket] != character)
+                {
+                    return new BracketsCheckResult()
+                    {
+                        BracketCheckOutput = BracketCheckOutput.Error,
+                        ErrorCharacterIndex = index + 1
+                    };
+                }
+            }
+        }
+
+        if (openBracketStack.Count == 0)
+        {
+            return new BracketsCheckResult()
+            {
+                BracketCheckOutput = BracketCheckOutput.Success
+            };
+        }
+
+        return new BracketsCheckResult()
+        {
+            BracketCheckOutput = BracketCheckOutput.Error,
+            ErrorCharacterIndex = text.Length
+        };
+    }
+
+    private bool IsClosingBracket(char character)
+    {
+        return _bracketPairs.Values.Contains(character);
+    }
+
+    private bool IsOpenBracket(char character)
+    {
+        return _bracketPairs.ContainsKey(character);
+    }
+}
 ```
 
 Constant-time access also for **multidimensional arrays**:
