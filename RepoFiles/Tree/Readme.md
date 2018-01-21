@@ -184,7 +184,42 @@ public void PostOrderRecursiveTraversal(Tree<T> tree)
     PostOrderRecursiveTraversal(tree.Right);
     Console.WriteLine(tree.Key);
 }
+
+public void PostOrderIterativeTraversal(Tree<T> tree)
+{
+    if (tree == null)
+    {
+        return;
+    }
+
+    var reverseStack = new Stack<Tree<T>>();
+    reverseStack.Push(tree);
+    var postOrderStack = new Stack<T>();
+
+    while (reverseStack.Count != 0)
+    {
+        Tree<T> actualTree = reverseStack.Pop();
+        postOrderStack.Push(actualTree.Key);
+        if (actualTree.Left != null)
+        {
+            reverseStack.Push(actualTree.Left);
+        }
+        if (actualTree.Right != null)
+        {
+            reverseStack.Push(actualTree.Right);
+        }
+       
+    }
+
+    while (postOrderStack.Count != 0)
+    {
+        Console.WriteLine(postOrderStack.Pop());
+    }
+}
 ```
+There is also a PostOrder iterative single stack implementation:
+
+https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/
 
 ## Breath-first
 
