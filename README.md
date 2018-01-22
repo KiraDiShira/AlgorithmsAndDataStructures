@@ -31,3 +31,4 @@ One Paragraph of project description goes here
 * [Coursera](https://www.coursera.org/learn/data-structures/home/welcome)
 * [Università di Camerino](http://docenti.unicam.it/pdett.aspx?UteId=207&IDPADRE=968&tv=m&ru=PO)
 * [Solutions to clrs](https://github.com/gzc/CLRS#solutions-to-clrs)
+* [c# implementations](http://referencesource.microsoft.com/#mscorlib/system/collections/generic/list.cs,cf7f4095e4de7646)
