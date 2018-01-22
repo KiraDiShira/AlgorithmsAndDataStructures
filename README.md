@@ -27,5 +27,6 @@ One Paragraph of project description goes here
 ## Acknowledgments
 
 * [*GitHub Cheat Sheet*](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md)
+* [Coursera](https://www.coursera.org/learn/data-structures/home/welcome)
 * [Università di Camerino](http://docenti.unicam.it/pdett.aspx?UteId=207&IDPADRE=968&tv=m&ru=PO)
 * [Solutions to clrs](https://github.com/gzc/CLRS#solutions-to-clrs)
