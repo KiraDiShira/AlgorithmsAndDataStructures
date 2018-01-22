@@ -1,6 +1,6 @@
 * [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
-# Stack
+# Dynamic Arrays and Amortized Analysis
 
 **Array**: contiguous area of memory consisting of equal-size elements indexed by countiguos integers.
 
