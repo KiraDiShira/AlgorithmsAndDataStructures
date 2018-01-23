@@ -3,6 +3,8 @@
 # Dynamic Arrays and Amortized Analysis
 
 * [Dynamic Arrays](#dynamic-arrays)
+    - [Implementation](#implementation)
+    - [Runtimes](#runtimes)
 * Amortized Analysis
   — [Aggregate Method](#aggregate-method)
 
@@ -16,6 +18,8 @@ Unlike static arrays, dynamic arrays can be resized. Solution: dynamic arrays (a
 * `PushBack(val)`: Adds `val` to the end
 * `Remove(i)`: Removes element at location `i`
 * `Size()`: the number of elements
+
+### Implementation
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa1.PNG" />
 
@@ -93,5 +97,6 @@ public class DynamicArray<T>
     }
 }
 ```
+### Runtimes
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa6.PNG" />
