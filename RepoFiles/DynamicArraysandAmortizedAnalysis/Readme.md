@@ -2,11 +2,17 @@
 
 # Dynamic Arrays and Amortized Analysis
 
-* [Dynamic Arrays(#dynamic-arrays)
-* [Depth-first](#depth-first)
-* [Breath-first](#breath-first)
+* [Dynamic Arrays](#dynamic-arrays)
+* Amortized Analysis
+  — [Aggregate Method](#aggregate-method)
+
 
 ## Dynamic Arrays
 
+Unlike static arrays, dynamic arrays can be resized. Solution: dynamic arrays (also known as resizable arrays are an abstract data type with the following operations (at a minimum):
 
-A **Tree** is:
+* `Get(i)`: returns element at location `i`. Must must be constant time
+* `Set(i, val)`: Sets element `i` to `val`. Must be constant time
+* `PushBack(val)`: Adds `val` to the end
+* `Remove(i)`: Removes element at location `i`
+* `Size()`: the number of elements
