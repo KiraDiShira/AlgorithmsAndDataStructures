@@ -6,7 +6,8 @@
     - [Implementation](#implementation)
     - [Runtimes](#runtimes)
 * Amortized Analysis
-  — [Aggregate Method](#aggregate-method)
+    - [Aggregate Method](#aggregate-method)
+    - [Banker's Method](#banker-s-method)
 
 
 ## Dynamic Arrays
@@ -132,10 +133,34 @@ Amortized Cost = Cost(n operations) / n
  
  <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa10.PNG" />
  
- Then summing over the entire sequence, all the 1's sum to O(n), and all the di also sum to O(n). That is,
+ Then summing over the entire sequence, all the 1's sum to `O(n)`, and all the di also sum to `O(n)`. That is,
  
   <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa11.PNG" />
   
 So we've got `n` plus something no more than `2n`, that's clearly `O(n)` divided by `n`, and that's just `O(1)`. So what we've determined then is that we have a amortized cost for each insertion of order 1. 
 
 Our worst case cost is still order `n`, so if we want to know how long it's going to take in the worst case for any  particular insertion is `O(n)`, but the amortized cost is `O(1)`. 
+
+## Banker's Method
+
+Intuitively, one can think of maintaining a bank account. Low-cost operations are charged a little bit more than their true cost, and the surplus is deposited into the bank account for later use. High-cost operations can then be charged less than their true cost, and the deficit is paid for by the savings in the bank account. In that way we spread the cost of high-cost operations over the entire sequence. The charges to each operation must be set large enough that the balance in the bank account always remains positive, but small enough that no one operation is charged significantly more than its actual cost.
+
+We emphasize that the extra time charged to an operation does not mean that the operation really takes that much time. It is just a method of accounting that makes the analysis easier.
+
+In dynamic array example we charge 3 for each insertion: 
+* one token is the raw cost for insertion.
+* one token on the newly-inserted element.
+* one token capacity/2 elements prior
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa12.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa13.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa14.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa15.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa16.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa17.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa18.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa19.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa20.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa21.PNG" />
+
+What we have got is an amortized cost of `O(1)`, in particular the cost is 3
