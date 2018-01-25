@@ -7,7 +7,7 @@
     - [Runtimes](#runtimes)
 * Amortized Analysis
     - [Aggregate Method](#aggregate-method)
-    - [Banker's Method](#banker-s-method)
+    - [Banker's Method](#bankers-method)
 
 
 ## Dynamic Arrays
