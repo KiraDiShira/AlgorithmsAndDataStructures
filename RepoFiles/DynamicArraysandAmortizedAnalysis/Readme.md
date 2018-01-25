@@ -100,3 +100,42 @@ public class DynamicArray<T>
 ### Runtimes
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa6.PNG" />
+
+## Aggregate Method
+
+Sometimes, we're looking at an individual worst case and that may be too severe. In particular we may want to know the total worst case for a sequence of operations and it may be some of those operations are cheap, while only certain of them are expensive. So if we look at the worst case operation for any one and multiply that by the total, it may be overstating the total cost. 
+
+As an example, for a dynamic array, we only resize every so often. If we do our running time analysis for a sequence of `n` insert operations we would have `n * O(n) = O(n^2)`. Most of the time, we're doing a constant time operation, just adding an element. It's only when we fully reach the capacity, that we have to resize. So the question is, what's the total cost if you have to insert a bunch of items? 
+
+So here's the definition of **amortized cost**. You have a sequence of `n` operations, the amortized cost is the cost of those `n` operations divided by `n`. 
+
+```
+Amortized Cost = Cost(n operations) / n
+
+```
+
+ For instance, consider the following sequence of insertions, starting with an array of length 1:
+ 
+ <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa7.PNG" />
+ 
+ The table is doubled in the second, third, and fifth steps. As each insertion takes `O(n)` time in the worst case, a simple analysis would yield a bound of `O(n^2)` time for n insertions. But it is not this bad. 
+ 
+ Let c_i be the cost of the i-th insertion:
+ 
+  <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa8.PNG" />
+ 
+ Let's consider the size of the table si and the cost ci for the first few insertions in a sequence:
+
+ <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa9.PNG" />
+ 
+ Alteratively we can see that `c_i=1+d_i` where `d_i` is the cost of doubling the table size. 
+ 
+ <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa10.PNG" />
+ 
+ Then summing over the entire sequence, all the 1's sum to O(n), and all the di also sum to O(n). That is,
+ 
+  <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa11.PNG" />
+  
+So we've got `n` plus something no more than `2n`, that's clearly `O(n)` divided by `n`, and that's just `O(1)`. So what we've determined then is that we have a amortized cost for each insertion of order 1. 
+
+Our worst case cost is still order `n`, so if we want to know how long it's going to take in the worst case for any  particular insertion is `O(n)`, but the amortized cost is `O(1)`. 
