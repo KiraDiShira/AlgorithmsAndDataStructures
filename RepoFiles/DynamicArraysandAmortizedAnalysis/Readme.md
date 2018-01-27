@@ -9,6 +9,7 @@
     - [Aggregate Method](#aggregate-method)
     - [Banker's Method](#bankers-method)
     - [Physicist's method](http://www.cs.cornell.edu/courses/cs3110/2013sp/lectures/lec21-amortized/lec21.html)
+* [Summary](#summary)
 
 
 ## Dynamic Arrays
@@ -165,3 +166,13 @@ In dynamic array example we charge 3 for each insertion:
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa21.PNG" />
 
 What we have got is an amortized cost of `O(1)`, in particular the cost is 3
+
+## Summary
+
+Can we use a constant amount (+10 for instance), intead of a constant factor (* 2) for growing our dynamic array?
+
+So this shows that if we use a constant amount to grow the dynamic array each time that we end up with an amortized cost for push back of O(n) rather than O(1). So it's extremely important to use a constant factor. 
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Images/daaa22.PNG" />
+
+So this shows that if we use a constant amount to grow the dynamic array each time that we end up with an amortized cost for push back of O(n) rather than O(1). So it's extremely important to use a constant factor. 
