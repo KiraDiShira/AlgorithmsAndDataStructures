@@ -8,7 +8,7 @@
 * Amortized Analysis
     - [Aggregate Method](#aggregate-method)
     - [Banker's Method](#bankers-method)
-    - [Physicist's method](#http://www.cs.cornell.edu/courses/cs3110/2013sp/lectures/lec21-amortized/lec21.html)
+    - [Physicist's method](http://www.cs.cornell.edu/courses/cs3110/2013sp/lectures/lec21-amortized/lec21.html)
 
 
 ## Dynamic Arrays
