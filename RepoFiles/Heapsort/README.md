@@ -97,6 +97,7 @@ Idea: far scendere il valore di A[i] nel max-heap in modo da ripristinare la pro
 
 ```c#
 
+//SIFT DOWN(index)
 public static void MaxHeapify(Heap heap, int index)
 {
     int left = Left(index);
