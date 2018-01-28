@@ -260,6 +260,7 @@ public void HeapIncreaseKey(Heap heap, int index, int key)
 
     heap[index] = key;
 
+    //SIFT UP(index)
     while (index > 0 && heap[Parent(index)] < heap[index])
     {
         Exchange(heap, index, Parent(index));
