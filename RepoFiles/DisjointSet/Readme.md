@@ -1,6 +1,6 @@
 * [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#project-title)
 
-# Dynamic Arrays and Amortized Analysis
+# Disjoint Sets
 
 * [Dynamic Arrays](#dynamic-arrays)
     - [Implementation](#implementation)
