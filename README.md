@@ -24,7 +24,7 @@ One Paragraph of project description goes here
   - [Tree](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Tree#tree)
   - [DataStructure1Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure1Exercises/Readme.md#datastructure1exercises)
   - [Dynamic Arrays and Amortized Analysis](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Readme.md#dynamic-arrays-and-amortized-analysis)
-  - [Priority Queues]()
+  - [Priority Queues](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/PriorityQueues#priority-queues)
   
 ## Acknowledgments
 
