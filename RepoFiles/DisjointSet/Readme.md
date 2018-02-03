@@ -7,6 +7,7 @@
 * [Trees](#trees)
 * [Union by Rank](#union-by-rank)
 * [Path Compression](#path-compression)
+* [Analysis](#analysis)
 
 ## Definition
 
@@ -252,3 +253,4 @@ public class TreeDisjointSet
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds21.PNG" />
 
+## Analysis
