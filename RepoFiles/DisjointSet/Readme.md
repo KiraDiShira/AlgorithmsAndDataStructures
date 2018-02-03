@@ -174,6 +174,76 @@ not only it finds the root for 6, it does so for all the nodes on this path. Let
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds17.PNG" />
 
+```c#
+public class TreeDisjointSet
+{
+    private  int[] _parents;
+    private  int[] _ranks;
+
+    public TreeDisjointSet()
+    {
+        _parents = new int[]
+        {
+            0,
+            6,
+            3,
+            5,
+            9,
+            5,
+            12,
+            10,
+            12,
+            5,
+            5,
+            6,
+            3
+        };
+        _ranks = new int[_parents.Length];
+    }
+
+    public void MakeSet(int index)
+    {
+        _parents[index] = index;
+    }
+
+    public int Find(int index)
+    {
+        if (index != _parents[index])
+        {
+            _parents[index] = Find(_parents[index]);
+        }
+        return _parents[index];
+    }
+
+    public void Union(int indexI, int indexJ)
+    {
+        int iId = Find(indexI);
+        int jId = Find(indexJ);
+        if (iId == jId)
+        {
+            return;
+        }
+        if (_ranks[iId] > _ranks[jId])
+        {
+            _parents[jId] = iId;
+        }
+        else
+        {
+            _parents[iId] = jId;
+            if (_ranks[iId] == _ranks[jId])
+            {
+                _ranks[jId] = _ranks[jId] + 1;
+            }
+        }
+    }
+
+    public override string ToString()
+    {
+        return String.Join(",", _parents);
+    }
+}
+```
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds18.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds19.PNG" />
