@@ -156,5 +156,6 @@ has at least 2^(k−1) nodes, hence the resulting tree contains at least 2^k nod
 2^(k−1) + 2^(k−1) = 2^(k−1) * (1 + 1) = 2^(k−1) * (2) = 2^(k-1+1) = 2^k
 ```
 
-
+Mia spigazione intuitiva:
+Il disjoint-cresce nel caso peggiore come un albero binario. I nodi di un albero binario completo sono `2^(k+1) - 1`. Quando creaiamo un nuovo livello di profondità, nel caso peggiore, abbiamo un solo nodo all'ultimo livello, quindi il numero di nodi è quello di un albero binario completo meno un livello più un nodo: `2^(k+1-1) - 1 + 1=  2^k`
 
