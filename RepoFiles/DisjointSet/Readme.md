@@ -2,15 +2,8 @@
 
 # Disjoint Sets
 
-* [Dynamic Arrays](#dynamic-arrays)
-    - [Implementation](#implementation)
-    - [Runtimes](#runtimes)
-* Amortized Analysis
-    - [Aggregate Method](#aggregate-method)
-    - [Banker's Method](#bankers-method)
-    - [Physicist's method](http://www.cs.cornell.edu/courses/cs3110/2013sp/lectures/lec21-amortized/lec21.html)
-* [Summary](#summary)
-
+* [Definition](#definition)
+* [Naive Implementations](#naive-implementations)
 
 ## Definition
 
@@ -28,6 +21,10 @@ A **disjoint-set** data structure supports the following operations:
 * Use array smallest[1 . . . n]: smallest[i] stores the smallest element in the set i belongs to
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds1.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds2.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds3.PNG" />
 
 ```c#
 
@@ -70,6 +67,26 @@ public class ArrayDisjointSet
 }
 
 ```
+Current bottleneck: Union.
+
+What basic data structure allows for efficient merging? Linked list!
+
+Idea: represent a set as a linked list, use the list tail as ID of the set
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds4.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds5.PNG" />
+
+Pros:
+    * Running time of Union is O(1)
+    * Well-defined ID    
+Cons:
+    * Running time of Find is O(n) as we need to traverse the list to find its tail
+    * Union(x, y) works in time O(1) only if we can get the tail of the list of x and the head of the list of y in constant time!
+    
+Can we merge in a different way?
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds6.PNG" />
 
 **Lemma**
 
