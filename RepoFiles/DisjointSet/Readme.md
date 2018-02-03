@@ -12,15 +12,15 @@
 * [Summary](#summary)
 
 
-## Dynamic Arrays
+## Definition
 
-Unlike static arrays, dynamic arrays can be resized. Solution: dynamic arrays (also known as resizable arrays are an abstract data type with the following operations (at a minimum):
+A **disjoint-set** data structure supports the following operations:
 
-* `Get(i)`: returns element at location `i`. Must must be constant time
-* `Set(i, val)`: Sets element `i` to `val`. Must be constant time
-* `PushBack(val)`: Adds `val` to the end
-* `Remove(i)`: Removes element at location `i`
-* `Size()`: the number of elements
+* `MakeSet(x)`: creates a singleton set {x}
+* `Find(x)`: returns ID of the set containing x:
+    - if x and y lie in the same set, then `Find(x) = Find(y)`
+    - otherwise, `Find(x) ̸= Find(y)` 
+* `Union(x, y)`: merges two sets containing x and y
 
 ### Implementation
 
