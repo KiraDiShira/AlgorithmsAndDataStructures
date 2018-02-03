@@ -6,6 +6,7 @@
 * [Naive Implementations](#naive-implementations)
 * [Trees](#trees)
 * [Union by Rank](#union-by-rank)
+* [Path Compression](#path-compression)
 
 ## Definition
 
@@ -158,4 +159,26 @@ has at least 2^(k−1) nodes, hence the resulting tree contains at least 2^k nod
 
 Mia spigazione intuitiva:
 Il disjoint-cresce nel caso peggiore come un albero binario. I nodi di un albero binario completo sono `2^(k+1) - 1`. Quando creaiamo un nuovo livello di profondità, nel caso peggiore, abbiamo un solo nodo all'ultimo livello, quindi il numero di nodi è quello di un albero binario completo meno un livello più un nodo: `2^(k+1-1) - 1 + 1=  2^k`
+
+The union by rank heuristic guarantees that Union and Find work in time `O(log n)`.
+
+Next part We’ll discover another heuristic that improves the running time to nearly constant!
+
+## Path Compression
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds15.PNG" />
+
+not only it finds the root for 6, it does so for all the nodes on this path. Let’s not lose this useful info.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds16.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds17.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds18.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds19.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds20.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds21.PNG" />
 
