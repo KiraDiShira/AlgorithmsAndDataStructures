@@ -22,7 +22,12 @@ A **disjoint-set** data structure supports the following operations:
     - otherwise, `Find(x) ̸= Find(y)` 
 * `Union(x, y)`: merges two sets containing x and y
 
-### Implementation
+## Naive Implementations
+
+* Use the smallest element of a set as its ID
+* Use array smallest[1 . . . n]: smallest[i] stores the smallest element in the set i belongs to
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds1.PNG" />
 
 **Lemma**
 
