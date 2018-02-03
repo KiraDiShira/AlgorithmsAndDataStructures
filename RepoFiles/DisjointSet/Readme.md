@@ -254,3 +254,30 @@ public class TreeDisjointSet
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds21.PNG" />
 
 ## Analysis
+
+**Goal**: Prove that when both union by rank heuristic and path compression heuristic are used, the average running time of each operation is nearly constant.
+
+**Height ≤ Rank**
+
+- When using path compression, rank[i] is no longer equal to the height of the subtree rooted at i
+- Still, the height of the subtree rooted at i is at most rank[i]
+- And it is still true that a root node of rank k has at least 2^k nodes in its subtree: a root node is not affected by path compression
+
+**Important properties**
+
+`1) There are at most n/(2^k) nodes of rank k`
+
+Proof:
+
+* Any root node of rank k has ≥ 2k descendants.
+* Any nonroot node of rank k has ≥ 2k descendants because:
+    - it had this property just before it became a nonroot 
+    - its rank doesn't change once it becomes a nonroot
+    - its set of descendants doesn't change once it became a nonroot
+* Different nodes of rank k can't have common descendants.
+
+nodes ≥ 2^r * nodes with rank r  --> nodes with rank r <= n/(2^k)
+
+`2) For any node i, rank[i] < rank[parent[i]]`
+
+`3) Once an internal node, always an internal node`
