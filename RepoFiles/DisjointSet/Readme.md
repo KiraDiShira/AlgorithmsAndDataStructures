@@ -148,6 +148,7 @@ Proof on 2nd lemma:
 Induction on k.
 
 *Base*: initially, a tree has height 0 and one node: 2^0 = 1.
+
 *Step*: a tree of height k results from merging two trees of height k − 1. By induction hypothesis, each of two trees
 has at least 2^(k−1) nodes, hence the resulting tree contains at least 2^k nodes: 
 
