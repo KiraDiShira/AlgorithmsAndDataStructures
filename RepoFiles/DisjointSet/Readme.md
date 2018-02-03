@@ -88,6 +88,26 @@ Can we merge in a different way?
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds6.PNG" />
 
+## Trees
+
+- Represent each set as a rooted tree
+- ID of a set is the root of the tree
+- Use array parent[1 . . . n]: parent[i] is the parent of i, or i if it is the root
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds7.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds8.PNG" />
+
+How to merge two trees?
+
+Hang one of the trees under the root of the other one
+
+Which one to hang?
+
+A shorter one, since we would like to keep the trees shallow
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds9.PNG" />
+
 **Lemma**
 
 The height of any tree in the forest is at most log2 n.
