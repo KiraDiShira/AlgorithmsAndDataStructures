@@ -77,10 +77,10 @@ Idea: represent a set as a linked list, use the list tail as ID of the set
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds5.PNG" />
 
-Pros:
+- Pros:
     * Running time of Union is O(1)
     * Well-defined ID    
-Cons:
+- Cons:
     * Running time of Find is O(n) as we need to traverse the list to find its tail
     * Union(x, y) works in time O(1) only if we can get the tail of the list of x and the head of the list of y in constant time!
     
