@@ -4,6 +4,8 @@
 
 * [Definition](#definition)
 * [Naive Implementations](#naive-implementations)
+* [Trees](#trees)
+* [Union by Rank](#union-by-rank)
 
 ## Definition
 
@@ -108,15 +110,36 @@ A shorter one, since we would like to keep the trees shallow
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds9.PNG" />
 
+## Union by Rank
+
+* When merging two trees we hang a shorter one under the root of a taller one
+* To quickly find a height of a tree, we will keep the height of each subtree in an array rank[1 . . . n]: rank[i] is the
+* Hanging a shorter tree under a taller one is called a union by rank heuristic
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds10.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds11.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds12.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds13.PNG" />
+
+Union(5, 2)
+Union(3, 1)
+Union(2, 3)
+Union(2, 6)
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds14.PNG" />
+
 **Lemma**
 
-The height of any tree in the forest is at most log2 n.
+`The height of any tree in the forest is at most log2 n`
 
 Follows from the following lemma.
 
 **Lemma**
 
-Any tree of height k in the forest has at least 2^k nodes
+`Any tree of height k in the forest has at least 2^k nodes`
 
 This will imply the first lemma as follows. I assume that some tree has height strictly greater than binany logarithm of n. Using the second lemma it will be possible to show then that this tree contains more than n nodes, right? Which would lead to a contradiction with the fact that we only have n objects in our data structure. 
 
