@@ -29,6 +29,48 @@ A **disjoint-set** data structure supports the following operations:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds1.PNG" />
 
+```c#
+
+public class ArrayDisjointSet
+{
+    private readonly int[] _smallest;
+
+    public ArrayDisjointSet()
+    {
+        _smallest = new int[100];
+    }
+
+    public void MakeSet(int index)
+    {
+        _smallest[index] = index;
+    }
+
+    public int Find(int index)
+    {
+        return _smallest[index];
+    }
+
+    public void Union(int indexI, int indexJ)
+    {
+        int iId = Find(indexI);
+        int jId = Find(indexJ);
+        if (iId == jId)
+        {
+            return;
+        }
+        int min = Math.Min(iId, jId);
+        for (int i = 0; i < _smallest.Length; i++)
+        {
+            if (_smallest[i] == iId || _smallest[i] == jId)
+            {
+                _smallest[i] = min;
+            }
+        }
+    }
+}
+
+```
+
 **Lemma**
 
 The height of any tree in the forest is at most log2 n.
