@@ -281,3 +281,13 @@ nodes ≥ 2^r * nodes with rank r  --> nodes with rank r <= n/(2^k)
 `2) For any node i, rank[i] < rank[parent[i]]`
 
 `3) Once an internal node, always an internal node`
+
+We now start to estimate the running time of M operations. First of all note that the **union** operation boils down to calls to **Find** operation. So for this reason when estimating the total running time we will just assume that we have m calls to find operation.
+
+So the total running time of all the defind operations, of all the calls to defind operation is just the total number of edges traversed. So this is what is written here:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds22.PNG" />
+
+ For technical reasons we will split this number into three terms. The first term includes all the edges that lead from a node to another node, which is the root in this case.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds23.PNG" />
