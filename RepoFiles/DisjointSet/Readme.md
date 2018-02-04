@@ -255,6 +255,8 @@ public class TreeDisjointSet
 
 ## Analysis
 
+E' complicata e non ci ho capito molto
+
 **Goal**: Prove that when both union by rank heuristic and path compression heuristic are used, the average running time of each operation is nearly constant.
 
 **Height ≤ Rank**
