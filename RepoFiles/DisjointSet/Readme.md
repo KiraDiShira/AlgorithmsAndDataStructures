@@ -255,6 +255,11 @@ public class TreeDisjointSet
 
 ## Analysis
 
+In our analysis, we show that any sequence of m UNION and FIND operations on `n` elements take at most `O((m + n)log∗ n)` steps, where `log∗ n` is the number of times you must iterate the `log2` function on `n` before getting a number less than or equal to 1. (So log∗
+4 = 2,log∗ 16 = 3,log∗ 65536 = 4.) We should note that this is not the tightest analysis possible; however, this analysis is already somewhat complex!
+
+Note that we are going to do an amortized analysis here. That is, we are going to consider the cost of the algorithm over a sequence of steps, instead of considering the cost of a single operation. In fact a single UNION or FIND operation could require `O(log n)` operations. (Exercise: Prove this!) Only by considering an entire sequence of operations at once can obtain the above bound. Our argument will require some interesting accounting to total the cost of a sequence of steps.
+
 E' complicata e non ci ho capito molto
 
 **Goal**: Prove that when both union by rank heuristic and path compression heuristic are used, the average running time of each operation is nearly constant.
