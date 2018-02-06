@@ -26,7 +26,7 @@ One Paragraph of project description goes here
   - [Dynamic Arrays and Amortized Analysis](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicArraysandAmortizedAnalysis/Readme.md#dynamic-arrays-and-amortized-analysis)
   - [Priority Queues](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/PriorityQueues#priority-queues)
   - [Disjoint sets](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Readme.md#disjoint-sets)
-  - [DataStructure2Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure1Exercises/Readme.md#datastructure2exercises)
+  - [DataStructure2Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure2Exercises/Readme.md#datastructure2exercises)
 ## Acknowledgments
 
 * [*GitHub Cheat Sheet*](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md)
