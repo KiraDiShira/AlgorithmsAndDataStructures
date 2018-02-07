@@ -3,6 +3,7 @@
 # DataStructure2Exercises
 
 * [Convert array into heap](#convert-array-into-heap)
+* [Parallel processing](#parallel-processing)
 
 ## Convert array into heap
 
@@ -115,6 +116,251 @@ namespace BuildHeapAssignment
                 return $"{Index1} {Index2}";
             }
         }
+    }
+}
+
+```
+## Parallel processing
+
+### Problem Description
+
+**Task.** You have a program which is parallelized and uses 𝑛 independent threads to process the given list of 𝑚 jobs. Threads take jobs in the order they are given in the input. If there is a free thread, it immediately takes the next job from the list. If a thread has started processing a job, it doesn’t interrupt or stop until it finishes processing the job. If several threads try to take jobs from the list simultaneously, the thread with smaller index takes the job. For each job you know exactly how long will it take any thread to process this job, and this time is the same for all the threads. You need to determine for each job which thread will process it and when will it start processing. 
+
+**Input Format.** The first line of the input contains integers 𝑛 and 𝑚. The second line contains 𝑚 integers 𝑡𝑖 — the times in seconds it takes any thread to process 𝑖-th job. The times are given in the same order as they are in the list from which threads take jobs. Threads are indexed starting from 0.
+
+**Output Format.** Output exactly 𝑚 lines. 𝑖-th line (0-based index is used) should contain two spaceseparated integers — the 0-based index of the thread which will process the 𝑖-th job and the time in seconds when it will start processing that job.
+
+**Sample 1.**
+```
+Input:
+2 5
+1 2 3 4 5
+
+Output:
+0 0
+1 0
+0 1
+1 2
+0 4
+```
+
+```c#
+
+public class Job
+{
+    public int Priority { get; set; }
+    public long Duration { get; set; }
+}
+
+class Worker : IComparable<Worker>
+{
+    public int Id { get; set; }
+    public long AvailabilityTime { get; set; }
+    
+    public int CompareTo(Worker other)
+    {
+        int availabilityComparer = AvailabilityTime.CompareTo(other.AvailabilityTime);
+
+        if (availabilityComparer == 0)
+        {
+            return Id.CompareTo(other.Id);
+        }
+
+        return availabilityComparer;
+    }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, Time: {AvailabilityTime}";
+    }
+}
+
+public class MinPriorityQueue<T> where T : IComparable<T>
+{
+    private readonly T[] _array;
+
+    public int Size { get; set; }
+    public int Length => _array.Length;
+
+    public T this[int index]
+    {
+        get => _array[index];
+        set => _array[index] = value;
+    }
+
+    public MinPriorityQueue(T[] array)
+    {
+        _array = array;
+        Size = array.Length;
+        BuildMinHeap();
+    }
+
+    private void BuildMinHeap()
+    {
+        for (int i = (_array.Length - 1) / 2; i >= 0; i--)
+        {
+            MinHeapify( i);
+        }
+    }
+
+    public void Insert(T key)
+    {
+        if (Size == Length)
+        {
+            throw new Exception("error");
+        }
+        
+        _array[Size] = key;
+        SiftUp(Size);
+        Size++;
+    }
+
+    public T Min()
+    {
+        return _array[0];
+    }
+
+    public T ExtractMin()
+    {
+        if (Size <= 0)
+        {
+            throw new Exception("heap underflow");
+        }
+
+        T max = _array[0];
+
+        _array[0] = _array[Size - 1];
+        Size--;
+        MinHeapify(0);
+
+        return max;
+    }
+
+    private void MinHeapify(int index)
+        {
+            int minimum = index;
+            int left = Left(index);
+            if (left < _array.Length && _array[left].CompareTo(_array[index]) < 0)
+            {
+                minimum = left;
+            }
+            int right = Right(index);
+            if (right < _array.Length && _array[right].CompareTo(_array[minimum]) < 0 )
+            {
+                minimum = right;
+            }
+            if (minimum != index)
+            {
+                Exchange( index, minimum);
+                MinHeapify( minimum);
+            }
+        }
+
+    private void Exchange(int index, int largest)
+        {
+            T heapIndex = _array[index];
+            _array[index] = _array[largest];
+            _array[largest] = heapIndex;
+        }
+
+    private int Right(int index)
+        {
+            return 2 * index + 2;
+        }
+
+    private int Left(int index)
+        {
+            return 2 * index + 1;
+        }
+
+    private void SiftUp(int index)
+        {
+            while (index > 0 && _array[Parent(index)].CompareTo(_array[index]) > 0)
+            {
+                Exchange(index, Parent(index));
+                index = Parent(index);
+            }
+        }
+
+    private static int Parent(int index)
+    {
+        return (index - 1) / 2;
+    }
+}
+
+class Program
+{
+    private int numWorkers;
+    private int[] jobs;
+
+    private int[] assignedWorker;
+    private long[] startTime;
+
+    static void Main(string[] args)
+    {
+        new Program().Solve();
+    }
+
+    private void Solve()
+    {
+        ReadData();
+        IList<Worker> workers = AssignJobs();
+       
+
+        Console.ReadLine();
+    }
+
+    private void WriteResponse()
+    {
+        for (int i = 0; i < jobs.Length; ++i)
+        {
+            Console.WriteLine(assignedWorker[i] + " " + startTime[i]);
+        }
+    }
+
+    private IList<Worker> AssignJobs()
+    {
+        var jobArray = new Job[jobs.Length];
+        for (int i = 0; i < jobs.Length; i++)
+        {
+            jobArray[i] = new Job()
+            {
+                Duration = jobs[i],
+                Priority = i
+            };
+        }
+
+        var workerArray = new Worker[numWorkers];
+        for (int i = 0; i < workerArray.Length; i++)
+        {
+            workerArray[i] = new Worker()
+            {
+                Id = i,
+                AvailabilityTime = 0
+            };
+        }
+        var workerQueue = new MinPriorityQueue<Worker>(workerArray);
+
+        IList<Worker> workers = new List<Worker>();
+
+        foreach (Job jobToProcess in jobArray)
+        {
+            Worker currentWorker = workerQueue.ExtractMin();
+            workers.Add(new Worker(){AvailabilityTime = currentWorker.AvailabilityTime, Id = currentWorker.Id});
+            currentWorker.AvailabilityTime = currentWorker.AvailabilityTime + jobToProcess.Duration;
+            workerQueue.Insert(currentWorker);
+        }
+
+        return workers;
+    }
+
+    private void ReadData()
+    {
+        string[] lines = System.IO.File.ReadAllLines(
+            $@"D:\Biblioteca\Algoritmi\Programming-Assignment-2\job_queue\tests\08");
+
+        numWorkers = Int32.Parse(lines[0].Split(" ")[0]);
+        jobs = lines[1].Split(" ").Select(Int32.Parse).ToArray();
     }
 }
 
