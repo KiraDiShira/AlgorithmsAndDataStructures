@@ -275,10 +275,10 @@ The procedure **MAX-HEAP-INSERT** implements the INSERT operation. It takes as a
 ```c#
 
 public void MaxHeapInsert(Heap heap, int key)
-{
-    heap.Size++;
+{    
     heap[heap.Size] = int.MinValue;
     HeapIncreaseKey(heap, heap.Size, key);
+    heap.Size++;
 }
 
 ```
