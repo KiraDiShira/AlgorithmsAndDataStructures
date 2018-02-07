@@ -199,7 +199,7 @@ public class MinPriorityQueue<T> where T : IComparable<T>
     {
         for (int i = (_array.Length - 1) / 2; i >= 0; i--)
         {
-            MinHeapify( i);
+            MinHeapify(i);
         }
     }
 
@@ -209,7 +209,7 @@ public class MinPriorityQueue<T> where T : IComparable<T>
         {
             throw new Exception("error");
         }
-        
+
         _array[Size] = key;
         SiftUp(Size);
         Size++;
@@ -237,50 +237,50 @@ public class MinPriorityQueue<T> where T : IComparable<T>
     }
 
     private void MinHeapify(int index)
+    {
+        int minimum = index;
+        int left = Left(index);
+        if (left < _array.Length && _array[left].CompareTo(_array[index]) < 0)
         {
-            int minimum = index;
-            int left = Left(index);
-            if (left < _array.Length && _array[left].CompareTo(_array[index]) < 0)
-            {
-                minimum = left;
-            }
-            int right = Right(index);
-            if (right < _array.Length && _array[right].CompareTo(_array[minimum]) < 0 )
-            {
-                minimum = right;
-            }
-            if (minimum != index)
-            {
-                Exchange( index, minimum);
-                MinHeapify( minimum);
-            }
+            minimum = left;
         }
+        int right = Right(index);
+        if (right < _array.Length && _array[right].CompareTo(_array[minimum]) < 0)
+        {
+            minimum = right;
+        }
+        if (minimum != index)
+        {
+            Exchange(index, minimum);
+            MinHeapify(minimum);
+        }
+    }
 
     private void Exchange(int index, int largest)
-        {
-            T heapIndex = _array[index];
-            _array[index] = _array[largest];
-            _array[largest] = heapIndex;
-        }
+    {
+        T heapIndex = _array[index];
+        _array[index] = _array[largest];
+        _array[largest] = heapIndex;
+    }
 
     private int Right(int index)
-        {
-            return 2 * index + 2;
-        }
+    {
+        return 2 * index + 2;
+    }
 
     private int Left(int index)
-        {
-            return 2 * index + 1;
-        }
+    {
+        return 2 * index + 1;
+    }
 
     private void SiftUp(int index)
+    {
+        while (index > 0 && _array[Parent(index)].CompareTo(_array[index]) > 0)
         {
-            while (index > 0 && _array[Parent(index)].CompareTo(_array[index]) > 0)
-            {
-                Exchange(index, Parent(index));
-                index = Parent(index);
-            }
+            Exchange(index, Parent(index));
+            index = Parent(index);
         }
+    }
 
     private static int Parent(int index)
     {
