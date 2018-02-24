@@ -388,6 +388,36 @@ and instead of real data put a symbolic link to 𝑑𝑒𝑠𝑡𝑖𝑛𝑎𝑡
 If the table contains only a symbolic link, its size is considered to be 0. See examples and explanations for further clarifications.
 Input Format. The first line of the input contains two integers 𝑛 and 𝑚 — the number of tables in the database and the number of merge queries to perform, respectively. The second line of the input contains 𝑛 integers 𝑟𝑖 — the number of rows in the 𝑖-th table. Then follow 𝑚 lines describing merge queries. Each of them contains two integers 𝑑𝑒𝑠𝑡𝑖𝑛𝑎𝑡𝑖𝑜𝑛𝑖 and 𝑠𝑜𝑢𝑟𝑐𝑒𝑖 — the numbers of the tables to merge.
 
+**Sample 1.**
+```
+Input:
+5 5
+1 1 1 1 1
+
+3 5
+2 4
+1 4
+5 4
+5 3
+
+Output:
+2
+2
+3
+5
+5
+```
+Explanation:
+In this sample, all the tables initially have exactly 1 row of data. Consider the merging operations:
+1. All the data from the table 5 is copied to table number 3. Table 5 now contains only a symbolic link to table 3, while table 3 has 2 rows. 2 becomes the new maximum size.
+
+2. 2 and 4 are merged in the same way as 3 and 5.
+3. We are trying to merge 1 and 4, but 4 has a symbolic link pointing to 2, so we actually copy all the data from the table number 2 to the table number 1, clear the table number 2 and put a symbolic link to the table number 1 in it. Table 1 now has 3 rows of data, and 3 becomes the new maximum size.
+
+4. Traversing the path of symbolic links from 4 we have 4 → 2 → 1, and the path from 5 is 5 → 3. So we are actually merging tables 3 and 1. We copy all the rows from the table number 1 into the table number 3, and now the table number 3 has 5 rows of data, which is the new maximum.
+
+5. All tables now directly or indirectly point to table 3, so all other merges won’t change anything.
+
 ```c#
 
 public class Table
