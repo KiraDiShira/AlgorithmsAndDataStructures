@@ -53,3 +53,11 @@ Now let's look at asymptotics of chaining schema:
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h12.PNG" />
 ___________________________________________________________________________________________________________________
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h13.PNG" />
+
+ We've introduced the notion of map, and now we'll introduce a very similar and natural notion of a **set**. 
+ 
+ <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h14.PNG" />
+ 
+ 
+ 
+ 
