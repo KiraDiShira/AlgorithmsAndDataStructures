@@ -158,9 +158,6 @@ has at least 2^(k−1) nodes, hence the resulting tree contains at least 2^k nod
 2^(k−1) + 2^(k−1) = 2^(k−1) * (1 + 1) = 2^(k−1) * (2) = 2^(k-1+1) = 2^k
 ```
 
-Mia spigazione intuitiva:
-Il disjoint-cresce nel caso peggiore come un albero binario. I nodi di un albero binario completo sono `2^(k+1) - 1`. Quando creaiamo un nuovo livello di profondità, nel caso peggiore, abbiamo un solo nodo all'ultimo livello, quindi il numero di nodi è quello di un albero binario completo meno un livello più un nodo: `2^(k+1-1) - 1 + 1=  2^k`
-
 The union by rank heuristic guarantees that Union and Find work in time `O(log n)`.
 
 Next part We’ll discover another heuristic that improves the running time to nearly constant!
@@ -252,49 +249,3 @@ public class TreeDisjointSet
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds20.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds21.PNG" />
-
-## Analysis
-
-In our analysis, we show that any sequence of m UNION and FIND operations on `n` elements take at most `O((m + n)log∗ n)` steps, where `log∗ n` is the number of times you must iterate the `log2` function on `n` before getting a number less than or equal to 1. (So log∗
-4 = 2,log∗ 16 = 3,log∗ 65536 = 4.) We should note that this is not the tightest analysis possible; however, this analysis is already somewhat complex!
-
-Note that we are going to do an amortized analysis here. That is, we are going to consider the cost of the algorithm over a sequence of steps, instead of considering the cost of a single operation. In fact a single UNION or FIND operation could require `O(log n)` operations. (Exercise: Prove this!) Only by considering an entire sequence of operations at once can obtain the above bound. Our argument will require some interesting accounting to total the cost of a sequence of steps.
-
-E' complicata e non ci ho capito molto
-
-**Goal**: Prove that when both union by rank heuristic and path compression heuristic are used, the average running time of each operation is nearly constant.
-
-**Height ≤ Rank**
-
-- When using path compression, rank[i] is no longer equal to the height of the subtree rooted at i
-- Still, the height of the subtree rooted at i is at most rank[i]
-- And it is still true that a root node of rank k has at least 2^k nodes in its subtree: a root node is not affected by path compression
-
-**Important properties**
-
-`1) There are at most n/(2^k) nodes of rank k`
-
-Proof:
-
-* Any root node of rank k has ≥ 2k descendants.
-* Any nonroot node of rank k has ≥ 2k descendants because:
-    - it had this property just before it became a nonroot 
-    - its rank doesn't change once it becomes a nonroot
-    - its set of descendants doesn't change once it became a nonroot
-* Different nodes of rank k can't have common descendants.
-
-nodes ≥ 2^r * nodes with rank r  --> nodes with rank r <= n/(2^k)
-
-`2) For any node i, rank[i] < rank[parent[i]]`
-
-`3) Once an internal node, always an internal node`
-
-We now start to estimate the running time of M operations. First of all note that the **union** operation boils down to calls to **Find** operation. So for this reason when estimating the total running time we will just assume that we have m calls to find operation.
-
-So the total running time of all the defind operations, of all the calls to defind operation is just the total number of edges traversed. So this is what is written here:
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds22.PNG" />
-
- For technical reasons we will split this number into three terms. The first term includes all the edges that lead from a node to another node, which is the root in this case.
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds23.PNG" />
