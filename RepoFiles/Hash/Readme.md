@@ -88,7 +88,7 @@ We need two Maps: (phone number → name) and (name → phone number)
 
 Implement these Maps as hash tables. First, we will focus on the Map from phone numbers to names.
 
-If we choose the *direct addressing* way:
+If we choose the **direct addressing** way:
 
 - int(123-45-67) = 1234567
 - Create array Name of size 10^L where L is the maximum allowed phone number length
@@ -102,3 +102,34 @@ Whis this implementation:
 - Operations run in O(1)
 - Memory usage: O(10L), where L is the maximum length of a phone number
 - Problematic with international numbers of length 12 and more: we will need 1012 bytes = 1TB to store one person's phone book - this won't fit in anyone's phone!
+
+**A better schema is chaining.**
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h21.PNG" />
+
+Parameters:
+
+- **n**: phone numbers stored
+- **m**: cardinality of the hash function
+- **c**: length of the longest chain
+- **O(n + m)** memory is used
+- **𝛼 = n/m**: is called **load factor**
+- Operations run in time O(c + 1)
+- You want small m and c!
+
+Good example:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h22.PNG" />
+
+Bad example:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h23.PNG" />
+
+For the map from phone numbers to names, select **m = 1000**
+
+I need to choose an hash function, for example: take first three digits
+- h(800-123-45-67) = 800
+- Problem: area code
+- * h(425-234-55-67) =
+  * h(425-123-45-67) =
+  * h(425-223-23-23) = · · · = 425
