@@ -147,5 +147,7 @@ Good hash functions are:
 
 - Deterministic
 - Fast to compute
-- Distributes keys well into dierent cells
+- Distributes keys well into different cells
 - Few collisions
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h24.PNG" />
