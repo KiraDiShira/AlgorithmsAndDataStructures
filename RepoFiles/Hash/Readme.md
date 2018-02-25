@@ -3,6 +3,7 @@
 # Hash
 
 - [Introduction, Direct Addressing and Chaining](#introduction-direct-addressing-and-chaining)
+- [Hash functions](#hash-functions)
 
 ## Introduction, Direct Addressing and Chaining
 
@@ -73,3 +74,31 @@ ________________________________________________________________________________
 Hash table examples:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h19.PNG" />
+
+## Hash functions
+
+You want to design a data structure to store your contacts: names of people along with their phone numbers. The data structure should
+be able to do the following quickly:
+
+- Add and delete contacts,
+- Lookup the phone number by name,
+- Determine who is calling given their phone number.
+
+We need two Maps: (phone number → name) and (name → phone number)
+
+Implement these Maps as hash tables. First, we will focus on the Map from phone numbers to names.
+
+If we choose the *direct addressing* way:
+
+- int(123-45-67) = 1234567
+- Create array Name of size 10^L where L is the maximum allowed phone number length
+- Store the name corresponding to phone number P in Name[int(P)]
+- If no contact with phone number P, Name[int(P)] = N/A
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h20.PNG" />
+
+Whis this implementation:
+
+- Operations run in O(1)
+- Memory usage: O(10L), where L is the maximum length of a phone number
+- Problematic with international numbers of length 12 and more: we will need 1012 bytes = 1TB to store one person's phone book - this won't fit in anyone's phone!
