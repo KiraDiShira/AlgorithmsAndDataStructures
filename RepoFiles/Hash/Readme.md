@@ -133,3 +133,19 @@ I need to choose an hash function, for example: take first three digits
 - * h(425-234-55-67) =
   * h(425-123-45-67) =
   * h(425-223-23-23) = · · · = 425
+
+If I choose as hash function: take last three digits
+- h(800-123-45-67) = 567
+- Problem if many phone numbers end with three zeros
+
+If i chosse a random value as hash function: random number between 0 and 999
+- Uniform distribution of hash values
+- Different value when hash function called again -> we won't be able to find anything!
+- Hash function must be deterministic
+
+Good hash functions are:
+
+- Deterministic
+- Fast to compute
+- Distributes keys well into dierent cells
+- Few collisions
