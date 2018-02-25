@@ -100,7 +100,7 @@ If we choose the **direct addressing** way:
 Whis this implementation:
 
 - Operations run in O(1)
-- Memory usage: O(10L), where L is the maximum length of a phone number
+- Memory usage: O(10^L), where L is the maximum length of a phone number
 - Problematic with international numbers of length 12 and more: we will need 1012 bytes = 1TB to store one person's phone book - this won't fit in anyone's phone!
 
 **A better schema is chaining.**
