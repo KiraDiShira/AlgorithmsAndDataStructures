@@ -238,4 +238,12 @@ So how can we implement a hash function from this family?
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h36.PNG" />
 
+**Java implementation**
 
+The method hashCode of the built-in Java class String is very similar to our PolyHash, it just uses x = 31 and for technical reasons avoids the (mod p) operator. 
+
+You now know how a function that is used trillions of times a day in many thousands of programs is implemented!
+
+**Efficency of polynomial family?**
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h37.PNG" />
