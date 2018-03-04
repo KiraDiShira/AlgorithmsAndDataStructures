@@ -192,3 +192,18 @@ Example with a phone number:
 - Convert phone numbers to integers from 0 to 10^7 − 1 = 9 999 999: 148-25-67 → 1 482 567
 - Choose prime number bigger than 10^7, e.g. p = 10 000 019
 - Choose hash table size, e.g. m = 1 000
+
+So now that we selected p and m, we are ready to define universal family for integers between 0 and 10^7 - 1. So the Lemma says that the following family of hash functions is a universal family. 
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h31.PNG" />
+
+```
+p = prime number
+a,b = those parameters are different for different hash functions in these family
+```
+And the size of this hash family, what do you think it is? 
+
+Well, it is equal to `p (p - 1)`, why is that? Because there are p minus 1 variance for a, and independently from that, there are p variance for b.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h32.PNG" />
+
