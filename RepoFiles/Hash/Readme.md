@@ -4,6 +4,7 @@
 
 - [Introduction, Direct Addressing and Chaining](#introduction-direct-addressing-and-chaining)
 - [Hash functions](#hash-functions)
+- [Searching Patterns](#searching-patterns)
 
 ## Introduction, Direct Addressing and Chaining
 
@@ -267,3 +268,5 @@ So, that is not an universal family because for a universal family there shouldn
 So that way, we proved that combination of polynomial hashing with universal hashing for integers, is a really good family of hash functions. Now what if we take this new family of hash functions and apply it to build a hash table? 
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h41.PNG" />
+
+## Searching Patterns
