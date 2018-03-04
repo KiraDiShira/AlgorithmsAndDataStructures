@@ -235,3 +235,7 @@ How many hash functions are there in this family? Well of course, there are exac
 So how can we implement a hash function from this family? 
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h35.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h36.PNG" />
+
+
