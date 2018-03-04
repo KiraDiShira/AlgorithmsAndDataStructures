@@ -247,3 +247,23 @@ You now know how a function that is used trillions of times a day in many thousa
 **Efficency of polynomial family?**
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h37.PNG" />
+
+### Cardinality fix
+
+Now we know of polynomial hash family or hashing strings. But there's a problem with that family. All the hash functions in that family have a cardinality of P, where P is a very big prime number. And what we want is the cardinality of hash functions to be the same as the size of our hash table. So, once a small cardinality. So, we won't be able to use this polynomial hashing family directly in our hash tables. We want to somehow fix the cardinality of the functions in the polynomial family. 
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h38.PNG" />
+
+Note that it is very important that we first select both random function from the polynomial family and the random function from the universal family of our integers. And we fix them, and we use the same pair of functions for the whole algorithm. And then, the whole function from string to integer number from between zero and minus one is a deterministic hash function. 
+
+And it can be shown that the family of functions define this way is a very good family. It is not a universal family, but it is a very good family with low probability of collisions.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h39.PNG" />
+
+So, that is not an universal family because for a universal family there shouldn't be any sum on L over p the probability of collision should be at most 1 over M. But we can be very, very close to universal family because we can control P. We can make P very big. And then L over p will be very small. And so, the probability of collision will be at most will 1 over m plus some very small number.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h40.PNG" />
+
+So that way, we proved that combination of polynomial hashing with universal hashing for integers, is a really good family of hash functions. Now what if we take this new family of hash functions and apply it to build a hash table? 
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h41.PNG" />
