@@ -230,3 +230,8 @@ We introduce a new family of hash functions called **polynomial hash functions**
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h34.PNG" />
 
+How many hash functions are there in this family? Well of course, there are exactly p- 1 different hash functions, because to choose to define a hash function from this family you would just need to choose the value of x. And x changes from 1 to p- 1, and it's an integer number of course. 
+
+So how can we implement a hash function from this family? 
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h35.PNG" />
