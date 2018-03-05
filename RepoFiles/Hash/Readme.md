@@ -270,3 +270,8 @@ So that way, we proved that combination of polynomial hashing with universal has
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h41.PNG" />
 
 ## Searching Patterns
+
+Given a text T (book, website, facebook profile) and a pattern P (word, phrase,sentence), find all occurrences of P in T.
+Examples: Your name on a website, Twitter messages about your company.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h42.png" />
