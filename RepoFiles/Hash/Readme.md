@@ -278,7 +278,7 @@ Examples: Your name on a website, Twitter messages about your company.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h43.png" />
 
-**ive Algorithm**: For each position i from 0 to |T| − |P|, check character-by-character whether T[i..i + |P| − 1] = P or not. If yes, append i to the result.
+**Naive Algorithm**: For each position i from 0 to |T| − |P|, check character-by-character whether T[i..i + |P| − 1] = P or not. If yes, append i to the result.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h44.png" />
 
@@ -287,4 +287,23 @@ Examples: Your name on a website, Twitter messages about your company.
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h46.png" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h47.png" />
+
+### Rabin-Karp's Algorithm
+
+Need to compare P with all substrings S of T of length |P|. Idea: use hashing to quickly compare P with substrings of T.
+
+- If h(P) != h(S), then definitely P != S
+- If h(P) = h(S), call AreEqual(P, S)
+- Use polynomial hash family 𝒫p with prime p
+- If P != S, the probability Pr[h(P) = h(S)] is at most |P|/p for polynomial hashing
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h48.png" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h49.png" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h50.png" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h51.png" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h52.png" />
 
