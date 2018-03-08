@@ -423,3 +423,60 @@ Here's the function to pre compute all the hash values of our polynomial hash fu
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h57.png" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h58.png" />
+
+```c#
+public class RabinKarpAlgorithm
+{
+    private int prime = 1610612741;
+    private int multiplier = 31;
+
+    private int PolyHash(string pattern)
+    {
+        long hash = 0;
+        for (int i = pattern.Length - 1; i >= 0; --i)
+            hash = (hash * multiplier + pattern[i]) % prime;
+        return (int)hash;
+    }
+
+    private int[] PrecomputeHashes(string text, int patternLength)
+    {
+        int[] precomputedHashes = new int[text.Length - patternLength + 1];
+        string S = text.Substring(text.Length - patternLength, patternLength );
+        precomputedHashes[text.Length - patternLength] = PolyHash(S);
+        int y = 1;
+        for (int i = 1; i <= patternLength; i++)
+        {
+            y = (y * multiplier) % prime;
+        }
+
+        for (int i = text.Length - patternLength - 1; i >= 0; i--)
+        {
+            precomputedHashes[i] = (multiplier * precomputedHashes[i + 1] + text[i] -
+                                    y * text[i + patternLength]) % prime;
+        }
+
+        return precomputedHashes;
+    }
+
+    public IList<int> RabinKarp(string text, string pattern)
+    {
+        IList<int> results = new List<int>();
+        int patternHash = PolyHash(pattern);
+        int[] precomputedHashes = PrecomputeHashes(text, pattern.Length);
+
+        for (int i = 0; i <= text.Length - pattern.Length; i++)
+        {
+            if (patternHash != precomputedHashes[i])
+            {
+                continue;
+            }
+            if (text.Substring(i, pattern.Length) == pattern)
+            {
+                results.Add(i);
+            }
+        }
+
+        return results;
+    }
+}
+```
