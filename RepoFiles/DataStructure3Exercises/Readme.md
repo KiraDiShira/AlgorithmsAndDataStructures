@@ -4,7 +4,6 @@
 
 * [Phone book](#phone-book)
 * [Hashing with chains](#hashing-with-chains)
-* [Merging tables](#merging-tables)
 
 ## Phone book
 
