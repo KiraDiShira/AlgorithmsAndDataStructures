@@ -348,6 +348,14 @@ Now we know of polynomial hash family or hashing strings. But there's a problem 
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h38.PNG" />
 
+```c#
+private int HashFunc(string s)
+{
+    var hash = PolyHash(s);
+    return (int)hash % _tableSize;
+}
+```
+
 Note that it is very important that we first select both random function from the polynomial family and the random function from the universal family of our integers. And we fix them, and we use the same pair of functions for the whole algorithm. And then, the whole function from string to integer number from between zero and minus one is a deterministic hash function. 
 
 And it can be shown that the family of functions define this way is a very good family. It is not a universal family, but it is a very good family with low probability of collisions.
