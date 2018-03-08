@@ -224,6 +224,36 @@ If we start with very big hash table we will waste a lot of memory. So we can co
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h30.PNG" />
 
+```c#
+private void Rehash()
+{
+    double loadFactor = (double)_numberOfKeys / _tableSize;
+    if (loadFactor > 0.9)
+    {
+        _numberOfKeys = 0;
+        _tableSize *= 2;
+        SetAandB();
+        IList<Contact>[] newTable = new IList<Contact>[_tableSize];
+        foreach (IList<Contact> contacts in _table)
+        {
+            foreach (Contact contact in contacts)
+            {
+                long arrayIndex = Hashing(contact.Number);
+                newTable[arrayIndex]
+                    .Add(new Contact(contact.Name, contact.Number));
+            }
+        }
+        _table = newTable;
+    }
+}
+
+private void SetAandB()
+{
+    _b = (long) _random.NextDouble() * (_p - 1);
+    _a = 1 + (long) _random.NextDouble() * (_p - 2);
+}
+```
+
 So here is the code which tries to keep loadfFactor below 0.9. And 0.9 is just a number I selected, you could put 1 here or 0.8, that doesn't really matter.
 
 So to achieve that, you need to call this procedure rehash after each operation which inserts something in your hash table. And it could work slowly when this happens because the rehash procedure needs to copy all the keys from your current hash table to the new big hash table, and that works in linear time. But similarly to dynamic arrays, the amortized running time will still be constant on average because their hash will happen only rarely. So you reach a certain level of load factor and you increase the size of our table twice. And then it will take twice longer to again reach too high value of load factor. And then you'll again increase your hash table twice. So the more keys you put in, the longer it takes until the next rehash. So their hashes will be really rare, and that's why it won't influence your running time with operations, significantly. 
