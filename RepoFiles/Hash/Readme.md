@@ -321,6 +321,15 @@ So how can we implement a hash function from this family?
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h35.PNG" />
 
+```c#
+private long PolyHash(string s)
+{
+    long hash = 0;
+    for (int i = s.Length - 1; i >= 0; --i)
+        hash = (hash * multiplier + s[i]) % _p;
+    return hash;
+}
+```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h36.PNG" />
 
 **Java implementation**
