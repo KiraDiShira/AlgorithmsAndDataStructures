@@ -279,6 +279,13 @@ So now that we selected p and m, we are ready to define universal family for int
 p = prime number
 a,b = those parameters are different for different hash functions in these family
 ```
+
+```c#
+private long Hashing(long number)
+{
+    return ((_a * number + _b) % _p) % _tableSize;
+}
+```
 And the size of this hash family, what do you think it is? 
 
 Well, it is equal to `p (p - 1)`, why is that? Because there are p minus 1 variance for a, and independently from that, there are p variance for b.
