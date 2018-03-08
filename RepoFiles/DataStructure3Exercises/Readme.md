@@ -3,7 +3,7 @@
 # DataStructure3Exercises
 
 * [Phone book](#phone-book)
-* [Parallel processing](#parallel-processing)
+* [Hashing with chains](#hashing-with-chains)
 * [Merging tables](#merging-tables)
 
 ## Phone book
@@ -241,4 +241,130 @@ class Program
     }
 }
 
+```
+
+## Hashing with chains
+
+Task. In this task your goal is to implement a hash table with lists chaining. You are already given the
+number of buckets 𝑚 and the hash function.
+
+, 𝑝 = 1 000 000 007 and 𝑥 = 263. Your program
+should support the following kinds of queries:
+∙ add string — insert string into the table. If there is already such string in the hash table, then
+just ignore the query.
+∙ del string — remove string from the table. If there is no such string in the hash table, then
+just ignore the query.
+∙ find string — output “yes" or “no" (without quotes) depending on whether the table contains
+string or not.
+∙ check 𝑖 — output the content of the 𝑖-th list in the table. Use spaces to separate the elements of
+the list. If 𝑖-th list is empty, output a blank line.
+When inserting a new string into a hash chain, you must insert it in the beginning of the chain.
+Input Format. There is a single integer 𝑚 in the first line — the number of buckets you should have. The
+next line contains the number of queries 𝑁. It’s followed by 𝑁 lines, each of them contains one query
+in the format described above.
+Constraints. 1 ≤ 𝑁 ≤ 105
+;
+𝑁
+5 ≤ 𝑚 ≤ 𝑁. All the strings consist of latin letters. Each of them is non-empty
+and has length at most 15.
+Output Format. Print the result of each of the find and check queries, one result per line, in the same
+order as these queries are given in the input.
+
+```c#
+public class Query
+{
+    public string Type { get; }
+    public int Ind { get; }
+    public string S { get; }
+
+    public Query(string type, string s)
+    {
+        Type = type;
+        S = s;
+    }
+
+    public Query(string type, int ind)
+    {
+        Type = type;
+        Ind = ind;
+    }
+}
+
+public class PhoneBook
+{
+    private int _tableSize = 43;
+    private IList<string>[] _table;
+    private long _p = 1000000007;
+    private int multiplier = 263;
+
+    public PhoneBook()
+    {
+        _table = new IList<string>[_tableSize];
+        for (int i = 0; i < _table.Length; i++)
+        {
+            _table[i] = new List<string>();
+        }
+    }
+
+    private int HashFunc(string s)
+    {
+        var hash = PolyHash(s);
+        return (int)hash % _tableSize;
+    }
+
+    private long PolyHash(string s)
+    {
+        long hash = 0;
+        for (int i = s.Length - 1; i >= 0; --i)
+            hash = (hash * multiplier + s[i]) % _p;
+        return hash;
+    }
+
+    public IList<string> Check(int index)
+    {
+        return _table[index];
+    }
+
+    public string Get(string key)
+    {
+        int arrayIndex = HashFunc(key);
+        IList<string> collisions = _table[arrayIndex];
+        foreach (string collision in collisions)
+        {
+            if (collision == key)
+            {
+                return "yes";
+            }
+        }
+        return "no";
+    }
+
+    public void Delete(string key)
+    {
+        int arrayIndex = HashFunc(key);
+        IList<string> collisions = _table[arrayIndex];
+        foreach (string collision in collisions)
+        {
+            if (collision == key)
+            {
+                collisions.Remove(collision);
+                return;
+            }
+        }
+    }
+
+    public void Set(string key)
+    {
+        int arrayIndex = HashFunc(key);
+        IList<string> contacts = _table[arrayIndex];
+        foreach (string contact in contacts)
+        {
+            if (contact == key)
+            {
+                return;
+            }
+        }
+        _table[arrayIndex].Insert(0,key);
+    }
+}
 ```
