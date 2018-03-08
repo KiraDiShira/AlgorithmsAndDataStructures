@@ -45,11 +45,58 @@ We want to implement a map, using hash function, and some combination of ideas f
 How to implement this in code?
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h9.PNG" />
-___________________________________________________________________________________________________________________
+
+```c#
+public bool HasKey(int number)
+{
+    long arrayIndex = Hashing(number);
+    IList<Contact> collisions = _table[arrayIndex];
+    foreach (var collision in collisions)
+    {
+        if (collision.Number == number)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h10.PNG" />
-___________________________________________________________________________________________________________________
+
+```c#
+public string Get(int number)
+{
+    long arrayIndex = Hashing(number);
+    IList<Contact> collisions = _table[arrayIndex];
+    foreach (Contact collision in collisions)
+    {
+        if (collision.Number == number)
+        {
+            return collision.Name;
+        }
+    }
+    return "not found";
+}
+```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h11.PNG" />
 
+```c#
+public void Set(int number, string name)
+{
+    long arrayIndex = Hashing(number);
+    IList<Contact> contacts = _table[arrayIndex];
+    foreach (Contact contact in contacts)
+    {
+        if (contact.Number == number)
+        {
+            contact.Name = name;
+            return;
+        }
+    }
+    _table[arrayIndex]
+        .Add(new Contact(name, number));    
+}
+```
 Now let's look at asymptotics of chaining schema:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h12.PNG" />
