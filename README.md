@@ -28,6 +28,8 @@ One Paragraph of project description goes here
   - [Disjoint sets](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Readme.md#disjoint-sets)
   - [DataStructure2Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure2Exercises/Readme.md#datastructure2exercises)
   - [Hash](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Hash#hash)
+  - [DataStructure3Exercises]
+  
 ## Acknowledgments
 
 * [*GitHub Cheat Sheet*](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md)
