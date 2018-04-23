@@ -138,3 +138,7 @@ public class SearchTreeOperations<T> where T : IComparable<T>
 }
 
 ```
+
+### Next - node with the next largest key
+
+
