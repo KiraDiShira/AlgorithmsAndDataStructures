@@ -69,6 +69,7 @@ public class SearchTree<T>
 if I want to return a null value when the key value is not found:
 
 ```c#
+
 public class SearchTreeOperations<T> where T : IComparable<T>
 {
     public SearchTree<T> Find(T key, SearchTree<T> root)
@@ -96,4 +97,44 @@ public class SearchTreeOperations<T> where T : IComparable<T>
         throw new Exception("Illegal Find execution");
     }
 }
+```
+If I want to return the closest value in the set when the key is not found:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst11.PNG" />
+
+```c#
+
+public class SearchTreeOperations<T> where T : IComparable<T>
+{
+    public SearchTree<T> Find(T key, SearchTree<T> root)
+    {      
+        if (key.Equals(root.Key))
+        {
+            return root;
+        }
+
+        if (key.CompareTo(root.Key) < 0)
+        {
+            if (root.Left == null)
+            {
+                return root;
+            }
+
+            return Find(key, root.Left);
+        }
+
+        if (key.CompareTo(root.Key) > 0)
+        {
+            if (root.Right == null)
+            {
+                return root;
+            }
+
+            return Find(key, root.Right);
+        }
+
+        throw new Exception("Illegal Find execution");
+    }
+}
+
 ```
