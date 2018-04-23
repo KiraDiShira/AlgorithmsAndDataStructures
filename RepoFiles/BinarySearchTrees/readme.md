@@ -150,3 +150,43 @@ public class SearchTreeOperations<T> where T : IComparable<T>
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst15.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst16.PNG" />
+
+```c#
+
+public SearchTree<T> Next(SearchTree<T> node)
+{
+    if (node.Right != null)
+    {
+        return LeftDescendant(node.Right);
+    }
+
+    return RightAncestor(node);
+}
+
+private SearchTree<T> RightAncestor(SearchTree<T> node)
+{
+    //if node is the largest element in the tree
+    if (node.Parent == null)
+    {
+        return null;
+    }
+
+    if (node.Key.CompareTo(node.Parent.Key) < 0)
+    {
+        return node.Parent;
+    }
+
+   return RightAncestor(node.Parent);
+}
+
+private SearchTree<T> LeftDescendant(SearchTree<T> node)
+{
+    if (node.Left == null)
+    {
+        return node;
+    }
+
+    return LeftDescendant(node.Left);
+}
+
+```
