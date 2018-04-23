@@ -141,4 +141,8 @@ public class SearchTreeOperations<T> where T : IComparable<T>
 
 ### Next - node with the next largest key
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst12.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst13.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst14.PNG" />
