@@ -16,3 +16,5 @@ A **Local Search Datastructure** stores a number of elements each with a key com
 
 - **RangeSearch(x, y)**: Returns all elements with keys between x and y.
 - **NearestNeighbors(z)**: Returns the element with keys on either side of z
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst1.PNG" />
