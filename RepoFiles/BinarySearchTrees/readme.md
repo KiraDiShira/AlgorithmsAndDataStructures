@@ -4,6 +4,7 @@
 
 * [Introduction](#introduction)
 * [Search Trees](#search-trees)
+* [Basic Operations](#basic-operations)
 
 ## Introduction
 
@@ -45,3 +46,54 @@ The Search Tree Structure:
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst8.PNG" />
 
 X’s key is larger than the key of any descendent of its left child, and smaller than the key of any descendant of its right child.
+
+## Basic Operations
+
+### Find
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst10.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst9.PNG" />
+
+```c#
+
+public class SearchTree<T>
+{
+    public T Key { get; set; }
+    public SearchTree<T> Left { get; set; }
+    public SearchTree<T> Right { get; set; }
+    public SearchTree<T> Parent { get; set; }
+}
+
+```
+if I want to return a null value when the key value is not found:
+
+```c#
+public class SearchTreeOperations<T> where T : IComparable<T>
+{
+    public SearchTree<T> Find(T key, SearchTree<T> root)
+    {
+        if (root.Key == null)
+        {
+            return null; //key value not found
+        }
+
+        if (key.Equals(root.Key))
+        {
+            return root;
+        }
+
+        if (key.CompareTo(root.Key) < 0)
+        {
+            return Find(key, root.Left);
+        }
+
+        if (key.CompareTo(root.Key) > 0)
+        {
+            return Find(key, root.Right);
+        }
+
+        throw new Exception("Illegal Find execution");
+    }
+}
+```
