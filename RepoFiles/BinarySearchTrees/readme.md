@@ -242,3 +242,5 @@ public void Insert(T key, SearchTree<T> root)
     }
 }
 ```
+
+### Delete
