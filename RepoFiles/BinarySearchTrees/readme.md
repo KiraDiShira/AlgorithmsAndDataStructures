@@ -74,7 +74,7 @@ public class SearchTreeOperations<T> where T : IComparable<T>
 {
     public SearchTree<T> Find(T key, SearchTree<T> root)
     {
-        if (root.Key == null)
+        if (root == null)
         {
             return null; //key value not found
         }
