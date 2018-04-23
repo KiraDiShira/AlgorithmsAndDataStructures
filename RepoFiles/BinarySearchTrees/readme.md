@@ -5,6 +5,7 @@
 * [Introduction](#introduction)
 * [Search Trees](#search-trees)
 * [Basic Operations](#basic-operations)
+* [Balance](#balance)
 
 ## Introduction
 
@@ -244,3 +245,26 @@ public void Insert(T key, SearchTree<T> root)
 ```
 
 ### Delete
+
+## Balance
+
+How long do Binary Search Tree operations take?
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst19.PNG" />
+
+We Want left and right subtrees to have approximately the same size. Suppose perfectly balanced:
+- Each subtree half the size of its parent.
+- After log2(n) levels, subtree of size 1.
+- Operations run in O(log(n)) time.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst20.PNG" />
+
+Solution: rebalancing. Rearrange tree to maintain balance.
+
+Problem: How do we rearrange tree while maintaining order? With **rotations**
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst21.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst22.PNG" />
+
+How to keep a tree balanced. AVL trees.
