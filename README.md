@@ -29,7 +29,7 @@ One Paragraph of project description goes here
   - [DataStructure2Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure2Exercises/Readme.md#datastructure2exercises)
   - [Hash](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Hash#hash)
   - [DataStructure3Exercises](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DataStructure3Exercises/Readme.md#datastructure3exercises)
-  - [Binary Search Trees]
+  - [Binary Search Trees](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/readme.md#binary-search-trees)
   
 ## Acknowledgments
 
