@@ -3,6 +3,7 @@
 # Binary Search Trees
 
 * [Introduction](#introduction)
+* [Search Trees](#search-trees)
 
 ## Introduction
 
@@ -32,3 +33,15 @@ How we can implement this data structure?
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst5.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst6.PNG" />
+
+## Search Trees
+
+Sorted arrays can search but not update.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst7.PNG" />
+
+The Search Tree Structure:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst8.PNG" />
+
+X’s key is larger than the key of any descendent of its left child, and smaller than the key of any descendant of its right child.
