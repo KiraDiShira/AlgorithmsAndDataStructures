@@ -190,3 +190,29 @@ private SearchTree<T> LeftDescendant(SearchTree<T> node)
 }
 
 ```
+### Range Search - A list of nodes with key between x and y
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BinarySearchTrees/Images/bst17.PNG" />
+
+```c#
+
+public IList<SearchTree<T>> RangeSearch(T x, T y, SearchTree<T> root)
+{
+    IList<SearchTree<T>> range = new List<SearchTree<T>>();
+
+    SearchTree<T> node = Find(x, root);
+
+    while (node.Key.CompareTo(y) <= 0)
+    {
+        if (node.Key.CompareTo(x) >= 0)
+        {
+            range.Add(node);
+        }
+
+        node = Next(node);
+    }
+
+    return range;
+}
+
+```
