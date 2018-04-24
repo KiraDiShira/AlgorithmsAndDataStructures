@@ -27,6 +27,10 @@ For the balance we want size of subtrees roughly the same.
 |N.Left.Height − N.Right.Height| ≤ 1
 ```
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/Images/avl3.PNG" />
+
 We claim that this ensures balance.
+
+
 
 We need to show that AVL property implies Height = O(log(n)).
