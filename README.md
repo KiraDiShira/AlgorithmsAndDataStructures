@@ -41,3 +41,5 @@ One Paragraph of project description goes here
 * [Solutions to clrs](https://github.com/gzc/CLRS#solutions-to-clrs)
 * [c# implementations](http://referencesource.microsoft.com/#mscorlib/system/collections/generic/list.cs,cf7f4095e4de7646)
 * https://www.csdojo.io/
+* https://people.csail.mit.edu/alinush/files/alin-tomescu-cv.pdf
+* https://www.dei.unipd.it/~depoli/fi2ae/slides_pw/lucidi-07/liste_alberi/T6_AVLTree-06.pdf
