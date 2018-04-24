@@ -47,6 +47,17 @@ So we have:
 ```
 𝑁(ℎ) > 2 ⋅ 𝑁(ℎ − 2)
 ```
+We can try to solve this as a recurrence (note that 𝑁(0) = 1):
+
+```
+𝑁(ℎ) > 2 ⋅ 𝑁(ℎ − 2) > 2 ⋅ 2 ⋅ 𝑁(ℎ − 4) > 2 ⋅ 2 ⋅ 2 ⋅ 𝑁(ℎ − 6) > ⋯ > 2^(ℎ/2)
+```
+
+```
+𝑁(ℎ) > 2^(ℎ/2) ⇔ log 𝑁(ℎ) > log 2^(ℎ/2) ⇔ ℎ < 2 log 𝑁(ℎ)
+```
+
+Thus, these worst-case AVL trees have height **ℎ = O(log 𝑛)**.
 
 https://people.csail.mit.edu/alinush/files/alin-tomescu-cv.pdf
 
