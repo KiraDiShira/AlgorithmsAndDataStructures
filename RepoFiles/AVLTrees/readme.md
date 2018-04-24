@@ -53,12 +53,21 @@ We can try to solve this as a recurrence (note that 𝑁(0) = 1):
 𝑁(ℎ) > 2 ⋅ 𝑁(ℎ − 2) > 2 ⋅ 2 ⋅ 𝑁(ℎ − 4) > 2 ⋅ 2 ⋅ 2 ⋅ 𝑁(ℎ − 6) > ⋯ > 2^(ℎ/2)
 ```
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/Images/avl5.PNG" />
+
+Note that AVL trees with a minimum number of nodes are the worst case examples of AVL tree: every node’s subtrees differ in height by one. You can see examples of such trees below:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/Images/avl6.PNG" />
+
+If we consider worst case example:
+
+```
+i = ℎ/2
+```
+
 ```
 𝑁(ℎ) > 2^(ℎ/2) ⇔ log 𝑁(ℎ) > log 2^(ℎ/2) ⇔ ℎ < 2 log 𝑁(ℎ)
 ```
 
 Thus, these worst-case AVL trees have height **ℎ = O(log 𝑛)**.
 
-https://people.csail.mit.edu/alinush/files/alin-tomescu-cv.pdf
-
-https://www.dei.unipd.it/~depoli/fi2ae/slides_pw/lucidi-07/liste_alberi/T6_AVLTree-06.pdf
