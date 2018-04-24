@@ -35,6 +35,8 @@ We claim that this ensures balance.
 
 We need to show that AVL property implies Height = O(log(n)).
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/Images/avl4.PNG" />
+
 https://people.csail.mit.edu/alinush/files/alin-tomescu-cv.pdf
 
 https://www.dei.unipd.it/~depoli/fi2ae/slides_pw/lucidi-07/liste_alberi/T6_AVLTree-06.pdf
