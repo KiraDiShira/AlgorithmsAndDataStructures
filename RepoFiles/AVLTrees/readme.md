@@ -37,6 +37,17 @@ We need to show that AVL property implies Height = O(log(n)).
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/Images/avl4.PNG" />
 
+We assumed that `𝑁(ℎ − 1) > 𝑁(ℎ − 2)`, so we can say that
+
+```
+𝑁(ℎ) > 1 + 𝑁(ℎ − 2) + 𝑁(ℎ − 2) = 1 + 2 ⋅ 𝑁(ℎ − 2) > 2 ⋅ 𝑁(ℎ − 2)
+```
+
+So we have:
+```
+𝑁(ℎ) > 2 ⋅ 𝑁(ℎ − 2)
+```
+
 https://people.csail.mit.edu/alinush/files/alin-tomescu-cv.pdf
 
 https://www.dei.unipd.it/~depoli/fi2ae/slides_pw/lucidi-07/liste_alberi/T6_AVLTree-06.pdf
