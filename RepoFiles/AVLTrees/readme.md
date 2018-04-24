@@ -34,3 +34,5 @@ We claim that this ensures balance.
 
 
 We need to show that AVL property implies Height = O(log(n)).
+
+https://people.csail.mit.edu/alinush/files/alin-tomescu-cv.pdf
