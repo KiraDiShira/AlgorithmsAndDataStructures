@@ -78,5 +78,5 @@ Updates to the tree can destroy AVL tree property:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/Images/avl7.png" />
 
-
+We need a new insertion algorithm that involves rebalancing the tree to maintain the AVL property.
 
