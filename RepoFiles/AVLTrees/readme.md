@@ -3,6 +3,7 @@
 # AVL Trees
 
 * [Introduction](#introduction)
+* [Avl Tree implementation](#avl-tree-implementation)
 
 ## Introduction
 
