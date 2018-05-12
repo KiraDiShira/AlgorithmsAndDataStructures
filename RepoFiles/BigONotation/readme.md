@@ -16,3 +16,17 @@ How long takes a program to work?
  In fact, there'll be several people running it on different computers with different architectures and different speeds, and it'll be a mess. And you really don't want to compute the runtime separately for every different client. 
 
 ## Asymptotic notation
+
+We need something that's maybe a little bit less precise but much easier to work with.
+
+Basic idea: there are lots of factors that have an effect on the final runtime but, most of them will only change the runtimes by a constant. If you're running on a computer that's a hundred times faster, it will take one hundreth of the time, a constant multiple. If your system architecture has multiplications that take three times as long as additions, then if your program is heavy on multiplications instead of additions, it might take three times as long, but it's only a factor of three. If your memory hierarchy is arranged in a different way, you might have to do disk lookups instead of RAM lookups. And those will be a lot slower, but only by a constant multiple. 
+
+So the key idea is if we come up with a measure of runtime complexity that ignores all of these constant multiples, where running in time n and in running in time 100n are sort of considered to be the same thing, then we don't have to worry about all of these little, bitty details that affect runtime. 
+
+Problem: runtimes of 1 second or 1 hour or 1 year, these only differ by constant multiples.
+
+Solution: we're not going to actually consider the runtimes of our programs on any particular input. We're going to look at what are known as **asymptotic runtimes**. These ask, how does the runtime scale with input size? As the input size n gets larger, does the output scale proportional to n, maybe proportional to n squared? Is it exponential in n? All these things are different. And in fact they're sort of so different that as long as n is sufficiently large, the difference between n runtime and n squared runtime is going to be worse than any constant multiple. 
+
+Only caring about what happens in this sort of long scale behavior, we will be able to do this without seeing these constants, without having to care about these details. 
+
+This sort of asymptotic, large scale behavior is actually what you care about a lot of the time, because you really want to know: what happens when I run my program on very large inputs? 
