@@ -30,3 +30,5 @@ Solution: we're not going to actually consider the runtimes of our programs on a
 Only caring about what happens in this sort of long scale behavior, we will be able to do this without seeing these constants, without having to care about these details. 
 
 This sort of asymptotic, large scale behavior is actually what you care about a lot of the time, because you really want to know: what happens when I run my program on very large inputs? 
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO1.PNG" />
