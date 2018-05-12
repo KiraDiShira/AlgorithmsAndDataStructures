@@ -3,6 +3,7 @@
 # Big-O Notation
 
 - [Computing runtimes](#computing-runtimes)
+- [Asymptotic notation](#asymptotic-notation)
 
 ## Computing runtimes
 
@@ -13,3 +14,5 @@ How long takes a program to work?
  In practice, you don't know a lot of these details, because you're writing a program it's going to be run on somebody else's computer, and you've got no idea what their system architecture looks like on that computer, because you don't know what the computer is.
  
  In fact, there'll be several people running it on different computers with different architectures and different speeds, and it'll be a mess. And you really don't want to compute the runtime separately for every different client. 
+
+## Asymptotic notation
