@@ -41,3 +41,12 @@ This sort of asymptotic, large scale behavior is actually what you care about a 
 `f (n) = O(g(n)) (f is Big-O of g) or f ⪯ g if there exist constants N and c so that for all n ≥ N, f (n) ≤ c · g(n).`
 
  At least for sufficiently large inputs, `f` is bounded above by some constant multiple of `g`. 
+
+Advantages:
+- clarifies growth rate
+- cleans up notation: O(n^2) vs. 3n^2 + 5n + 2.
+- we don't need to know how fast computer is, memory management, system architecture ...
+
+Warnings:
+- Using Big-O loses important information about constant multiples.
+- Big-O is only asymptotic.
