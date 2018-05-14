@@ -60,6 +60,8 @@ Example:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO3.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO4.PNG" />
+
 For huge numbers (that doesn't fit in the integer type) summing up it is not constant, but proportional to the number of digits.
 
 Other notations:
