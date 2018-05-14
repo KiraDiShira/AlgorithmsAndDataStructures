@@ -4,7 +4,7 @@
 
 - [Computing runtimes](#computing-runtimes)
 - [Asymptotic notation](#asymptotic-notation)
-- [Big-O](#bigo)
+- [Big-O](#big-o)
 
 ## Computing runtimes
 
