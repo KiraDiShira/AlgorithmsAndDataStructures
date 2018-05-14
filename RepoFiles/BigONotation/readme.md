@@ -5,6 +5,7 @@
 - [Computing runtimes](#computing-runtimes)
 - [Asymptotic notation](#asymptotic-notation)
 - [Big-O](#big-o)
+- [Using Big-O](#using-big-o)
 
 ## Computing runtimes
 
@@ -50,3 +51,23 @@ Advantages:
 Warnings:
 - Using Big-O loses important information about constant multiples.
 - Big-O is only asymptotic.
+
+## Using Big-O
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO2.PNG" />
+
+Example:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO3.PNG" />
+
+For huge numbers (that doesn't fit in the integer type) summing up it is not constant, but proportional to the number of digits.
+
+Other notations:
+
+For functions f , g : N → R+ we say that:
+
+`f (n) = Ω(g(n)) or f ⪰ g if for some c, f (n) ≥ c · g(n) (f grows no slower than g).`
+
+`f (n) = Θ(g(n)) or f ≍ g if f = O(g) and f = Ω(g) (f grows at the same rate as g).`
+
+`f (n) = o(g(n)) or f ≺ g if f (n)/g(n) → 0 as n → ∞ (f grows slower than g).`
