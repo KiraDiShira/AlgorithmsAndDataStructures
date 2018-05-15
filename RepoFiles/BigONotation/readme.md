@@ -78,4 +78,4 @@ For functions f , g : N → R+ we say that:
 
 The main rules for working with logarithms are the following:
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO5.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO5.jpg" />
