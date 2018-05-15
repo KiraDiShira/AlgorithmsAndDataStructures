@@ -6,6 +6,7 @@
 - [Asymptotic notation](#asymptotic-notation)
 - [Big-O](#big-o)
 - [Using Big-O](#using-big-o)
+- [Logarithms](#logarithms)
 
 ## Computing runtimes
 
