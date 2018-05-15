@@ -73,3 +73,9 @@ For functions f , g : N → R+ we say that:
 `f (n) = Θ(g(n)) or f ≍ g if f = O(g) and f = Ω(g) (f grows at the same rate as g).`
 
 `f (n) = o(g(n)) or f ≺ g if f (n)/g(n) → 0 as n → ∞ (f grows slower than g).`
+
+## Logarithms
+
+The main rules for working with logarithms are the following:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO5.PNG" />
