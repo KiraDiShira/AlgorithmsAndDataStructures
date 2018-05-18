@@ -31,7 +31,7 @@ The second option will give you the optimal number of refills. We will prove it 
 
 ```
 Start at A
-Refill at the farthest reachable gasstation G
+Refill at the farthest reachable gas station G
 Make G the new A
 Get from new A to B with minimum number of refills
 ```
