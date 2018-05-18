@@ -29,4 +29,11 @@ There are different greedy choice, for example:
 
 The second option will give you the optimal number of refills. We will prove it later. 
 
+```
+- Start at A
+- Refill at the farthest reachable gasstation G
+- Make G the new A
+- Get from new A to B with minimum number of refills
+```
+
 A greedy choice is called **safe move** if there is an optimal solution consistent with this first move.
