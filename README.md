@@ -4,7 +4,7 @@ One Paragraph of project description goes here
 
 ## Table of Contents
 - [Big-O Notation](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/BigONotation#big-o-notation)
-- [Greedy algorithms]()
+- [Greedy algorithms](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Greedy#greedy-algorithms)
 - Foundations
   - [Insertion sort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/InsertionSort/InsertionSort.md#insertion-sort)   
   - [Merge sort](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/MergeSort/MergeSort.md#merge-sort)   
