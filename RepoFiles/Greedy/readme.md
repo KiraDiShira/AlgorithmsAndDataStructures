@@ -75,6 +75,8 @@ public class MoneyChanger
 
 ## Maximum Value of the Loot
 
+**Task**. The goal of this code problem is to implement an algorithm for the fractional knapsack problem.
+
  ```c#
  
 public class Item
