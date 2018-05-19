@@ -72,3 +72,55 @@ public class MoneyChanger
 }
 
 ```
+
+## Maximum Value of the Loot
+
+ ```c#
+ 
+public class Item
+{
+    public double Value { get; }
+    public double Weight { get; }
+    public double UnitValue => Value / Weight;
+
+    public Item(double value, double weight)
+    {
+        Value = value;
+        Weight = weight;
+    }
+}
+
+public class FractionalKnapsack
+{
+    public int Capacity { get; }
+
+    public FractionalKnapsack(int capacity)
+    {
+        Capacity = capacity;
+    }
+
+    public IList<Item> Calculate(IList<Item> items)
+    {
+        IList<Item> selectedItems = new List<Item>();
+
+        IList<Item> sortedItems = items.OrderByDescending(x => x.UnitValue).ToList();
+        double availableCapacity = Capacity;
+
+        foreach (Item item in sortedItems)
+        {
+            if (availableCapacity == 0)
+            {
+                return selectedItems;
+            }
+
+            double a = Math.Min(item.Weight, availableCapacity);
+            Item itemToAdd = new Item(a * item.UnitValue, item.Weight - a);
+            selectedItems.Add(itemToAdd);
+            availableCapacity -= a;
+        }
+
+        return selectedItems;
+    }
+}
+
+ ```
