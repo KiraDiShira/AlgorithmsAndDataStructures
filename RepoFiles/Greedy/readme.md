@@ -39,3 +39,36 @@ Get from new A to B with minimum number of refills
 **Subproblem** is a similar problem of smaller size
 
 A greedy choice is called **safe move** if there is an optimal solution consistent with this first move.
+
+## Money change
+
+**Task**. The goal in this problem is to find the minimum number of coins needed to change the input value (an integer) into coins with denominations 1, 5, and 10.
+
+ ```c#
+ 
+public class MoneyChanger
+{
+    IList<int> _coinSizes = new List<int>()
+    {
+        10, 5, 1
+    };
+
+    public IList<int> ChangeMoney(int input)
+    {
+        IList<int> coins = new List<int>();
+
+        int coinToExchange = input;
+        foreach (int coinSize in _coinSizes)
+        {
+            while (coinToExchange >= coinSize)
+            {
+                coins.Add(coinSize);
+                coinToExchange -= coinSize;
+            }
+        }
+
+        return coins;
+    }
+}
+
+```
