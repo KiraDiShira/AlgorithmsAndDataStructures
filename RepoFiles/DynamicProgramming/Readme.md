@@ -2,7 +2,10 @@
 
 # Dynamic programming
 
-Coin change problem.
+- [Coin change problem](#coin-change-problem)
+- [The Alignment Game](#the-alignment-game)
+
+## Coin change problem
 
 **Greedy implementation**:
 
@@ -52,3 +55,6 @@ public int DynamicProgrammingChange(int money, int[] coins)
 }
 
  ```
+
+## The Alignment Game
+
