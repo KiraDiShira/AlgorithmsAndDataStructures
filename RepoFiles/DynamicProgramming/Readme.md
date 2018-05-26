@@ -60,3 +60,12 @@ public int DynamicProgrammingChange(int money, int[] coins)
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp5.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp6.PNG" />
+
+**Sequence alignment**
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp7.PNG" />
+
+**Alignment** of two strings is a two-row matrix: 
+- 1st row: symbols of the 1st string (in order) interspersed by “–”
+- 2nd row: symbols of the 2nd string (in order) interspersed by “–”
