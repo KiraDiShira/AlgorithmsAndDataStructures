@@ -2,6 +2,29 @@
 
 # Dynamic programming
 
+Coin change problem.
+
+**Greedy implementation**:
+
+Greedy choice however uses the fact that, for many currencies, we simply can take the maximum value that still gives us less than then our amount and ignore all other possibilities. However, greedy doesn't work for all currencies.
+
+For example: V = {1, 3, 4} and making change for 6: Greedy gives 4 + 1 + 1 = 3 Dynamic gives 3 + 3 = 2
+
+**Recursive implementation**:
+
+**Dynamic programming implementation**:
+
+Wouldn’t it be nice to know all the
+answers for changing money − coini by
+the time we need to compute an optimal
+way of changing money?
+Instead of the time-consuming calls to
+RecursiveChange(money−coini
+, coins)
+we would simply look up these values!
+
+
+
  ```c#
 
 public int DynamicProgrammingChange(int money, int[] coins)
