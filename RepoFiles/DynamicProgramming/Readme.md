@@ -12,18 +12,19 @@ For example: V = {1, 3, 4} and making change for 6: Greedy gives 4 + 1 + 1 = 3 D
 
 **Recursive implementation**:
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp1.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp2.PNG" />
+
 **Dynamic programming implementation**:
 
-Wouldn’t it be nice to know all the
-answers for changing money − coini by
-the time we need to compute an optimal
-way of changing money?
-Instead of the time-consuming calls to
-RecursiveChange(money−coini
-, coins)
-we would simply look up these values!
+Wouldn’t it be nice to know all the answers for changing money − coini by the time we need to compute an optimal way of changing money?
 
+Instead of the time-consuming calls to RecursiveChange(money−coini, coins) we would simply look up these values!
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp3.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp4.PNG" />
 
  ```c#
 
