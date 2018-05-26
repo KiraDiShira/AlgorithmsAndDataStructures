@@ -58,3 +58,5 @@ public int DynamicProgrammingChange(int money, int[] coins)
 
 ## The Alignment Game
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp5.PNG" />
+
