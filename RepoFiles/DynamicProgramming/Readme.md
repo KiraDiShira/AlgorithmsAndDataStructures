@@ -73,3 +73,25 @@ public int DynamicProgrammingChange(int money, int[] coins)
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp8.PNG" />
 
 Alignment score: premium for every match (+1) and penalty for every mismatch (−𝜇), indel (−𝜎).
+
+Example: 𝜇 = 0 and 𝜎 = 1
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp9.PNG" />
+
+**Alignment Score**: #matches − 𝜇 · #mismatches − 𝜎 · #indels
+
+**Optimal alignment problem**
+
+**Input**: Two strings, mismatch penalty 𝜇, and indel penalty 𝜎.
+**Output**: An alignment of the strings maximizing the score.
+
+We will be particularly interested in one particular score of alignment:  **common subsequence**. In this case, common subsequence is represented by ATGT, and the **longest common subsequence problems** that we will be interested in is the following. Given two strings we want to find the longest common subsequence of these strings. 
+
+Another classical problem in computer science is the **edit distance problem**.
+
+- Input: Two strings.
+- Output: The minimum number of operations (insertions, deletions, and substitutions of symbols) to transform one string into another.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp10.PNG" />
+
+And to see that the edit distance problem is equivalent to the alignment problem let's consider this alignment between editing and distance. And let's compute the total number of symbols in the two strings. 
