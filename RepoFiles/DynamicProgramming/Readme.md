@@ -69,3 +69,7 @@ public int DynamicProgrammingChange(int money, int[] coins)
 **Alignment** of two strings is a two-row matrix: 
 - 1st row: symbols of the 1st string (in order) interspersed by “–”
 - 2nd row: symbols of the 2nd string (in order) interspersed by “–”
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DynamicProgramming/Images/dp8.PNG" />
+
+Alignment score: premium for every match (+1) and penalty for every mismatch (−𝜇), indel (−𝜎).
