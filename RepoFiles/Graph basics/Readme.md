@@ -27,6 +27,133 @@ If a graph has neither, it is **simple**.
 - C adjacent to A,D
 - D adjacent to A, C
 
+```c#
+
+public class Node<T>
+{
+    public T Key { get; }
+
+    public Node(T key)
+    {
+        Key = key;
+    }
+
+    #region Equals
+
+    protected bool Equals(Node<T> other)
+    {
+        return EqualityComparer<T>.Default.Equals(Key, other.Key);
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((Node<T>) obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return EqualityComparer<T>.Default.GetHashCode(Key);
+    }
+
+    public static bool operator ==(Node<T> left, Node<T> right)
+    {
+        return Equals(left, right);
+    }
+
+    public static bool operator !=(Node<T> left, Node<T> right)
+    {
+        return !Equals(left, right);
+    }
+
+    #endregion
+    
+    public override string ToString()
+    {
+        return $"{nameof(Key)}: {Key}";
+    }
+}
+
+public class Edge<T>
+{
+    public Node<T> Node1 { get; }
+    public Node<T> Node2 { get; }
+
+    public Edge(Node<T> node1, Node<T> node2)
+    {
+        Node1 = node1;
+        Node2 = node2;
+    }
+
+    public override string ToString()
+    {
+        return $"{nameof(Node1)}: {Node1}, {nameof(Node2)}: {Node2}";
+    }
+}
+
+public class Graph<T>
+{
+    private readonly IDictionary<Node<T>, IList<Node<T>>> _graph;
+
+    public Graph(IDictionary<Node<T>, IList<Node<T>>> graph)
+    {
+        _graph = graph;
+    }
+
+    public bool IsEdge(Edge<T> edge)
+    {
+        if (!_graph.ContainsKey(edge.Node1))
+        {
+            return false;
+        }
+
+        IEnumerable<Node<T>> connectedArcs = _graph[edge.Node1];
+
+        foreach (Node<T> connectedArc in connectedArcs)
+        {
+            if (connectedArc == edge.Node2)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public IList<Edge<T>> GetEdges()
+    {
+        IList<Edge<T>> edges = new List<Edge<T>>();
+
+        foreach (KeyValuePair<Node<T>, IList<Node<T>>> nodes in _graph)
+        {
+            Node<T> node1 = nodes.Key;
+
+            foreach (Node<T> node in nodes.Value)
+            {
+                Node<T> node2 = node;
+                Edge<T> edge = new Edge<T>(node1, node2);
+                edges.Add(edge);
+            }
+        }
+
+        return edges;
+    }
+
+    public IEnumerable<Node<T>> GetNeighbours(Node<T> node)
+    {
+        if (!_graph.ContainsKey(node))
+        {
+            return new List<Node<T>>();
+        }
+
+        return _graph[node];
+    }
+}
+
+```
+
 **Running times**
 
 deg: grado di un vertice, numero di archi incidenti
