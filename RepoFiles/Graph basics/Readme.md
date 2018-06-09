@@ -1,4 +1,4 @@
-- [Index]()
+- [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures#table-of-contents)
 
 # Graph Basics
 
