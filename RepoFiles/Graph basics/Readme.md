@@ -22,10 +22,10 @@ If a graph has neither, it is **simple**.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb4.PNG" />
 
-A adjacent to B, C,D
-B adjacent to A
-C adjacent to A,D
-D adjacent to A, C
+- A adjacent to B, C,D
+- B adjacent to A
+- C adjacent to A,D
+- D adjacent to A, C
 
 **Running times**
 
