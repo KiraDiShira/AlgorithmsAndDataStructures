@@ -208,3 +208,6 @@ for v ∈ V :
     if not visited(v):
         Explore(v)
 ```
+
+- Total number of neighbors over all vertices is `O(|E|)`.
+- Total runtime `O(|V | + |E|)`.
