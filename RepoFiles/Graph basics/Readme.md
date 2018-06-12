@@ -182,3 +182,29 @@ In **sparse graphs**, |E| ≈ |V |.
 
 Each vertex has only a few edges.
 
+## Exploring Graphs
+
+**Reachability**
+
+- `Input`: Graph `G` and vertex `s`
+- `Output`: The collection of vertices v of G so that there is a path from `s` to `v`.
+
+We will explore new edges in **Depth First** order. We will follow a long path forward, only backtracking when we hit a dead end.
+
+**Explore(v)**
+```
+visited(v) ← true
+for (v, w) ∈ E:
+    if not visited(w):
+        Explore(w)
+```
+
+Sometimes you want to find all vertices of G, not just those reachable from v.
+
+**DFS(G)**
+```
+for all v ∈ V : mark v unvisited
+for v ∈ V :
+    if not visited(v):
+        Explore(v)
+```
