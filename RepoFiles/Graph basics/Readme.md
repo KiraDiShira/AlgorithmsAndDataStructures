@@ -211,3 +211,39 @@ for v ∈ V :
 
 - Total number of neighbors over all vertices is `O(|E|)`.
 - Total runtime `O(|V | + |E|)`.
+
+## Connected Components
+
+The vertices of a graph `G` can be partitioned into **Connected Components** so that `v` is reachable from `w` if and only if they are in the same connected component.
+
+How many connected components does the graph below have? 4.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb7.PNG" />
+
+**Connected Components Problem**
+
+`Input: Graph G
+Output: The connected components of G`
+
+**Idea**
+
+Explore(v) finds the connected component of v. Just need to repeat to find other components. Modify DFS to do this. Modify goal to label connected components.
+
+**Explore(v)**
+`visited(v) ← true
+CCnum(v) ← cc
+for (v, w) ∈ E:
+    if not visited(w):
+        Explore(w)`
+        
+**DFS(G)**
+`for all v ∈ V mark v unvisited
+cc ← 1
+for v ∈ V :
+    if not visited(v):
+        Explore(v)
+        cc ← cc + 1`
+        
+Runtime still `O(|V | + |E|)`.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb8.PNG" />
