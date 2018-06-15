@@ -251,3 +251,43 @@ for v ∈ V :
 Runtime still `O(|V | + |E|)`.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb8.PNG" />
+
+## Previsit and Postvisit Orders
+
+We're going to augment `Explore` functions in order to store additional information. 
+
+**Explore(v)**
+```
+visited(v) ← true
+previsit(v)
+for (v, w) ∈ E:
+    if not visited(w):
+        explore(w)
+postvisit(v)
+```
+
+Initialize clock to 1.
+
+**previsit(v)**
+```
+pre(v) ← clock
+clock ← clock + 1
+```
+**postvisit(v)**
+```
+post(v) ← clock
+clock ← clock + 1
+```
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb9.PNG" />
+
+Previsit and Postvisit numbers tell us about the execution of DFS.
+
+**Lemma** 
+For any vertices u, v the intervals [pre(u), post(u)] and [pre(v), post(v)] are either nested or disjoint.
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb10.PNG" />
+
+Which of the following tables is not a valid set of pre- and post- orders?
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb11.PNG" />
