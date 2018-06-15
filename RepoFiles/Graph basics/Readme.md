@@ -239,12 +239,14 @@ for (v, w) ∈ E:
 ```
         
 **DFS(G)**
-`for all v ∈ V mark v unvisited
+```
+for all v ∈ V mark v unvisited
 cc ← 1
 for v ∈ V :
     if not visited(v):
         Explore(v)
-        cc ← cc + 1`
+        cc ← cc + 1
+```
         
 Runtime still `O(|V | + |E|)`.
 
