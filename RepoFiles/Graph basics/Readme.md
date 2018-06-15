@@ -230,11 +230,13 @@ Output: The connected components of G`
 Explore(v) finds the connected component of v. Just need to repeat to find other components. Modify DFS to do this. Modify goal to label connected components.
 
 **Explore(v)**
-```visited(v) ← true
+```
+visited(v) ← true
 CCnum(v) ← cc
 for (v, w) ∈ E:
     if not visited(w):
-        Explore(w)```
+        Explore(w)
+```
         
 **DFS(G)**
 `for all v ∈ V mark v unvisited
