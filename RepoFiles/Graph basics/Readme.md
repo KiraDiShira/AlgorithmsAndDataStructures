@@ -329,3 +329,49 @@ public int ExploreExit(Node<T> currentNode, Node<T> targetNode)
     return 0;
 }
 ```
+
+## Exercise 2.find  the  number  of  exits  needed  for  a  maze (number of connected components)
+
+```c#
+public void Explore(Node<T> currentNode, int connectedComponent)
+{
+    Stack<Node<T>> stack = new Stack<Node<T>>();
+    stack.Push(currentNode);
+    currentNode.IsVisited = true;
+    currentNode.ConnectedComponent = connectedComponent;
+
+    while (stack.Count > 0)
+    {
+        currentNode = stack.Pop();
+
+        IEnumerable<Node<T>> neighbours = GetNeighbours(currentNode);
+
+        foreach (Node<T> neighbour in neighbours)
+        {
+            if (!neighbour.IsVisited)
+            {
+                stack.Push(neighbour);
+                neighbour.IsVisited = true;
+                currentNode.ConnectedComponent = connectedComponent;
+            }
+        }
+    }
+}
+
+public int GetConnectedComponentCount()
+{
+    int connectedComponent = 0;
+    foreach (KeyValuePair<Node<T>, IList<Node<T>>> keyValuePair in _graph)
+    {
+        Node<T> vertex = keyValuePair.Key;
+        if (vertex.IsVisited)
+        {
+            continue;
+        }
+        connectedComponent++;
+        Explore(vertex, connectedComponent);
+    }
+
+    return connectedComponent;
+}
+```
