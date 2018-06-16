@@ -291,3 +291,41 @@ For any vertices u, v the intervals [pre(u), post(u)] and [pre(v), post(v)] are 
 Which of the following tables is not a valid set of pre- and post- orders?
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Images/gb11.PNG" />
+
+## Exercise 1 - Find  an  exit  from  a  maze
+
+Output  1  if  there  is  a  path  between u and v and  0  otherwise.
+
+```c#
+public int ExploreExit(Node<T> currentNode, Node<T> targetNode)
+{
+    Stack<Node<T>> stack = new Stack<Node<T>>();
+    stack.Push(currentNode);
+    currentNode.IsVisited = true;
+    if (targetNode == currentNode)
+    {
+        return 1;
+    }
+
+    while (stack.Count > 0)
+    {
+        currentNode = stack.Pop();
+
+        IEnumerable<Node<T>> neighbours = GetNeighbours(currentNode);
+
+        foreach (Node<T> neighbour in neighbours)
+        {
+            if (!neighbour.IsVisited)
+            {
+                stack.Push(neighbour);
+                neighbour.IsVisited = true;
+                if (targetNode == currentNode)
+                {
+                    return 1;
+                }
+            }
+        }
+    }
+    return 0;
+}
+```
