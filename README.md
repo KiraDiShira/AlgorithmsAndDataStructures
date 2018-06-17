@@ -1,8 +1,5 @@
-# Project Title
+# Table of Contents
 
-One Paragraph of project description goes here
-
-## Table of Contents
 - [Big-O Notation](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/BigONotation#big-o-notation)
 - [Greedy algorithms](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/Greedy#greedy-algorithms)
 - [Dynamic programming](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/DynamicProgramming#dynamic-programming)
@@ -36,6 +33,7 @@ One Paragraph of project description goes here
   - [AVL Trees](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/readme.md#avl-trees)
 - Graphs
   - [Decomposition of Graphs 1](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Readme.md#graph-basics)
+  - [Decomposition of Graphs 2](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Readme.md#graph-basics)
   
 ## Acknowledgments
 
