@@ -1,4 +1,4 @@
-- [Index]()
+- [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/README.md#table-of-contents)
 
 # Graph Decomposition 2
 
