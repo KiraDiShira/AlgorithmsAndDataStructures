@@ -1,6 +1,6 @@
 - [Index](https://github.com/KiraDiShira/AlgorithmsAndDataStructures#table-of-contents)
 
-# Graph Basics
+# Decomposition of Graphs 1
 
 An (undirected) **Graph** is a collection `V` of vertices, and a collection `E` of edges each of which connects a pair of vertices.
 
