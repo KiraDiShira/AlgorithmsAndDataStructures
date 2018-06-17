@@ -33,7 +33,7 @@
   - [AVL Trees](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/AVLTrees/readme.md#avl-trees)
 - Graphs
   - [Decomposition of Graphs 1](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Readme.md#graph-basics)
-  - [Decomposition of Graphs 2](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Graph%20basics/Readme.md#graph-basics)
+  - [Decomposition of Graphs 2](https://github.com/KiraDiShira/AlgorithmsAndDataStructures/tree/master/RepoFiles/GraphDecomposition2#graph-decomposition-2)
   
 ## Acknowledgments
 
