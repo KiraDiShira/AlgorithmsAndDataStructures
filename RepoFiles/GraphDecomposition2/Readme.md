@@ -85,3 +85,4 @@ Follow path as far as possible v1 → v2 → . . . → vn. Eventually either:
 DFS(G)
 sort vertices by reverse post-order
 ```
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_8.PNG" />
