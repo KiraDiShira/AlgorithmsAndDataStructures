@@ -2,6 +2,9 @@
 
 # Graph Decomposition 2
 
+- [Directed Graphs](#directed-graphs)
+- [Topological Sort](#topological-sort)
+
 ## Directed Graphs
 
 A **directed graph** is a graph where each edge has a start vertex and an end vertex.
@@ -20,9 +23,9 @@ Can still run DFS in directed graphs.
 - explore(v) finds all vertices reachable from v.
 - Can still compute pre- and postorderings
 
-## Event Ordering
+## Event Ordering#
 
-Linear Ordering
+**Linear Ordering**
 
 We would like to order tasks to respect dependencies as below.
 
@@ -32,7 +35,7 @@ Is it always possible to do this? **NO**
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_2.PNG" />
 
-A cycle in a graph G is a sequence of vertices v1, v2, . . . , vn so that (v1, v2),(v2, v3), . . . ,(vn−1, vn),(vn, v1) are all edges.
+A **cycle** in a graph G is a sequence of vertices v1, v2, . . . , vn so that (v1, v2),(v2, v3), . . . ,(vn−1, vn),(vn, v1) are all edges.
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_3.PNG" />
 
@@ -45,3 +48,40 @@ Theorem. Any DAG can be linearly ordered.
 Which of the following graphs is a DAG?
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_4.PNG" />
+
+## Topological Sort
+
+A **source** is a vertex with no incoming edges. A **sink** is a vertex with no outgoing edges.
+
+How many sinks does the graph below have?
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_5.PNG" />
+
+We wanted to be able to linearly order the vertices of a graph.
+
+Idea:
+
+- Find sink.
+- Put at end of order.
+- Remove from graph.
+- Repeat.
+
+Example:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_6.PNG" />
+
+Example ordered:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_7.PNG" />
+
+Question: How do we know that there is a sink?
+
+Follow path as far as possible v1 → v2 → . . . → vn. Eventually either:
+- Cannot extend (found sink).
+- Repeat a vertex (have a cycle)
+
+**TopologicalSort(G)**
+```
+DFS(G)
+sort vertices by reverse post-order
+```
