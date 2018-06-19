@@ -4,6 +4,7 @@
 
 - [Directed Graphs](#directed-graphs)
 - [Topological Sort](#topological-sort)
+- [Strongly Connected Components](#strongly-connected-components)
 
 ## Directed Graphs
 
@@ -116,3 +117,27 @@ previsit: E
 postvisit: E
 postvisit: A
 ```
+
+## Strongly Connected Components
+
+A graph is said to be **strongly connected** or **diconnected** if every vertex is reachable from every other vertex. The **strongly connected components or diconnected components** of an arbitrary directed graph form a partition into subgraphs that are themselves strongly connected. 
+
+Example:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_9.PNG" />
+
+Another example: What is the SCC of A?
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_10.PNG" />
+
+### Metagraph
+
+We can also draw a **metagraph** showing how the strongly connected components connect to one another. The metagraph of a graph G is always a DAG.
+
+From:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_9.PNG" />
+
+To:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_11.PNG" />
