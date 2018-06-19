@@ -23,7 +23,7 @@ Can still run DFS in directed graphs.
 - explore(v) finds all vertices reachable from v.
 - Can still compute pre- and postorderings
 
-## Event Ordering#
+## Event Ordering
 
 **Linear Ordering**
 
