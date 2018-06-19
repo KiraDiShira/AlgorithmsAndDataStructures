@@ -86,3 +86,33 @@ DFS(G)
 sort vertices by reverse post-order
 ```
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/GraphDecomposition2/Images/gd2_8.PNG" />
+
+```c#
+public void Explore(Node<T> node)
+{
+    node.IsVisited = true;
+    Console.WriteLine($"previsit: {node.Key}");
+    IEnumerable<Node<T>> neighbours = GetNeighbours(node);
+    foreach (Node<T> neighbour in neighbours)
+    {
+        if (!neighbour.IsVisited)
+        {
+            Explore(neighbour);
+            
+        }
+    }
+    Console.WriteLine($"postvisit: {node.Key}");
+}
+```
+```
+previsit: A
+previsit: B
+previsit: C
+previsit: D
+postvisit: D
+postvisit: C
+postvisit: B
+previsit: E
+postvisit: E
+postvisit: A
+```
