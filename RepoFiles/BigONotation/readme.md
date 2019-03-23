@@ -79,6 +79,8 @@ For functions f , g : N → R+ we say that:
 
 `f (n) = o(g(n)) or f ≺ g if f (n)/g(n) → 0 as n → ∞ (f grows slower than g).`
 
+https://www.quora.com/What-is-the-difference-between-big-O-notation-and-little-o-notation-in-asymptotic-notations
+
 ## Logarithms
 
 The main rules for working with logarithms are the following:
