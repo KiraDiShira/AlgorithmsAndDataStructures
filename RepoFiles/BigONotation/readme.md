@@ -20,6 +20,10 @@ How long takes a program to work?
 
 ## Asymptotic notation
 
+Computing runtimes is hard:
+- depends on fine details of program
+- depends on details of computer
+
 We need something that's maybe a little bit less precise but much easier to work with.
 
 Basic idea: there are lots of factors that have an effect on the final runtime but, most of them will only change the runtimes by a constant. If you're running on a computer that's a hundred times faster, it will take one hundreth of the time, a constant multiple. If your system architecture has multiplications that take three times as long as additions, then if your program is heavy on multiplications instead of additions, it might take three times as long, but it's only a factor of three. If your memory hierarchy is arranged in a different way, you might have to do disk lookups instead of RAM lookups. And those will be a lot slower, but only by a constant multiple. 
