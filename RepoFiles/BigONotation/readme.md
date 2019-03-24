@@ -49,6 +49,8 @@ Big-O notation is an asymptotic notation.
 `f (n) = O(g(n)) (f is Big-O of g) or f ⪯ g if there exist constants N and c so that for all n ≥ N, f (n) ≤ c · g(n).`
 
  At least for sufficiently large inputs, `f` is bounded above by some constant multiple of `g`. 
+ 
+ `grows no faster than g(x)`
 
 Advantages:
 - clarifies growth rate
@@ -81,7 +83,10 @@ For functions f , g : N → R+ we say that:
 
 `f (n) = o(g(n)) or f ≺ g if f (n)/g(n) → 0 as n → ∞ (f grows slower than g).`
 
-https://www.quora.com/What-is-the-difference-between-big-O-notation-and-little-o-notation-in-asymptotic-notations
+We use o-notation to denote an upper bound that is not asymptotically tight. 
+
+The definitions of O-notation and o-notation are similar. The main difference
+is that in f (n) = O(g(n)), the bound 0 ≤ f (n) ≤ c · g(n) holds for some constant c > 0, but in f (n) = o(g(n)), the bound 0 ≤ f (n) < c · g(n) holds for all constants c > 0.
 
 ## Logarithms
 
