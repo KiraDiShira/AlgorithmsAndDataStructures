@@ -38,6 +38,8 @@ Only caring about what happens in this sort of long scale behavior, we will be a
 
 This sort of asymptotic, large scale behavior is actually what you care about a lot of the time, because you really want to know: what happens when I run my program on very large inputs? 
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO1.PNG" />
+
 ## Big-O
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigONotaions.PNG" />
@@ -47,8 +49,6 @@ Big-O notation is an asymptotic notation.
 `f (n) = O(g(n)) (f is Big-O of g) or f ⪯ g if there exist constants N and c so that for all n ≥ N, f (n) ≤ c · g(n).`
 
  At least for sufficiently large inputs, `f` is bounded above by some constant multiple of `g`. 
-
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/BigONotation/Images/BigO1.PNG" />
 
 Advantages:
 - clarifies growth rate
