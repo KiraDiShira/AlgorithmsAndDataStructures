@@ -37,7 +37,7 @@
   - scan the array/list 
   - running time O(n)
   
-**Sorted array*
+**Sorted array**
  
 - Extract Max()
   - extract the last element: O(1)
