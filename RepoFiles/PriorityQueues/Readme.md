@@ -26,6 +26,17 @@
 * `Huffman’s algorithm`: constructing an optimum prefix-free encoding of a string
 * `Heap sort`: sorting a given sequence
 
+## Naive implementation
+
+Unsorted array/list
+
+- Insert(e):
+  - add e to the end 
+  - running time O(1)
+- Extract Max()
+  - scan the array/list 
+  - running time O(n)
+
 ## Implementation
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/PriorityQueues/Images/pq1.PNG" />
