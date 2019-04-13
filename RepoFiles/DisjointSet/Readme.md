@@ -145,6 +145,10 @@ Follows from the following lemma.
 
 This will imply the first lemma as follows. I assume that some tree has height strictly greater than binany logarithm of n. Using the second lemma it will be possible to show then that this tree contains more than n nodes, right? Which would lead to a contradiction with the fact that we only have n objects in our data structure. 
 
+Ad esempio prendo `k = log2 (n + 1)` che è un numero più grande di `k = log2 (n)`.
+
+Per il secondo lemma avrò un numero di nodi pari a `2^k = 2^(log2 (n + 1)) = n + 1 > n` che è una contraddizione.
+
 Proof on 2nd lemma:
 
 Induction on k.
