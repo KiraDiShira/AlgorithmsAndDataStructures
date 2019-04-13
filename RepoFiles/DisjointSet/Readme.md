@@ -248,6 +248,18 @@ public class TreeDisjointSet
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds18.PNG" />
 
+Esempio:
+
+```
+log* 16 = ?
+
+log2 16 = 4, 4 <= 1? no, quindi itero
+log2 4 = 2, 2 <= 1? no, quindi itero
+log2 2 = 1 <= 1? si, mi fermo
+
+quante volte ho chiamato la funzione log2 x? 3 quindi il log* 16 = 3
+```
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds19.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds20.PNG" />
