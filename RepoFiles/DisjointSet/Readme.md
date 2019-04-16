@@ -268,7 +268,9 @@ quante volte ho chiamato la funzione log2 x? 3 quindi il log* 16 = 3
 
 ## Analysis
 
-Proprietà: There are at most n/2^k nodes of rank k
+`Proprietà: Height <= Rank`
+
+`Proprietà: There are at most n/2^k nodes of rank k`
 
 Problema: Quanti sono i nodi rank k?
 
