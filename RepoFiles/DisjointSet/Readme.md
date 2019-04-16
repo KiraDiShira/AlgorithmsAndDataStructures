@@ -282,9 +282,12 @@ Dimostrazione: ogni albero con root di rank k ha almeno 2^k nodi, quindi:
 
 Quanti sono i nodi di rank k?
 
-y * (2^k + epsilon) < n
+y * (2^k + epsilon) <= n
 
-y < n / (2^k + epsilon)
+- < n perchè al massimo il numero di nodi rank k può essere uguale al numero di nodi.
+- 2^k è il numero minimo di nodi che ha un albero con root di rank k, quindi per sapere il numero totale di nodi ci aggiungo una quantita variabile a piacere
+
+y <= n / (2^k + epsilon)
 
 Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte destra è
 
@@ -292,5 +295,5 @@ Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte d
  
  quindi 
  
- y < n / 2^k
+ y_maxValue = n / 2^k
 
