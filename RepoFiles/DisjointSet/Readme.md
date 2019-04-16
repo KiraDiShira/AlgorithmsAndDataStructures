@@ -301,3 +301,4 @@ Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte d
  
  y_maxValue = n / 2^k
 
+`Proprietà: For any node i, rank[i] < rank[parent(i)]`
