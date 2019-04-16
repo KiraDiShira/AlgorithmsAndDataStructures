@@ -306,3 +306,9 @@ Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte d
 `Proprietà: Once an internal node, always an internal node. An internal node can't become root`
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana2.PNG" />
+
+Per `m` si intende il numero di chiamate alla `Find`.
+
+Il primo membro dell'azione è `O(m)` perchè il numero di chiamate alla Find sarà uguale al numero di edge che vanno verso il parent che sono proprio m nel caso peggiore: immagina un albero con solo root o con root + child di primo livello.
+
+
