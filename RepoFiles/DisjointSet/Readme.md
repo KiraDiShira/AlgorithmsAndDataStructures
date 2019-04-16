@@ -265,3 +265,32 @@ quante volte ho chiamato la funzione log2 x? 3 quindi il log* 16 = 3
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds20.PNG" />
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds21.PNG" />
+
+## Analysis
+
+Proprietà: There are at most n/2^k nodes of rank k
+
+Problema: Quanti sono i nodi rank k?
+
+Dimostrazione: ogni albero con root di rank k ha almeno 2^k nodi, quindi:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana1.PNG" />
+
+- y = nodi di rank k
+- epsilon = numero di nodi in più in un albero
+- n = numero totale di nodi
+
+Quanti sono i nodi di rank k?
+
+y * (2^k + epsilon) < n
+
+y < n / (2^k + epsilon)
+
+Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte destra è
+
+ n / 2^k
+ 
+ quindi 
+ 
+ y < n / 2^k
+
