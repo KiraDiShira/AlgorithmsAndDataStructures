@@ -304,3 +304,5 @@ Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte d
 `Proprietà: For any node i, rank[i] < rank[parent(i)]`
 
 `Proprietà: Once an internal node, always an internal node. An internal node can't become root`
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana2.PNG" />
