@@ -115,7 +115,7 @@ A shorter one, since we would like to keep the trees shallow
 ## Union by Rank
 
 * When merging two trees we hang a shorter one under the root of a taller one
-* To quickly find a height of a tree, we will keep the height of each subtree in an array rank[1 . . . n]: rank[i] is the
+* To quickly find a height of a tree, we will keep the height of each subtree in an array rank[1 . . . n]: rank[i] is the height of the subtree whose root is `i`
 * Hanging a shorter tree under a taller one is called a union by rank heuristic
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ds10.PNG" />
