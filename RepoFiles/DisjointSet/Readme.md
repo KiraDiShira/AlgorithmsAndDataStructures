@@ -270,6 +270,8 @@ quante volte ho chiamato la funzione log2 x? 3 quindi il log* 16 = 3
 
 Our goal is to show that if we use both path compression and union by rank heuristics then the average running time of a single operation is upper bounded by O(log* (n)).
 
+Before going into details of the proof, let's realize some properties:
+
 `Proprietà: Height <= Rank`
 
 `Proprietà: ogni albero con root di rank k ha almeno 2^k nodi`
