@@ -274,6 +274,10 @@ Before going into details of the proof, let's realize some properties:
 
 `Proprietà: Height <= Rank`
 
+In questo esempio, il rank è 2 e l'altezza passa da 2 a 1:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana0.PNG" />
+
 `Proprietà: ogni albero con root di rank k ha almeno 2^k nodi`
 
 `Proprietà: There are at most n/2^k nodes of rank k`
