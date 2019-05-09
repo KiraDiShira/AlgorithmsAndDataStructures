@@ -329,3 +329,4 @@ Per il secondo membro: il rank della root (massimo rank di un albero) è al mass
 
 `O(m log* n)`
 
+In questo esempio, `log* (n) = log* (29) = 4`, quindi ci sono al massimo 4 valori differenti di log*. 
