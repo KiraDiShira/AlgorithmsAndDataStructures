@@ -321,7 +321,8 @@ Each Find operation traverses some path from a node to find the root of the corr
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana2.PNG" />
 
-Per `m` si intende il numero di chiamate alla `Find`.
+* Per `m` si intende il numero di chiamate alla `Find` (numero totale di operazioni).
+* Per `n` si intende il numero di `makeSet`
 
 Il primo membro dell'azione è `O(m)` perchè il numero di chiamate alla Find sarà uguale al numero di edge che vanno verso il parent che sono proprio m nel caso peggiore: immagina un albero con solo root o con root + child di primo livello.
 
