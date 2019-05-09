@@ -313,6 +313,10 @@ Se epsilon cresce la parte destra diminuisce, quindi il valore max della parte d
 
 `Proprietà: Once an internal node, always an internal node. An internal node can't become root`
 
+We now start to estimate the running time of `m` operations. Note that the union operation is two calls to Find operation and also to some constant operations.
+
+So for this reason when estimating the total running time we will just assume that we have `m` calls to find operation.
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana2.PNG" />
 
 Per `m` si intende il numero di chiamate alla `Find`.
