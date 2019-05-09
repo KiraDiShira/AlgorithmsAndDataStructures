@@ -331,3 +331,10 @@ Per il secondo membro: il rank della root (massimo rank di un albero) è al mass
 `O(m log* n)`
 
 In questo esempio, `log* (n) = log* (29) = 4`, quindi ci sono al massimo 4 valori differenti di log*. 
+
+Per il terzo membro:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/terz.PNG" />
+
+1) l'abbiamo dimostrato prima
+2) Quando si va verso l'alto il rank aumenta sempre (proprietà precedente)
