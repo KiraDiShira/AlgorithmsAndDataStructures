@@ -317,6 +317,8 @@ We now start to estimate the running time of `m` operations. Note that the union
 
 So for this reason when estimating the total running time we will just assume that we have `m` calls to find operation.
 
+Each Find operation traverses some path from a node to find the root of the corresponding tree. So we traverse some number of edges. So the total run in time of all the defind operations, of all the calls to the Find operation is just the total number of edges traversed. 
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/DisjointSet/Images/ana2.PNG" />
 
 Per `m` si intende il numero di chiamate alla `Find`.
