@@ -125,6 +125,10 @@ Hash table examples:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h19.PNG" />
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/preh.PNG" />
+
+So we want both m being relatively small and c. How can we do that? Well, we can do that based on a clever selection of a hash function, and we will discuss this topic in the next lessons.
+
 ## Hash functions
 
 You want to design a data structure to store your contacts: names of people along with their phone numbers. The data structure should
