@@ -159,6 +159,8 @@ Whis this implementation:
 
 **A better schema is chaining.**
 
+Il numero di telefono lo trasformiamo con una hash function e otteniamo un numero (da 2232323 a 1) e cosi via...
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h21.PNG" />
 
 Parameters:
