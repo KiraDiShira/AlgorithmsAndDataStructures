@@ -306,7 +306,7 @@ In the general case:
 
 If we take some `p < 10^L`, there will exist two different integer numbers between 0 and 10^L- 1, which differ by exactly p. And then, when we compute the value of some hash function on both those numbers and we take linear transformation of those keys, modulo b, the value of those transformations will be the same. And then when we take, again, module m, the value again will be the same. And that means that for any hash function from our family, the value of its function on these two keys will be the same. So there will be a collision for any hash function from the family, but that contradicts the definition of universal family. Because for a universal family and for two fixed different keys, no more than 1 over m part of all hash functions can have collision for these two keys. And in our case, all hash functions have a collision for these two keys, so this is definitely not a universal family. So we must take p more than 10^L, and in fact, that is sufficient
 
-### da inserirre
+### da inserirre https://www.cs.cornell.edu/courses/cs312/2008sp/lectures/lec20.html
 
 Resizable hash tables and amortized analysis
 
