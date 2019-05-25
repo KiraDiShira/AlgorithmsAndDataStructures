@@ -351,6 +351,8 @@ Affinche la parte sinistra mod p sia uguale a 0 o `a mod p`  deve essere uguale 
 
 `a mod p` non può essere mai uguale a 0 perchè il dominio di a è maggiore di 0 (se fosse a = 0 --> a mod p = 0) e minore di p (un numero mod altro numero maggiore è uguale al primo numero. il mod diventa uguale a 0 se i numeri sono uguali)
 
+`(x - y) mod p` non può essere mai uguale a 0 sia perchè x e y sono minori di p che perchè (x - y) = 0 solo quando x = y che è una contraddizione 
+
 
 
 
