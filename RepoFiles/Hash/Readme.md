@@ -323,7 +323,36 @@ In fact, if the load factor becomes too low, it's a good idea to resize the hash
 
 ### Proof2
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/proofMod1.PNG" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/proofMod1.png" />
+
+We will prove this lemma by contraddiction:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/proofMod2.png" />
+
+This is the congruence relation:
+
+```
+a ≡ b mod n
+```
+
+The congruence relation may be rewritten as
+
+```
+a = kn + b
+```
+
+What the statement `a ≡ b mod n` asserts is that `a` and `b` have the same remainder when divided by `n`. 
+
+Se r = s implica una relazione di congruenza che può essere riscritta sottraendo la parte destra alla sinistra (a destra rimane 0).
+
+0 mod p è sempre 0.
+
+Affinche la parte sinistra mod p sia uguale a 0 o `a mod p`  deve essere uguale a 0 oppure `(x - y) mod p` deve essere uguale a 0.
+
+`a mod p` non può essere mai uguale a 0 perchè il dominio di a è maggiore di 0 (se fosse a = 0 --> a mod p = 0) e minore di p (un numero mod altro numero maggiore è uguale al primo numero. il mod diventa uguale a 0 se i numeri sono uguali)
+
+
+
 
 ### Hashing Strings
 
