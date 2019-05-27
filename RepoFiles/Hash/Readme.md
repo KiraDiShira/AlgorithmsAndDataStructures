@@ -327,6 +327,10 @@ Vogliamo dimostrare il seguente teorema:
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/call1.PNG" />
 
+`U` è il dominio di `x`
+
+To do that we need a Lemma:
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/proofMod1.png" />
 
 We will prove this lemma by contraddiction:
@@ -349,13 +353,13 @@ What the statement `a ≡ b mod n` asserts is that `a` and `b` have the same rem
 
 Se r = s implica una relazione di congruenza che può essere riscritta sottraendo la parte destra alla sinistra (a destra rimane 0).
 
-0 mod p è sempre 0.
+L'espressione vuol dire che `p` divide `a(x - y)`. Divide vuol dire che a(x - y) è divisibile per p, cioè il resto della loro divisione è 0.
 
-Affinche la parte sinistra mod p sia uguale a 0 o `a mod p`  deve essere uguale a 0 oppure `(x - y) mod p` deve essere uguale a 0.
+Ricordiamo che p è un numero primo e quindi o divide `a` oppure divide `x-y`
 
-`a mod p` non può essere mai uguale a 0 perchè il dominio di a è maggiore di 0 (se fosse a = 0 --> a mod p = 0) e minore di p (un numero mod altro numero maggiore è uguale al primo numero. il mod diventa uguale a 0 se i numeri sono uguali)
+`a` non può dividere `p` perchè il dominio di a è maggiore di 0 (se fosse a = 0 --> a mod p = 0) e minore di p (un numero mod altro numero maggiore è uguale al primo numero. il mod diventa uguale a 0 se i numeri sono uguali)
 
-`(x - y) mod p` non può essere mai uguale a 0 sia perchè x e y sono minori di p che perchè (x - y) = 0 solo quando x = y che è una contraddizione 
+`(x - y)` non può dividere `p` sia perchè x e y sono minori di p, quindi la loro differenza in valore assoluto è minore di p, che perchè (x - y) = 0 solo quando x = y che è una contraddizione 
 
 
 
