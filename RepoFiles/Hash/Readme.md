@@ -329,6 +329,12 @@ In fact, if the load factor becomes too low, it's a good idea to resize the hash
 
 What it means is that on average the length of the chain containing any key will be just `1 + alpha`, which is not too long. Of course, in the worst case, the chain containing some key can be very, very long such as `n` keys, and all of them are in the same chain. But, on average, if it's like the random hash function from the universal family, the chain length will be at most 1 + alpha, where alpha is the load factor.
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll12.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll13.PNG" />
+
+
+
 ### Universal family for integers
 
 Vogliamo dimostrare il seguente teorema:
