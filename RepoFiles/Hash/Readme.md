@@ -4,6 +4,7 @@
 
 - [Introduction, Direct Addressing and Chaining](#introduction-direct-addressing-and-chaining)
 - [Hash functions](#hash-functions)
+- [Chain length for universal family](#chain-length-for-universal-family)
 - [Universal family for integers](#universal-family-for-integers)
 - [Searching Patterns](#searching-patterns)
 
@@ -320,7 +321,13 @@ Notice that it was crucial that the array size grows geometrically (doubling). I
 Any fixed threshold load factor is equally good from the standpoint of asymptotic run time. If you are concerned about performance, it is a good idea to measure the value of αmax that maximizes performance. Typically it will be between 1 and 3. One might think that a=1 is the right place to rehash, but the best performance is often seen (for buckets implemented as linked lists) when load factors are in the 1–2 range When a<1, the bucket array contains many empty entries, resulting in suboptimal performance from the computer's memory system. There are many other tricks that are important for getting the very best performance out of hash tables. For best performance, it is important to use measured performance to tune the hash function and resizing threshold.
 In fact, if the load factor becomes too low, it's a good idea to resize the hash table to make it smaller. Usually this is done when the load factor drops below αmax/4. At this point the hash table is halved in size and all of the elements are rehashed. It is important to shrink only once the hash table gets sufficiently small. For example, if the hash table grows by doubling, it should be shrunk only if its load factor is half of the point that would cause doubling. Otherwise, time could be wasted growing and shrinking the table, hurting asymptotic performance.
 
-### Proof1
+### Chain length for universal family
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll10.PNG" />
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll11.PNG" />
+
+What it means is that on average the length of the chain containing any key will be just `1 + alpha`, which is not too long. Of course, in the worst case, the chain containing some key can be very, very long such as `n` keys, and all of them are in the same chain. But, on average, if it's like the random hash function from the universal family, the chain length will be at most 1 + alpha, where alpha is the load factor.
 
 ### Universal family for integers
 
