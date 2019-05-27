@@ -6,6 +6,7 @@
 - [Hash functions](#hash-functions)
 - [Chain length for universal family](#chain-length-for-universal-family)
 - [Universal family for integers](#universal-family-for-integers)
+- [Hashing strings](#hashing-strings)
 - [Searching Patterns](#searching-patterns)
 
 ## Introduction, Direct Addressing and Chaining
