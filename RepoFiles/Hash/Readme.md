@@ -383,6 +383,10 @@ Ora possiamo dimostrare il teorema:
 
 Da dim precedenti sappiamo che `r` è diverso da `s`, ma la collisione ci può essere dopo le operazioni di `mod m` perchè `m` in molti casi è minore di `p`.
 
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll8.PNG" />
+
+In total there are  p/m, different integers between 0 and p - 1 which have the same remainder modular m as r. But, s also needs to be different from r. This explain the less by 1.
+
 
 
 ### Hashing Strings
