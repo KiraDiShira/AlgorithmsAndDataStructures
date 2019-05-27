@@ -323,6 +323,10 @@ In fact, if the load factor becomes too low, it's a good idea to resize the hash
 
 ### Proof2
 
+Vogliamo dimostrare il seguente teorema:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/call1.PNG" />
+
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/proofMod1.png" />
 
 We will prove this lemma by contraddiction:
