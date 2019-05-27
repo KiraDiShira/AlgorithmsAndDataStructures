@@ -361,7 +361,7 @@ Ricordiamo che p è un numero primo e quindi o divide `a` oppure divide `x-y`
 
 `(x - y)` non può dividere `p` sia perchè x e y sono minori di p, quindi la loro differenza in valore assoluto è minore di p, che perchè (x - y) = 0 solo quando x = y che è una contraddizione 
 
-<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll1.png" />
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll1.PNG" />
 
 
 ### Hashing Strings
