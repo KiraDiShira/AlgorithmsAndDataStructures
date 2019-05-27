@@ -387,6 +387,18 @@ Da dim precedenti sappiamo che `r` è diverso da `s`, ma la collisione ci può e
 
 In total there are  p/m, different integers between 0 and p - 1 which have the same remainder modular m as r. But, s also needs to be different from r. This explain the less by 1.
 
+Possiamo ora dimostrare il teorema:
+
+abbiamo dimostrato che r e s non possono avere collisioni ma i loro mod m si invece. E qui calcoliamo la probabilità di collisione:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll9.PNG" />
+
+- 1/p(p -1) è la probabilità di selezionare una coppia (r, s).
+- Fissato r, quante sono le coppie (r, s) che mi generano una collisione? ceil(p/m) - 1
+- Senza fissare r devo sommare per tutti i valori di r (da qui la sommatoria)
+
+
+
 
 
 ### Hashing Strings
