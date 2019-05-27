@@ -4,6 +4,7 @@
 
 - [Introduction, Direct Addressing and Chaining](#introduction-direct-addressing-and-chaining)
 - [Hash functions](#hash-functions)
+- [Universal family for integers](#universal-family-for-integers)
 - [Searching Patterns](#searching-patterns)
 
 ## Introduction, Direct Addressing and Chaining
@@ -321,7 +322,7 @@ In fact, if the load factor becomes too low, it's a good idea to resize the hash
 
 ### Proof1
 
-### Proof2
+### Universal family for integers
 
 Vogliamo dimostrare il seguente teorema:
 
