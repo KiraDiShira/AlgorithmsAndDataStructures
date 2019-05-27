@@ -377,6 +377,14 @@ pair (r, s) can uniquely solve for a,b mod p
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll6.PNG" />
 
+Ora possiamo dimostrare il teorema:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll7.PNG" />
+
+Da dim precedenti sappiamo che `r` è diverso da `s`, ma la collisione ci può essere dopo le operazioni di `mod m` perchè `m` in molti casi è minore di `p`.
+
+
+
 ### Hashing Strings
 
 **Definition** Denote by **|S|** the length of string S.
