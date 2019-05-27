@@ -363,6 +363,9 @@ Ricordiamo che p è un numero primo e quindi o divide `a` oppure divide `x-y`
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll1.PNG" />
 
+We need another Lemma:
+
+<img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/coroll2.PNG" />
 
 ### Hashing Strings
 
