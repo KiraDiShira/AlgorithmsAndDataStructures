@@ -6,6 +6,7 @@
 - [Hash functions](#hash-functions)
 - [Chain length for universal family](#chain-length-for-universal-family)
 - [Universal family for integers](#universal-family-for-integers)
+- [Hashing integers code](#hashing-integers-code)
 - [Hashing strings](#hashing-strings)
 - [Searching Patterns](#searching-patterns)
 
@@ -412,6 +413,9 @@ abbiamo dimostrato che r e s non possono avere collisioni ma i loro mod m si inv
 - Fissato r, quante sono le coppie (r, s) che mi generano una collisione? ceil(p/m) - 1
 - Senza fissare r devo sommare per tutti i valori di r (da qui la sommatoria)
 
+
+### Hashing integers code
+
 ```c#
 
 public class NumbersHashTable
@@ -510,6 +514,98 @@ public class NumbersHashTable
         _array = tNew._array;
     }
 }
+
+public class NumbersHashFunction
+{
+    public long PrimeNumber { get; private set; }
+    public long A { get; private set; }
+    public long B { get; private set; }
+    public long HashTableSize { get; private set; }
+
+    public NumbersHashFunction(long size, long maxDomainSize)
+    {
+        PrimeNumber = GetPrimeNumberGreaterThen(maxDomainSize);
+        Random rand = new Random();
+        A = LongRandom(1, PrimeNumber - 1, rand);
+        B = LongRandom(0, PrimeNumber - 1, rand);
+        HashTableSize = size;
+    }
+
+    public long Hash(long key)
+    {
+        return ((A * key + B) % PrimeNumber) % HashTableSize;
+    }
+
+    private static long GetPrimeNumberGreaterThen(long maxDomainSize)
+    {
+        //todo calculate prime number greater then max domain size
+        return maxDomainSize;
+    }
+
+    private static long LongRandom(long min, long max, Random rand)
+    {
+        max += 1;
+        byte[] buf = new byte[8];
+        rand.NextBytes(buf);
+        long longRand = BitConverter.ToInt64(buf, 0);
+        return (Math.Abs(longRand % (max - min)) + min);
+    }
+}
+
+static void Main(string[] args)
+{
+    var hashTable = new NumbersHashTable();
+
+    Random rnd = new Random();
+    for (int i = 0; i < 1700000; i++)
+    {
+        var longRandom = LongRandom(1, 10000000, rnd);
+        hashTable.Set(longRandom, new PhoneContact(longRandom.ToString(), longRandom));
+    }
+
+    Console.WriteLine($"number of rehash: {hashTable._numberOfRehash}");
+    Console.WriteLine($"number of keys: {hashTable._numberOfKeys}");
+    Console.WriteLine($"m or size: {hashTable._array.Length}");
+    Console.WriteLine($"Load factor: {hashTable.LoadFactor}");
+
+    IDictionary<int, int> sizeCount = new Dictionary<int, int>();
+    foreach (List<PhoneContact> bucket in hashTable._array)
+    {
+        var bucketCount = bucket.Count;
+        if (sizeCount.ContainsKey(bucketCount))
+        {
+            sizeCount[bucketCount]++;
+        }
+        else
+        {
+            sizeCount.Add(bucketCount, 1);
+        }
+    }
+
+    decimal totSum = 0m;
+    foreach (var item in sizeCount.OrderBy(x => x.Key))
+    {
+        Console.WriteLine($"bucket Length: {item.Key} Count: {item.Value}");
+        totSum +=  item.Key * item.Value;
+    }
+
+    Console.WriteLine($"averagee length: {totSum / sizeCount.Where(x => x.Key != 0).Select(x => x.Value).Sum()} expected lenth: {1 + hashTable.LoadFactor}");
+    
+
+    Console.WriteLine();
+    Console.Read();
+}
+
+
+private static long LongRandom(long min, long max, Random rand)
+{
+    max += 1;
+    byte[] buf = new byte[8];
+    rand.NextBytes(buf);
+    long longRand = BitConverter.ToInt64(buf, 0);
+    return (Math.Abs(longRand % (max - min)) + min);
+}
+
 
 ```
 
