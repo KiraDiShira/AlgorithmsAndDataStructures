@@ -412,9 +412,106 @@ abbiamo dimostrato che r e s non possono avere collisioni ma i loro mod m si inv
 - Fissato r, quante sono le coppie (r, s) che mi generano una collisione? ceil(p/m) - 1
 - Senza fissare r devo sommare per tutti i valori di r (da qui la sommatoria)
 
+```c#
 
+public class NumbersHashTable
+{
+    public List<PhoneContact>[] _array;
+    public decimal _numberOfKeys;
+    public decimal _numberOfRehash; // per fini di debug
+    private NumbersHashFunction _hashFunction;
+    private decimal _maxLoadFactor = 3m;
 
+    public NumbersHashTable(long size = 1, long maxDomainSize = 10000019)
+    {
+        _array = new List<PhoneContact>[size];
+        for(int i = 0; i< _array.Length; i++)
+        {
+            _array[i] = new List<PhoneContact>();
+        }
+        _hashFunction = new NumbersHashFunction(size, maxDomainSize);
+    }
 
+    public decimal LoadFactor
+    {
+        get
+        {
+            return _numberOfKeys / _array.LongLength;
+        }
+    }
+
+    public bool HasKey(long key)
+    {
+        List<PhoneContact> phoneContacts = _array[_hashFunction.Hash(key)];
+
+        foreach (PhoneContact phoneContact in phoneContacts)
+        {
+            if(key == phoneContact.Number)
+            {
+                return true;
+            }             
+        }
+        return false;
+    }
+
+    public PhoneContact Get(long key)
+    {
+        List<PhoneContact> phoneContacts = _array[_hashFunction.Hash(key)];
+
+        foreach (PhoneContact phoneContact in phoneContacts)
+        {
+            if (key == phoneContact.Number)
+            {
+                return phoneContact;
+            }
+        }
+
+        throw new Exception($"The given key '{key}' was not present in the dictionary.");
+    }
+
+    public void Set(long key, PhoneContact newContact)
+    {
+        List<PhoneContact> phoneContacts = _array[_hashFunction.Hash(key)];
+
+        for (int i = 0; i < phoneContacts.Count; i++)
+        {
+            PhoneContact phoneContact = phoneContacts[i];
+            if (key == phoneContact.Number)
+            {
+                phoneContact = newContact;
+                return;
+            }
+        }
+
+        phoneContacts.Add(newContact);
+        _numberOfKeys++;
+
+        if (LoadFactor > _maxLoadFactor)
+        {
+            _numberOfRehash++;
+            Rehash();
+        }
+    }    
+
+    private void Rehash()
+    {
+        long newSize = _array.LongLength * 2;
+        var tNew = new NumbersHashTable(size: newSize);
+
+        foreach (List<PhoneContact> contacts in _array)
+        {
+            foreach (PhoneContact contact in contacts)
+            {
+                tNew.Set(contact.Number, contact);
+            }
+        }
+
+        _hashFunction = tNew._hashFunction;
+        _array = tNew._array;
+    }
+}
+
+```
 
 ### Hashing Strings
 
