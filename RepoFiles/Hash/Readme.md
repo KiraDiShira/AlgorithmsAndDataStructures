@@ -8,6 +8,7 @@
 - [Universal family for integers](#universal-family-for-integers)
 - [Hashing integers code](#hashing-integers-code)
 - [Hashing strings](#hashing-strings)
+- [Hashing strings code](#hashing-strings-code)
 - [Searching Patterns](#searching-patterns)
 
 ## Introduction, Direct Addressing and Chaining
@@ -727,7 +728,7 @@ public class StringsHashTable
         {
             _array[i] = new List<PhoneContact>();
         }
-        _hashFunction = new StringsHashFunction(new NumbersHashFunction(new LongRandomCalculator(), size, max
+        _hashFunction = new StringsHashFunction(new NumbersHashFunction(new LongRandomCalculator(), size, maxDomainSize), new LongRandomCalculator());
     }
 
     public decimal LoadFactor
