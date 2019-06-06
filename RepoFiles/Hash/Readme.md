@@ -681,6 +681,136 @@ So that way, we proved that combination of polynomial hashing with universal has
 
 <img src="https://github.com/KiraDiShira/AlgorithmsAndDataStructures/blob/master/RepoFiles/Hash/Images/h41.PNG" />
 
+### Hashing strings code
+
+```c#
+
+public class StringsHashFunction
+{
+    private readonly NumbersHashFunction _numbersHashFunction;
+
+    public long PrimeNumber { get; private set; }
+    public long X { get; private set; }
+
+    public StringsHashFunction(NumbersHashFunction numbersHashFunction, LongRandomCalculator longRandomCalculator)
+    {
+        PrimeNumber = 1610612741;
+        Random rand = new Random();
+        X = longRandomCalculator.LongRandom(1, PrimeNumber - 1, rand);
+        _numbersHashFunction = numbersHashFunction;
+    }
+
+    public long Hash(string key)
+    {
+        long stringHash = 0;
+        for (int i = key.Length - 1; i >= 0; --i)
+            stringHash = (stringHash * X + key[i]) % PrimeNumber;
+
+        long numberHash = _numbersHashFunction.Hash(stringHash);
+
+        return numberHash;
+    }
+}
+
+public class StringsHashTable
+{
+    public List<PhoneContact>[] _array;
+    public decimal _numberOfKeys;
+    public decimal _numberOfRehash; // per fini di debug
+    private StringsHashFunction _hashFunction;
+    private decimal _maxLoadFactor = 3m;
+
+    public StringsHashTable(long size = 1, long maxDomainSize = 10000019)
+    {
+        _array = new List<PhoneContact>[size];
+        for (int i = 0; i < _array.Length; i++)
+        {
+            _array[i] = new List<PhoneContact>();
+        }
+        _hashFunction = new StringsHashFunction(new NumbersHashFunction(new LongRandomCalculator(), size, max
+    }
+
+    public decimal LoadFactor
+    {
+        get
+        {
+            return _numberOfKeys / _array.LongLength;
+        }
+    }
+
+    public bool HasKey(string key)
+    {
+        List<PhoneContact> phoneContacts = _array[_hashFunction.Hash(key)];
+
+        foreach (PhoneContact phoneContact in phoneContacts)
+        {
+            if (key == phoneContact.Name)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public PhoneContact Get(string key)
+    {
+        List<PhoneContact> phoneContacts = _array[_hashFunction.Hash(key)];
+
+        foreach (PhoneContact phoneContact in phoneContacts)
+        {
+            if (key == phoneContact.Name)
+            {
+                return phoneContact;
+            }
+        }
+
+        throw new Exception($"The given key '{key}' was not present in the dictionary.");
+    }
+
+    public void Set(string key, PhoneContact newContact)
+    {
+        List<PhoneContact> phoneContacts = _array[_hashFunction.Hash(key)];
+
+        for (int i = 0; i < phoneContacts.Count; i++)
+        {
+            PhoneContact phoneContact = phoneContacts[i];
+            if (key == phoneContact.Name)
+            {
+                phoneContact = newContact;
+                return;
+            }
+        }
+
+        phoneContacts.Add(newContact);
+        _numberOfKeys++;
+
+        if (LoadFactor > _maxLoadFactor)
+        {
+            _numberOfRehash++;
+            Rehash();
+        }
+    }
+
+    private void Rehash()
+    {
+        long newSize = _array.LongLength * 2;
+        var tNew = new StringsHashTable(size: newSize);
+
+        foreach (List<PhoneContact> contacts in _array)
+        {
+            foreach (PhoneContact contact in contacts)
+            {
+                tNew.Set(contact.Name, contact);
+            }
+        }
+
+        _hashFunction = tNew._hashFunction;
+        _array = tNew._array;
+    }
+}
+
+```
+
 ## Searching Patterns
 
 Given a text T (book, website, facebook profile) and a pattern P (word, phrase,sentence), find all occurrences of P in T.
